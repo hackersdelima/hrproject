@@ -5,12 +5,7 @@
 
 <html>
 <head>
-<style>
-	.workform input{
-	border:none;
-	width: 100%;
-	}
-</style>
+
 </head>
 <body class="background">
 	<div class="breadcrumb-line">
@@ -724,14 +719,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-	<script>
-		
-	
-	</script>
 </body>
 </html>
 
