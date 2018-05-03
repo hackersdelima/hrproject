@@ -6,21 +6,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.hrproject.dao.LoginDao;
 import com.project.hrproject.entity.UserModel;
 
 @Controller
 @RequestMapping("/login")
+@SessionAttributes("userDetail")
 public class LoginController {
+	@Autowired
+	private LoginDao loginDao;
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String login(Model model){
-		model.addAttribute("user", new UserModel());
+	public String login(@ModelAttribute(value = "user") UserModel user, Model model, RedirectAttributes attributes){
+		System.out.println(user);
 		System.out.println("login invoked");
-		return "";
+		boolean status = loginDao.verifyUser(user);
+		if (status) {
+			UserModel userDetail = getUser(user);
+			model.addAttribute("userDetail", userDetail);
+			return "profile";
+		} else {
+			attributes.addFlashAttribute("msg","Invalid Login Credentials!");
+			return "redirect:/";
+		}
 	}
-	
+	public UserModel getUser(UserModel user) {
+		return loginDao.getUserDetails(user);
+	}
 	/*@Autowired
 	private LoginDao loginDao;*/
 	

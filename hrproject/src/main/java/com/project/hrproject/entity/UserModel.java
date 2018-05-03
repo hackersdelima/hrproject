@@ -1,7 +1,15 @@
 package com.project.hrproject.entity;
 
 public class UserModel {
-	private String userid, status,username, password, citizenshipno, phonenumber, email;
+	private String name, userid, status,username, password, citizenshipno, phonenumber, email;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getUserid() {
 		return userid;
@@ -61,11 +69,12 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "UserModel [userid=" + userid + ", status=" + status + ", username=" + username + ", password="
-				+ password + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber + ", email=" + email
-				+ "]";
+		return "UserModel [name=" + name + ", userid=" + userid + ", status=" + status + ", username=" + username
+				+ ", password=" + password + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber
+				+ ", email=" + email + "]";
 	}
 
+	
 	
 
 }

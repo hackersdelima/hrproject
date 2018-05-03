@@ -2,7 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import='java.sql.*' %>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <html lang="en">
   <head>
@@ -15,14 +16,14 @@
     <title>Digi Nepal | Profile</title>
 
     <!-- Bootstrap -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="resources/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="resources/css/nprogress.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="resources/css/custom.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -31,7 +32,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="" class="site_title"><i class="fa fa-desktop" aria-hidden="true"></i> <span>Digi Nepal</span></a>
+              <a href="" class="site_title"><i class="fa fa-desktop" aria-hidden="true"></i> <span>ADBL</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -39,7 +40,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="resources/images/user.jpg" alt="..." class="img-circle profile_img">
+                <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -57,44 +58,16 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="view/dashboard.jsp" target="iframe_a">Dashboard</a></li>
+                      <li><a href="#" target="iframe_a">Dashboard</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Student <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="studentAdmission" target="iframe_a">Student Admission</a></li>
-                      <li><a href="listStudents" target="iframe_a">Students List</a></li>
+                      <li><a href="<spring:url value="/nav/registration_form"/>" target="iframe_a">Registration Form</a></li>
+                      <li><a href="listStudents" target="iframe_a">Verification Status</a></li>
                     </ul>
                   </li>
-                   <li><a><i class="fa fa-edit"></i> Exam <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                    	 <li><a href="createExam" target="iframe_a">Create Exam</a>
-                            </li>
-                      <li><a href="createStudentReport.click" target="iframe_a">Create Marks Report</a></li>
-                       <li><a href="reportsearchbox.click" target="iframe_a">Search Report</a>
-                            </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Settings</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-sitemap"></i> Settings <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                    <li ><a href="generalSettings" target="iframe_a">General Settings</a>
-                        <li><a>Academic Settings<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li ><a href="subjects" target="iframe_a">Subjects</a>
-                            </li>
-                            <li><a href="assignSubjects" target="iframe_a">Assign Subjects</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="initialDetails" target="iframe_a">Set Initial Details</a>
-                        </li>
-                    </ul>
-                  </li>                  
+                  
                 </ul>
               </div>
 
@@ -131,7 +104,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="resources/images/user.jpg" alt="">Username
+                    <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="">Username
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -153,7 +126,7 @@
 
         <!-- page content -->
      <div class="right_col" role="main">
-          <iframe    height="1400px" width="100%" src="view/dashboard.jsp" id="Iframe" name="iframe_a"  style="border:none;" >
+          <iframe height="1400px" width="100%" src="" id="Iframe" name="iframe_a"  style="border:none;background-color: transparent;" >
 		</iframe>
      </div>
         <!-- /page content -->
@@ -170,7 +143,7 @@
     </div>
 
     <!-- jQuery -->
-    <script src="resources/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script type="text/javascript">
     function toggleFullscreen(elem) {
     	  elem = elem || document.documentElement;
@@ -202,14 +175,14 @@
     	});
     </script>
     <!-- Bootstrap -->
-    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="resources/js/fastclick.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="resources/js/nprogress.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/nprogress.js"></script>
     
     <!-- Custom Theme Scripts -->
-    <script src="resources/js/custom.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/custom.min.js"></script>
     
   </body>
 </html>

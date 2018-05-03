@@ -538,48 +538,48 @@
 								</tr>
 								<tr>
 									<td>1</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
 								</tr>
 								<tr>
 									<td>2</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
 								</tr>
 								<tr>
 									<td>3</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
 								</tr>
 								<tr>
 									<td>4</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
 								</tr>
 								<tr>
 									<td>5</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
 								</tr>
 							</table>
 							<h6>Any Training: </h6>
@@ -594,27 +594,27 @@
 								</tr>
 								<tr>
 									<td>1</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
 								</tr>
 								<tr>
 									<td>2</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
 								</tr>
 								<tr>
 									<td>3</td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
 								</tr>
 							</table>
 							<h6>Work Experience: </h6>
@@ -630,14 +630,13 @@
 									<th style="padding: 16px;">Review of Work</th>
 								</tr>
 								<tr>
-									<td><input type="text" size=10  /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="text" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="number" size=10 /></td>
-									<td><input type="text" size=10 /></td>
+									<td><input type="text" size=auto  /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="text" size=auto /></td>
+									<td><input type="number" size=auto /></td>
+									<td><input type="number" size=auto /></td>
 								</tr>
 							</table>
 						</div>

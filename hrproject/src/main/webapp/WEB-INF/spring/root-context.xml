@@ -17,6 +17,9 @@
 	<bean id="loginDao" class="com.project.hrproject.dao.impl.LoginDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate"/>
 	</bean>
+	<bean id="userDao" class="com.project.hrproject.dao.impl.UserDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
