@@ -2,7 +2,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <html>
-	<head><title>ADBL Signup</title>
+	<head><title>ADBL Signup Review</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css">
@@ -17,44 +17,42 @@
     	<div class="col-md-6 col-centered" style="text-align: center;padding-bottom: 10px;">
     		<img src="${pageContext.request.contextPath}/resources/images/adbl government logo.jpg" alt="logo" class="img-responsive" />
     		
-    		<h4>SIGNUP FORM</h4>
+    		<h4>SIGNUP REVIEW</h4>
     		<hr>
     		
-    		<spring:url value="/signup_review" var="formUrl" />
+    		<spring:url value="/signup" var="formUrl" />
     		
-    		<form:form cssClass="login-form"  action="${formUrl }" method="POST" modelAttribute="user">
     		<table style="width:80%; margin:auto;">
     			<tr>
     				<td colspan="2"><label for="name">Name</label></td>
-    				<td><form:input path="name" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    				<td>${sessionScope.user.name }</td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="citizenship-no">Citizenship No</label></td>
-    				<td><form:input path="citizenshipno" cssClass="uname" id="citizenship-no" placeholder="Enter Citizenship No" value="${sessionScope.user.citizenshipno }"/></td>
+    				<td>${sessionScope.user.citizenshipno }</td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="phone-no">Phone Number</label></td>
-    				<td><form:input path="phonenumber" cssClass="uname" id="phone-no" placeholder="Enter Phone Number" value="${sessionScope.user.phonenumber }"/></td>
+    				<td>${sessionScope.user.phonenumber }</td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="phone-no">Email</label></td>
-    				<td><form:input path="email" cssClass="uname" id="email" placeholder="Enter Email" value="${sessionScope.user.email }"/></td>
+    				<td>${sessionScope.user.email }</td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="user-name">Username</label></td>
-    				<td><form:input path="username" cssClass="uname" id="user-name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    				<td>${sessionScope.user.username }</td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="user-name">Password</label></td>
-    				<td><form:input path="password" cssClass="uname" id="password" placeholder="Enter Password" value="${sessionScope.user.password }"/></td>
+    				<td>********</td>
     			</tr>
     			<tr>
-    				<td><a href="<spring:url value="/"/>" style="font-size: 80%">Already a member? Login</a></td>
-    				<td><input type="submit" class="form-control pull-right" value="Next"></td>
+    			<td><a href="<spring:url value="/"/>" style="font-size: 80%">Already a member? Login</a></td>
+    				<td></td>
+    				<td><a href="<spring:url value="/nav/signup"/>" style="font-size: 80%">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<spring:url value="/signup"/>" style="font-size: 80%">SIGNUP</a></td>
     			</tr>
-    			
     		</table>
-	   		</form:form>
 	    </div>
     </body>
 </html>
