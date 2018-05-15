@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css"></head>
     <body style="background-color: mediumaquamarine;">
     	<div class="col-md-6 col-centered" style="text-align: center;padding-bottom: 10px;">
-    		<img src="${pageContext.request.contextPath}/resources/images/adbl government logo.jpg" alt="logo" class="img-responsive" />
+    		<img src="${pageContext.request.contextPath}/resources/images/adbl-logo.png" alt="logo" class="img-responsive" />
     		<p style="color:red;">${msg}</p>
     		<br>
     		<br>

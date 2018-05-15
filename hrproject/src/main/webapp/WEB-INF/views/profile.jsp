@@ -64,6 +64,7 @@
                   <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<spring:url value="/nav/registration_form"/>" target="iframe_a">Registration Form</a></li>
+                       <li><a href="<spring:url value="/nav/entrance_card"/>" target="iframe_a">Entrance Card</a></li>
                       <li><a href="listStudents" target="iframe_a">Verification Status</a></li>
                     </ul>
                   </li>
@@ -85,7 +86,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="logout">
+              <a href="<spring:url value="/logout"/>"  data-toggle="tooltip" data-placement="top" title="Logout" ">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
               </a>
             </div>
@@ -115,7 +116,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<spring:url value="/logout/"/>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>
@@ -126,7 +127,7 @@
 
         <!-- page content -->
      <div class="right_col" role="main">
-          <iframe height="1400px" width="100%" src="" id="Iframe" name="iframe_a"  style="border:none;background-color: transparent;" >
+          <iframe height="3200px" width="100%" src="" id="Iframe" name="iframe_a"  style="border:none;background-color: transparent;" >
 		</iframe>
      </div>
         <!-- /page content -->
@@ -134,7 +135,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Copyright 2018 <a href="https://diginepal.com.np">Digi-Nepal</a>
+            Copyright 2018 <a href="https://diginepal.com.np">Agricultural Development Bank</a>
           </div>
           <div class="clearfix"></div>
         </footer>

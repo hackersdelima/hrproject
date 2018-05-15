@@ -20,6 +20,13 @@
 	<bean id="userDao" class="com.project.hrproject.dao.impl.UserDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate"/>
 	</bean>
+	<bean id="registrationDao" class="com.project.hrproject.dao.impl.RegistrationDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ <property name="maxUploadSize" value="268435456"/>
+</bean>
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -27,5 +34,6 @@
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
+	
 
 </beans>

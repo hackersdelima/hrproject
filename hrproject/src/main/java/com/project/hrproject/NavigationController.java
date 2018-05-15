@@ -24,5 +24,11 @@ public class NavigationController {
 		model.put("user", new UserModel());
 		return "signup";
 	}
+	
+	@RequestMapping(value = "/entrance_card", method = RequestMethod.GET)
+	public String entranceCard() {
+		
+		return "reports/admit_card";
+	}
 
 }
