@@ -56,7 +56,7 @@ private JdbcTemplate jdbcTemplate;
 				user.setPassword(rs.getString("password"));
 				user.setUserid(rs.getString("userid"));
 				user.setStatus(rs.getString("status"));
-				
+				user.setAd_no(rs.getString("advertiseno"));
 				
 				return user;
 			}

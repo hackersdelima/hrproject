@@ -21,8 +21,19 @@
 			</div>
 		</div>
 		<hr>
+		<br>
+		<br>
 		<div class="col-md-4">
 Upload Your Picture: <input class="form-control" type="file" name="file" accept="image/*">
+</div>
+<div class="col-md-4">
+Citizenship : <input class="form-control" type="file" name="citizenship" accept="image/*">
+</div>
+<div class="col-md-4">
+Marks Sheet: <input class="form-control" type="file" name="markssheet" accept="image/*">
+</div>
+<div class="col-md-4">
+Bank Voucher: <input class="form-control" type="file" name="voucher" accept="image/*">
 </div>
 	
 </form>

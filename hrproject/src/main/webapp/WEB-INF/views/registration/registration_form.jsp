@@ -18,7 +18,7 @@ body, .nep {
 	color: #344c4c;
 }
 
-input, .eng {
+input, .eng, span {
 	font-family: arial;
 }
 input{
@@ -89,8 +89,7 @@ body {
 		<div class="col-md-12">
 			dxfzo,<br> To; s[lif ljsf; a}+s ln=sf] ldlt <input value="${sessionScope.registration.ad_date }" type="text"
 				name="ad_date" value=""> ut] k|sflzt lj1fkg cg';f/ lj1fkg g+
-			<input value="${sessionScope.registration.ad_no }" type="text" name="ad_no" value=""> kb <input value="${sessionScope.registration.post }"
-				type="text" name="post" value=""> sf] nflu b]xfosf] ljj/0f
+			<span><strong>${sessionScope.userDetail.ad_no }</strong></span> kb <strong>${sessionScope.vacancy.postnp }</strong> sf] nflu b]xfosf] ljj/0f
 			pNn]v u/L /Ltk"j{s b/vf:t k]z u/]sf] 5' .
 		</div>
 		<div class="col-md-12">
@@ -236,5 +235,26 @@ body {
 		</div>
 		</div>
 	</form>
+	<script>
+
+		$("#ad_no").blur(function()
+				{
+				var advertiseno=$(this).val();
+				var dataString = 'advertiseno='+ advertiseno;
+				$.ajax
+				({
+				type: "POST",
+				url: "../reg/ad_no_blur",
+				data: dataString,
+				cache: false,
+				success: function(html)
+				{
+				alert("fds");
+				} 
+				});
+				});
+				
+	
+	</script>
 </body>
 </html>

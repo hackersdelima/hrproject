@@ -1,7 +1,7 @@
 package com.project.hrproject.entity;
 
 public class UserModel {
-	private String name, userid, status,username, password, citizenshipno, phonenumber, email;
+	private String ad_no, name, userid, status,username, password, citizenshipno, phonenumber, email;
 
 	public String getName() {
 		return name;
@@ -67,12 +67,22 @@ public class UserModel {
 		this.email = email;
 	}
 
+	public String getAd_no() {
+		return ad_no;
+	}
+
+	public void setAd_no(String ad_no) {
+		this.ad_no = ad_no;
+	}
+
 	@Override
 	public String toString() {
-		return "UserModel [name=" + name + ", userid=" + userid + ", status=" + status + ", username=" + username
-				+ ", password=" + password + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber
-				+ ", email=" + email + "]";
+		return "UserModel [ad_no=" + ad_no + ", name=" + name + ", userid=" + userid + ", status=" + status
+				+ ", username=" + username + ", password=" + password + ", citizenshipno=" + citizenshipno
+				+ ", phonenumber=" + phonenumber + ", email=" + email + "]";
 	}
+
+	
 
 	
 	

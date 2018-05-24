@@ -90,7 +90,7 @@ caption {
 					</tr>
 					<tr>
 						<td colspan="2">lj1fkg g+ <span>:</span></td>
-						<td class="eng">${sessionScope.registration.ad_no}</td>
+						<td class="eng">${sessionScope.userDetail.ad_no}</td>
 					</tr>
 					<tr>
 						<td colspan="2">/f]n g+</td>
@@ -102,7 +102,7 @@ caption {
 		</div>
 		<div class="col-md-12">
 			<div>
-				b/vf:t lbPsf] kb <span>: ${sessionScope.registration.post }</span>
+				b/vf:t lbPsf] kb : ${sessionScope.vacancy.postnp }
 			</div>
 		</div>
 		<div class="col-md-12">
@@ -117,8 +117,8 @@ caption {
 				<caption>-s_ j}olQms ljj/0f M cfˆgf] ;Dk"0f{ j}olQms
 					ljj/0f :ki6 a'lemg] cIf/df n]Vg'xf];</caption>
 				<tr>
-					<td>lj1fkg g+ M <span>${sessionScope.registration.ad_no }</span></td>
-					<td>kb M <span>${sessionScope.registration.post }</span></td>
+					<td>lj1fkg g+ M <span>${sessionScope.userDetail.ad_no }</span></td>
+					<td>kb M ${sessionScope.vacancy.postnp }</td>
 					<td>;]jf <input value="${sessionScope.registrationnext.sewa}"
 						type="text" name="sewa"></td>
 					<td>;d"x <input value="${sessionScope.registrationnext.group}"

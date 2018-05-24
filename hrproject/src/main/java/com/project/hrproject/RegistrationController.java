@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,14 +33,17 @@ public class RegistrationController {
 	RegistrationDao registrationDao;
 	
 	@RequestMapping(value = "/next", method = RequestMethod.POST)
-	public String next(@ModelAttribute RegistrationModel registrationModel, Model model) {
+	public String next(@ModelAttribute RegistrationModel registrationModel, Model model, HttpSession session) {
+		UserModel userDetail = (UserModel)session.getAttribute("userDetail");
+		//registrationModel.setVacancyModel(registrationDao.getSpecificAdvertisements(userDetail.getAd_no()));
+		
 		model.addAttribute("registration", registrationModel);
 		return "registration/registration_form1";
 	}
 
 	@RequestMapping(value = "/firstForm", method = RequestMethod.POST)
 	public String previous(@ModelAttribute RegistrationNextModel registrationNextModel, Model model) {
-		System.out.println(registrationNextModel.getRoll_no());
+		
 		model.addAttribute("registrationnext", registrationNextModel);
 		return "redirect:/nav/registration_form";
 	}
@@ -64,7 +68,8 @@ public class RegistrationController {
 		RegistrationNextModel rnm = (RegistrationNextModel)session.getAttribute("registrationnext");
 		
 		UserModel userdetail=(UserModel)session.getAttribute("userDetail");
-		// Save file on system
+		
+		// Save photo file on system
 		String saveFileName=null;
 		String fileLocation=null; 
 		if (!file.getOriginalFilename().isEmpty()) {
@@ -89,6 +94,9 @@ public class RegistrationController {
 		} else {
 			return "please select file";
 		}
+		
+		
+		
 
 	}
 
@@ -99,4 +107,11 @@ public class RegistrationController {
 		return "Registration Canceled!";
 	}
 
+	@RequestMapping(value = "/ad_no_blur")
+	public void ad_no_blur(@PathVariable String advertiseno){
+		System.out.println("reached");
+		System.out.println(advertiseno);
+		registrationDao.getSpecificAdvertisements(advertiseno);
+	
+	}
 }

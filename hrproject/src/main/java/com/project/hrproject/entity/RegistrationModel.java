@@ -1,7 +1,17 @@
 package com.project.hrproject.entity;
 
 public class RegistrationModel {
- private String reg_no,reg_date,subject,ad_date,ad_no,post,khulla_pratiyogita,samabesi,woman,aadibasi_janjati,madhesi,dalit,apanga,pichadiyeko_chhetra,last_exam,last_exam_subjects,degree_year,degree_month,degree_day,degree_yearen,degree_monthen,degree_dayen,birth_date,cur_age_yr,cur_age_month,cur_age_days,citizenship,cit_zone,cit_district,cit_vdcmun,permanent_address,temp_address,father_name,grandfather_name,mother_name,signature,full_name,submission_date;
+ private String reg_no,reg_date,subject,ad_date ,khulla_pratiyogita,samabesi,woman,aadibasi_janjati,madhesi,dalit,apanga,pichadiyeko_chhetra,last_exam,last_exam_subjects,degree_year,degree_month,degree_day,degree_yearen,degree_monthen,degree_dayen,birth_date,cur_age_yr,cur_age_month,cur_age_days,citizenship,cit_zone,cit_district,cit_vdcmun,permanent_address,temp_address,father_name,grandfather_name,mother_name,signature,full_name,submission_date;
+private VacancyModel vacancyModel;
+
+
+public VacancyModel getVacancyModel() {
+	return vacancyModel;
+}
+
+public void setVacancyModel(VacancyModel vacancyModel) {
+	this.vacancyModel = vacancyModel;
+}
 
 public String getReg_no() {
 	return reg_no;
@@ -33,22 +43,6 @@ public String getAd_date() {
 
 public void setAd_date(String ad_date) {
 	this.ad_date = ad_date;
-}
-
-public String getAd_no() {
-	return ad_no;
-}
-
-public void setAd_no(String ad_no) {
-	this.ad_no = ad_no;
-}
-
-public String getPost() {
-	return post;
-}
-
-public void setPost(String post) {
-	this.post = post;
 }
 
 public String getKhulla_pratiyogita() {
@@ -310,22 +304,19 @@ public void setSubmission_date(String submission_date) {
 @Override
 public String toString() {
 	return "RegistrationModel [reg_no=" + reg_no + ", reg_date=" + reg_date + ", subject=" + subject + ", ad_date="
-			+ ad_date + ", ad_no=" + ad_no + ", post=" + post + ", khulla_pratiyogita=" + khulla_pratiyogita
-			+ ", samabesi=" + samabesi + ", woman=" + woman + ", aadibasi_janjati=" + aadibasi_janjati + ", madhesi="
-			+ madhesi + ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chhetra=" + pichadiyeko_chhetra
-			+ ", last_exam=" + last_exam + ", last_exam_subjects=" + last_exam_subjects + ", degree_year=" + degree_year
-			+ ", degree_month=" + degree_month + ", degree_day=" + degree_day + ", degree_yearen=" + degree_yearen
-			+ ", degree_monthen=" + degree_monthen + ", degree_dayen=" + degree_dayen + ", birth_date=" + birth_date
-			+ ", cur_age_yr=" + cur_age_yr + ", cur_age_month=" + cur_age_month + ", cur_age_days=" + cur_age_days
-			+ ", citizenship=" + citizenship + ", cit_zone=" + cit_zone + ", cit_district=" + cit_district
-			+ ", cit_vdcmun=" + cit_vdcmun + ", permanent_address=" + permanent_address + ", temp_address="
-			+ temp_address + ", father_name=" + father_name + ", grandfather_name=" + grandfather_name
-			+ ", mother_name=" + mother_name + ", signature=" + signature + ", full_name=" + full_name
-			+ ", submission_date=" + submission_date + "]";
+			+ ad_date + ", khulla_pratiyogita=" + khulla_pratiyogita + ", samabesi=" + samabesi + ", woman=" + woman
+			+ ", aadibasi_janjati=" + aadibasi_janjati + ", madhesi=" + madhesi + ", dalit=" + dalit + ", apanga="
+			+ apanga + ", pichadiyeko_chhetra=" + pichadiyeko_chhetra + ", last_exam=" + last_exam
+			+ ", last_exam_subjects=" + last_exam_subjects + ", degree_year=" + degree_year + ", degree_month="
+			+ degree_month + ", degree_day=" + degree_day + ", degree_yearen=" + degree_yearen + ", degree_monthen="
+			+ degree_monthen + ", degree_dayen=" + degree_dayen + ", birth_date=" + birth_date + ", cur_age_yr="
+			+ cur_age_yr + ", cur_age_month=" + cur_age_month + ", cur_age_days=" + cur_age_days + ", citizenship="
+			+ citizenship + ", cit_zone=" + cit_zone + ", cit_district=" + cit_district + ", cit_vdcmun=" + cit_vdcmun
+			+ ", permanent_address=" + permanent_address + ", temp_address=" + temp_address + ", father_name="
+			+ father_name + ", grandfather_name=" + grandfather_name + ", mother_name=" + mother_name + ", signature="
+			+ signature + ", full_name=" + full_name + ", submission_date=" + submission_date + ", vacancyModel="
+			+ vacancyModel + "]";
 }
-
-
-
 
 
 }

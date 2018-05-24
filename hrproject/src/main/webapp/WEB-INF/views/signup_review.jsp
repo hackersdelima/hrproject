@@ -15,7 +15,7 @@
     
     <body style="background-color: mediumaquamarine;">
     	<div class="col-md-6 col-centered" style="text-align: center;padding-bottom: 10px;">
-    		<img src="${pageContext.request.contextPath}/resources/images/adbl government logo.jpg" alt="logo" class="img-responsive" />
+    		<img src="${pageContext.request.contextPath}/resources/images/adbl-logo.png" alt="logo" class="img-responsive" />
     		
     		<h4>SIGNUP REVIEW</h4>
     		<hr>
@@ -23,6 +23,10 @@
     		<spring:url value="/signup" var="formUrl" />
     		
     		<table style="width:80%; margin:auto;">
+    		<tr>
+    				<td colspan="2"><label for="name">Advertise No</label></td>
+    				<td>${sessionScope.user.ad_no }</td>
+    			</tr>
     			<tr>
     				<td colspan="2"><label for="name">Name</label></td>
     				<td>${sessionScope.user.name }</td>

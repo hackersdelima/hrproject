@@ -72,19 +72,19 @@ font-weight: bold;}
 			<td>-!_ dlxnf</td>
 		</tr>
 		<tr>
-			<td>-v_ lj1fkg gDa/ M</td>
+			<td>-v_ lj1fkg gDa/ M <span>${sessionScope.userDetail.ad_no }</span></td>
 			<td>-@_ cflbjf;L<span>/</span>hghflt</td>
 		</tr>
 		<tr>
-			<td>-u_ kb M</td>
+			<td>-u_ kb M ${sessionScope.vacancy.postnp }</td>
 			<td>-#_ dw];L</td>
 		</tr>
 		<tr>
-			<td>-3_ ;]jf M</td>
+			<td>-3_ ;]jf M ${sessionScope.vacancy.servicenp }</td>
 			<td>-$_ blnt</td>
 		</tr>
 		<tr>
-			<td>-ª_ ;d"x M</td>
+			<td>-ª_ ;d"x M ${sessionScope.vacancy.groupnp }</td>
 			<td>-%_ ckfË–</td>
 		</tr>
 		<tr>
