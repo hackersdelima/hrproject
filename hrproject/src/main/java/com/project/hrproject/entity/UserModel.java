@@ -1,7 +1,7 @@
 package com.project.hrproject.entity;
 
 public class UserModel {
-	private String ad_no, name, userid, status,username, password, citizenshipno, phonenumber, email;
+	private String ad_no, name,name1, father, mother, spouse,permanentaddress,tempaddress, userid, status,username, password, citizenshipno, phonenumber, email;
 
 	public String getName() {
 		return name;
@@ -10,7 +10,42 @@ public class UserModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+public String getName1() {
+	return name1;
+}
+public void setName1(String name1) {
+	this.name1 = name1;
+}
+public void setFather(String father) {
+	this.father = father;
+}
+public String getFather() {
+	return father;
+}
+public void setMother(String mother) {
+	this.mother = mother;
+}
+public String getMother() {
+	return mother;
+}
+public void setSpouse(String spouse) {
+	this.spouse = spouse;
+}
+public String getSpouse() {
+	return spouse;
+}
+public void setPermanentaddress(String permanentaddress) {
+	this.permanentaddress = permanentaddress;
+}
+public String getPermanentaddress() {
+	return permanentaddress;
+}
+public void setTempaddress(String tempaddress) {
+	this.tempaddress = tempaddress;
+}
+public String getTempaddress() {
+	return tempaddress;
+}
 	public String getUserid() {
 		return userid;
 	}
@@ -77,7 +112,7 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "UserModel [ad_no=" + ad_no + ", name=" + name + ", userid=" + userid + ", status=" + status
+		return "UserModel [ad_no=" + ad_no + ", name=" + name + ",name1=" + name1 + ", userid=" + userid + ", status=" + status
 				+ ", username=" + username + ", password=" + password + ", citizenshipno=" + citizenshipno
 				+ ", phonenumber=" + phonenumber + ", email=" + email + "]";
 	}

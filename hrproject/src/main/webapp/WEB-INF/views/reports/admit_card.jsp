@@ -13,7 +13,14 @@
 	font-family: myFirstFont;
 	src: url(${pageContext.request.contextPath}/resources/fonts/preeti.TTF);
 }
-
+@font-face {
+	font-family: mySecondFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/Sunil_1.ttf);
+}
+.nep1{
+font-family: mySecondFont;
+	color: #344c4c;
+}
 body, .nep {
 	font-family: myFirstFont;
 	color: #344c4c;
@@ -31,9 +38,6 @@ body {
 	font-size: 180%;
 	
 }
-caption{
-font-size:120%;
-font-weight: bold;}
 </style>
 </head>
 <body class="background">
@@ -68,11 +72,11 @@ font-weight: bold;}
 	<caption>k/LIffyL{n] eg]{ </caption>
 		<tbody>
 		<tr>
-			<td>-s_ gfd, y/ M</td>
+			<td>-s_ gfd, y/ M ${sessionScope.userDetail.name }</td>
 			<td>-!_ dlxnf</td>
 		</tr>
 		<tr>
-			<td>-v_ lj1fkg gDa/ M <span>${sessionScope.userDetail.ad_no }</span></td>
+			<td>-v_ lj1fkg gDa/ M <span class="nep1">${sessionScope.userDetail.ad_no }</span></td>
 			<td>-@_ cflbjf;L<span>/</span>hghflt</td>
 		</tr>
 		<tr>
@@ -85,7 +89,7 @@ font-weight: bold;}
 		</tr>
 		<tr>
 			<td>-ª_ ;d"x M ${sessionScope.vacancy.groupnp }</td>
-			<td>-%_ ckfË–</td>
+			<td>-%_ ckf+u</td>
 		</tr>
 		<tr>
 			<td>-5_ k/LIff s]Gb M</td>

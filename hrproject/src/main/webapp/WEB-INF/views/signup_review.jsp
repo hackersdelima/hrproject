@@ -6,9 +6,42 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css">
-    <style>
-    	table tr td{
-    	 padding-bottom: 1em;}
+   <style>
+     	table tr td{
+    	 padding-bottom: 1em;} 
+    	 
+
+@font-face {
+	font-family: myFirstFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/preeti.TTF);
+}
+@font-face {
+	font-family: mySecondFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/Sunil_1.ttf);
+}
+.nep1{
+font-family: mySecondFont;
+	color: #344c4c;
+}
+.nep {
+	font-family: myFirstFont;
+	color: #344c4c;
+}
+
+/* input, .eng, span {
+	font-family: arial;
+} */
+input{
+border: 1px solid #94b8b8;
+  padding:3px 8px;
+  font-size:80%;
+  color:#3d5c5c;}
+body {
+	font-size: 180%;
+	
+}
+	 
+    	 
     </style>
     
     </head>
@@ -29,8 +62,20 @@
     			</tr>
     			<tr>
     				<td colspan="2"><label for="name">Name</label></td>
-    				<td>${sessionScope.user.name }</td>
+    				<td>
+    				
+						${sessionScope.user.name } 
+    				
+    				
+    				</td>
     			</tr>
+    			
+    			<tr>
+    				<td colspan="2"><label for="name">Name1</label></td>
+    				<td>${sessionScope.user.name1 }</td>
+    			</tr>
+    			
+    			
     			<tr>
     				<td colspan="2"><label for="citizenship-no">Citizenship No</label></td>
     				<td>${sessionScope.user.citizenshipno }</td>

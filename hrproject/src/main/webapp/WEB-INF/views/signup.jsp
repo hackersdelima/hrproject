@@ -8,8 +8,45 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css">
     <style>
-    	table tr td{
-    	 padding-bottom: 1em;}
+     	table tr td{
+    	 padding-bottom: 1em;} 
+    	 
+
+@font-face {
+	font-family: myFirstFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/preeti.TTF);
+}
+@font-face {
+	font-family: mySecondFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/Sunil_1.ttf);
+}
+.nep1{
+font-family: mySecondFont;
+	color: #344c4c;
+}
+.nep {
+	font-family: myFirstFont;
+	color: #344c4c;
+}
+
+/* input, .eng, span {
+	font-family: arial;
+} */
+input{
+border: 1px solid #94b8b8;
+  padding:3px 8px;
+  font-size:80%;
+  color:#3d5c5c;}
+body {
+	font-size: 180%;
+	
+}
+
+    	 
+    	 
+    	 
+    	 
+    	 
     </style>
     
     </head>
@@ -35,9 +72,39 @@
     				</form:select></td>
     			</tr>
     			<tr>
-    				<td colspan="2"><label for="name">Name</label></td>
-    				<td><form:input path="name" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    				<td colspan="2"><label for="name">Name In Nepali Unicode</label></td>
+    				 <td><form:input path="name" cssClass="uname" id="name" placeholder="Devnagari unicode" value="${sessionScope.user.name }"/></td> 
+    			
+    			
+    			
     			</tr>
+    			   	<tr>
+    				<td colspan="2"><label for="name">Name1</label></td>
+    				<td><form:input path="name1" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			
+    			</tr>
+    			
+    			  	<tr>
+    				<td colspan="2"><label for="name">Father</label></td>
+    				<td><form:input path="father" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			</tr>
+   			  	<tr>
+    				<td colspan="2"><label for="name">Mother</label></td>
+    				<td><form:input path="mother" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			</tr> 		
+   			  	<tr>
+    				<td colspan="2"><label for="name">Spouse</label></td>
+    				<td><form:input path="spouse" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			</tr> 
+   			  	<tr>
+    				<td colspan="2"><label for="name">Permanent Address</label></td>
+    				<td><form:input path="permanentaddress" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			</tr> 
+   			  	<tr>
+    				<td colspan="2"><label for="name">Temporary Address</label></td>
+    				<td><form:input path="tempaddress" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
+    			</tr>     			    			
+    			  			
     			<tr>
     				<td colspan="2"><label for="citizenship-no">Citizenship No</label></td>
     				<td><form:input path="citizenshipno" cssClass="uname" id="citizenship-no" placeholder="Enter Citizenship No" value="${sessionScope.user.citizenshipno }"/></td>

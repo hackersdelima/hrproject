@@ -24,7 +24,7 @@ private JdbcTemplate jdbcTemplate;
 	 }
 	 
 	 public int signup(UserModel user){
-		 String sql = "insert into usertbl(username, password, citizenshipno, phonenumber, email, name, advertiseno) values ('"+user.getUsername()+"', '"+user.getPassword()+"','"+user.getCitizenshipno()+"', '"+user.getPhonenumber()+"', '"+user.getEmail()+"', '"+user.getName()+"','"+user.getAd_no()+"')";
+		 String sql = "insert into usertbl(username, password, citizenshipno, phonenumber, email, name,name1, advertiseno) values ('"+user.getUsername()+"', '"+user.getPassword()+"','"+user.getCitizenshipno()+"', '"+user.getPhonenumber()+"', '"+user.getEmail()+"', '"+user.getName()+"', '"+user.getName1() +"','"+user.getAd_no()+"')";
 		 return jdbcTemplate.update(sql);
 	 }
 

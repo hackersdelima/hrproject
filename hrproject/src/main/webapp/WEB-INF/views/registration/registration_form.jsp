@@ -12,7 +12,14 @@
 	font-family: myFirstFont;
 	src: url(${pageContext.request.contextPath}/resources/fonts/preeti.TTF);
 }
-
+@font-face {
+	font-family: mySecondFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/Sunil_1.ttf);
+}
+.nep1{
+font-family: mySecondFont;
+	color: #344c4c;
+}
 body, .nep {
 	font-family: myFirstFont;
 	color: #344c4c;
@@ -81,15 +88,15 @@ body {
 		<div class="col-md-12">
 			<div class="col-md-3"></div>
 			<div class="col-md-9">
-				<strong>ljifo</strong> <input type="text" value="${sessionScope.registration.subject }" name="subject">
+				<strong>ljifo M </strong>${sessionScope.vacancy.postnp }
 				=kbsf] b/vf:t ;DjGwdf .
 			</div>
 
 		</div>
 		<div class="col-md-12">
-			dxfzo,<br> To; s[lif ljsf; a}+s ln=sf] ldlt <input value="${sessionScope.registration.ad_date }" type="text"
-				name="ad_date" value=""> ut] k|sflzt lj1fkg cg';f/ lj1fkg g+
-			<span><strong>${sessionScope.userDetail.ad_no }</strong></span> kb <strong>${sessionScope.vacancy.postnp }</strong> sf] nflu b]xfosf] ljj/0f
+			dxfzo,<br> To; s[lif ljsf; a}+s ln=sf] ldlt  <span class="nep1">${sessionScope.vacancy.date }</span>
+				 ut] k|sflzt lj1fkg cg';f/ lj1fkg g+
+			<span class="nep1"><strong> ${sessionScope.userDetail.ad_no }</strong></span> kb <strong>${sessionScope.vacancy.postnp }</strong> sf] nflu b]xfosf] ljj/0f
 			pNn]v u/L /Ltk"j{s b/vf:t k]z u/]sf] 5' .
 		</div>
 		<div class="col-md-12">
@@ -218,16 +225,15 @@ body {
 					<tbody>
 						<tr>
 							<td colspan="2">b:tvt M</td>
-							<td><input value="${sessionScope.registration.signature }" type="text" name="signature"></td>
+							
 						</tr>
 						<tr>
-							<td colspan="2">k"/f gfd, y/</td>
-							<td><input value="${sessionScope.registration.full_name }" type="text" name="full_name"></td>
+							<td colspan="2" class="nep">k"/f gfd, y/ M <small> ${sessionScope.userDetail.name }</small></td>
+							
 						</tr>
 						<tr>
 							<td colspan="2">ldlt</td>
-							<td><input value="${sessionScope.registration.submission_date }" type="text" name="submission_date"
-								placeholder="2074-01-01"></td>
+							
 						</tr>
 					</tbody>
 				</table>
