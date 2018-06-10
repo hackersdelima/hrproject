@@ -1,127 +1,125 @@
--- phpMyAdmin SQL Dump
--- version 4.3.11
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
 --
--- Host: 127.0.0.1
--- Generation Time: May 24, 2018 at 05:53 PM
--- Server version: 5.6.24
--- PHP Version: 5.6.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: hr_form_verification
+-- ------------------------------------------------------
+-- Server version	5.6.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
---
--- Database: `hr_form_verification`
---
-
--- --------------------------------------------------------
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `general_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `general_settings` (
-  `general_settings_id` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `general_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `general_settings` (
+  `general_settings_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
-  `description` varchar(500) NOT NULL
+  `description` varchar(500) NOT NULL,
+  PRIMARY KEY (`general_settings_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `general_settings`
 --
 
-INSERT INTO `general_settings` (`general_settings_id`, `name`, `description`) VALUES
-(1, 'image_upload_location', 'localhost:8080/hr_images'),
-(2, 'image_download_location', '');
-
--- --------------------------------------------------------
+LOCK TABLES `general_settings` WRITE;
+/*!40000 ALTER TABLE `general_settings` DISABLE KEYS */;
+INSERT INTO `general_settings` VALUES (1,'image_upload_location','localhost:8080/hr_images'),(2,'image_download_location','');
+/*!40000 ALTER TABLE `general_settings` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `usertbl`
 --
 
-CREATE TABLE IF NOT EXISTS `usertbl` (
-  `userid` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `usertbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usertbl` (
+  `userid` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `citizenshipno` varchar(100) NOT NULL,
   `phonenumber` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
   `status` varchar(100) NOT NULL DEFAULT '1',
-  `name` varchar(100) NOT NULL,
+  `name` varchar(21844) NOT NULL,
+  `Name1` varchar(35) NOT NULL,
+  `father` varchar(35) NOT NULL,
   `advertiseno` varchar(25) DEFAULT NULL,
-  `res3` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `res3` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `usertbl`
 --
 
-INSERT INTO `usertbl` (`userid`, `username`, `password`, `citizenshipno`, `phonenumber`, `email`, `status`, `name`, `advertiseno`, `res3`) VALUES
-(6, 'admin', 'admin', '123456', '1234567891', 'admin@admin.com', '1', 'Admin Admin', '2/2075-2076', NULL),
-(9, 'shishirkarki', 'shishir', '123456', '9845811254', 'shishir@gmail.com', '1', 'Shishir', '1/2075-2076', NULL);
-
--- --------------------------------------------------------
+LOCK TABLES `usertbl` WRITE;
+/*!40000 ALTER TABLE `usertbl` DISABLE KEYS */;
+INSERT INTO `usertbl` VALUES (1,'admin','admin','123456','1234567891','admin@admin.com','1','&#2361;&#2352;&#2367;&#2350;&#2366;&#2344; &#2358;&#2381;&#2352;&#2375;&#2359;&#2381;&#2336;','','','2/2075-2076',NULL),(15,'gagan','gagan','','','','1','uugdfg','Gagan','','2/2075-2076',NULL),(16,'hariman','hariman','','','','1','&#2361;&#2352;&#2367;&#2350;&#2366;&#2344; &#2358;&#2381;&#2352;&#2375;&#2359;&#2381;&#2336;','hariman Shrestha','','1/2075-2076',NULL),(17,'sunil','sunil','','','','1','uug','Sunil','','1/2075-2076',NULL),(18,'abc','abc','','','','1','z`lgn sfsL{','abc','','1/2075-2076',NULL),(19,'sun','sun','','','','1','&#2358;&#2369;&#2344;&#2367;&#2354; &#2325;&#2369;&#2350;&#2366;&#2352; &#2325;&#2366;&#2352;&#2381;&#2325;&#2368;','Sunil','','1/2075-2076',NULL);
+/*!40000 ALTER TABLE `usertbl` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `vacancytbl`
 --
 
-CREATE TABLE IF NOT EXISTS `vacancytbl` (
-  `id` int(11) DEFAULT NULL,
+DROP TABLE IF EXISTS `vacancytbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vacancytbl` (
+  `id` int(11) NOT NULL DEFAULT '0',
   `advertiseno` varchar(25) DEFAULT NULL,
   `posten` varchar(30) DEFAULT NULL,
   `postnp` varchar(30) DEFAULT NULL,
   `serviceen` varchar(30) DEFAULT NULL,
   `servicenp` varchar(30) DEFAULT NULL,
   `groupen` varchar(30) DEFAULT NULL,
-  `groupnp` varchar(30) DEFAULT NULL
+  `groupnp` varchar(30) DEFAULT NULL,
+  `date` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `vacancytbl`
 --
 
-INSERT INTO `vacancytbl` (`id`, `advertiseno`, `posten`, `postnp`, `serviceen`, `servicenp`, `groupen`, `groupnp`) VALUES
-(1, '1/2075-2076', 'Section Officer', 'acdag', 'General Service', 'adjk', 'Service', 'abck'),
-(2, '2/2075-2076', 'Section Officer1', 'acdag', 'General Service1', 'adjk', 'Service1', 'abck');
+LOCK TABLES `vacancytbl` WRITE;
+/*!40000 ALTER TABLE `vacancytbl` DISABLE KEYS */;
+INSERT INTO `vacancytbl` VALUES (1,'1/2075-2076','Section Officer','zfvf clws[t','General Service','k|zf;g','Service','k|zf;g','2075/02/15'),(2,'2/2075-2076','Computer Eng','sDKo\'6/ OlGhlgo/','General Service1','k|fljlws','Service1','k|fljlws','2075/04/15');
+/*!40000 ALTER TABLE `vacancytbl` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `general_settings`
---
-ALTER TABLE `general_settings`
-  ADD PRIMARY KEY (`general_settings_id`);
-
---
--- Indexes for table `usertbl`
---
-ALTER TABLE `usertbl`
-  ADD PRIMARY KEY (`userid`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- Dumping events for database 'hr_form_verification'
 --
 
 --
--- AUTO_INCREMENT for table `general_settings`
+-- Dumping routines for database 'hr_form_verification'
 --
-ALTER TABLE `general_settings`
-  MODIFY `general_settings_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `usertbl`
---
-ALTER TABLE `usertbl`
-  MODIFY `userid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-06-10 10:30:38
