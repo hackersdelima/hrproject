@@ -79,7 +79,7 @@ body {
     			
     			</tr>
     			   	<tr>
-    				<td colspan="2"><label for="name">Name1</label></td>
+    				<td colspan="2"><label for="name">Name in English</label></td>
     				<td><form:input path="name1" cssClass="uname" id="name" placeholder="Enter Name" value="${sessionScope.user.name }"/></td>
     			
     			</tr>
@@ -110,13 +110,43 @@ body {
     				<td><form:input path="citizenshipno" cssClass="uname" id="citizenship-no" placeholder="Enter Citizenship No" value="${sessionScope.user.citizenshipno }"/></td>
     			</tr>
     			<tr>
-    				<td colspan="2"><label for="phone-no">Phone Number</label></td>
+    				<td colspan="2"><label for="phone-no">Phone/Mobile Number</label></td>
     				<td><form:input path="phonenumber" cssClass="uname" id="phone-no" placeholder="Enter Phone Number" value="${sessionScope.user.phonenumber }"/></td>
     			</tr>
+ 
     			<tr>
-    				<td colspan="2"><label for="phone-no">Email</label></td>
+    				<td colspan="2"><label for="phone-no">E_mail</label></td>
     				<td><form:input path="email" cssClass="uname" id="email" placeholder="Enter Email" value="${sessionScope.user.email }"/></td>
     			</tr>
+   			   			<tr>
+    				<td colspan="2"><label for="phone-no">Date of birth(BS YYYYMMDD)</label></td>
+    				<td><form:input path="dob" cssClass="uname" id="name" placeholder="Enter Date of birth in BS" value="${sessionScope.user.phonenumber }"/></td>
+    			</tr> 
+    			<tr>
+    				<td colspan="2"><label for="user-name">Age Year</label></td>
+    				<td><form:input path="ageyr" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr>  
+    			<tr>
+    				<td colspan="2"><label for="user-name">Age Month</label></td>
+    				<td><form:input path="agemth" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr>
+		<tr>
+    				<td colspan="2"><label for="user-name">Age day</label></td>
+    				<td><form:input path="ageday" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr>   
+ 		<tr>
+    				<td colspan="2"><label for="user-name">Last passed Exam</label></td>
+    				<td><form:input path="lastpassedexam" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr>   			  			 		  			   			
+ 		<tr>
+    				<td colspan="2"><label for="user-name">Last exam passed Date BS</label></td>
+    				<td><form:input path="passeddatebs" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr>  
+		<tr>
+    				<td colspan="2"><label for="user-name">Last exam passed Date AD</label></td>
+    				<td><form:input path="passeddatead" cssClass="uname" id="name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>
+    			</tr> 
+ 
     			<tr>
     				<td colspan="2"><label for="user-name">Username</label></td>
     				<td><form:input path="username" cssClass="uname" id="user-name" placeholder="Enter Username" value="${sessionScope.user.username }"/></td>

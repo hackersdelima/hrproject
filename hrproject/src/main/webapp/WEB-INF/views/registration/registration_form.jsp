@@ -148,7 +148,10 @@ body {
 			k/LIffdf ;lDdlnt x'g rfx]sf] xf] ;f]xL cg';f/sf] ;d"x sf]i7 leq
 			cIf/df :ki6 pNn]v ug'{kg]{5 _</div>
 		<div class="col-md-12">
-			pQL0f{ u/]sf] clGtd k/LIffsf] gfd <input value="${sessionScope.registration.last_exam }" type="text" name="last_exam">
+		
+		pQL0f{ u/]sf] clGtd k/LIffsf] gfd 
+			<span><strong> ${sessionScope.userDetail.lastpassedexam }</strong></span> 
+<%-- 			 pQL0f{ u/]sf] clGtd k/LIffsf] gfd <input value="${sessionScope.userDetail.lastpassedexam }" type="text" name="last_exam">  --%>
 			ljifox? <input value="${sessionScope.registration.last_exam_subjects }" type="text" name="last_exam_subjects">
 		</div>
 		<div class="col-md-12">
@@ -158,21 +161,21 @@ body {
 				</caption>
 				<tbody>
 					<tr>
-						<td>plQ0f{ u/]sf] ;fn <input value="${sessionScope.registration.degree_year }" type="text" name="degree_year"
-							size="4"> dlxgf <input value="${sessionScope.registration.degree_month }" type="text" name="degree_month"
-							size="2"> ut] <input value="${sessionScope.registration.degree_day }" type="text" name="degree_day"
-							size="2">&nbsp;&nbsp;&nbsp;&nbsp; ;g \ <input value="${sessionScope.registration.degree_yearen }" type="text"
-							name="degree_yearen" size="4"> dlxgf <input value="${sessionScope.registration.degree_monthen }" type="text"
+						<td>plQ0f{ u/]sf] ;fn <input value="${sessionScope.userDetail.passeddatebs }" type="text" disabled name="degree_year"
+							size="8"> <%-- dlxgf <input value="${sessionScope.userDetail.agemth }" type="text" name="degree_month"
+							size="2"> ut] <input value="${sessionScope.userDetail.ageday }" type="text" name="degree_day"
+							size="2"> --%>&nbsp;&nbsp;&nbsp;&nbsp; ;g \ <input value="${sessionScope.userDetail.passeddatead }" type="text"
+							name="degree_yearen" size="8" disabled> <%-- dlxgf  <input value="${sessionScope.registration.degree_monthen }" type="text"
 							name="degree_monthen" size="2"> tfl/v <input value="${sessionScope.registration.degree_dayen }" type="text"
-							name="degree_dayen" size="2">
+							name="degree_dayen" size="2"> --%>
 						</td>
 					</tr>
 					<tr>
-						<td>@_ hGd ldlt <input value="${sessionScope.registration.birth_date }" type="text" name="birth_date"
+						<td>@_ hGd ldlt <input value="${sessionScope.userDetail.dob }" type="text" name="birth_date"
 							size="10" placeholder="2051-11-11">
-							&nbsp;&nbsp;&nbsp;&nbsp; xfnsf] pd]/ &nbsp;&nbsp;&nbsp; aif{ <input value="${sessionScope.registration.cur_age_yr }"
-							type="text" name="cur_age_yr" size="3"> dlxgf <input value="${sessionScope.registration.cur_age_month }"
-							type="text" name="cur_age_month" size="2"> lbg <input value="${sessionScope.registration.cur_age_days }"
+							&nbsp;&nbsp;&nbsp;&nbsp; xfnsf] pd]/ &nbsp;&nbsp;&nbsp; aif{ <input value="${sessionScope.userDetail.ageyr }"
+							type="text" name="cur_age_yr" size="3"> dlxgf <input value="${sessionScope.userDetail.agemth }"
+							type="text" name="cur_age_month" size="2"> lbg <input value="${sessionScope.userDetail.ageday }"
 							type="text" name="cur_age_days" size="2"></td>
 					</tr>
 
@@ -202,7 +205,7 @@ body {
 					</tr>
 					<tr>
 						<td colspan="1">&_ Affa'sf] gfd</td>
-						<td><input value="${sessionScope.registration.father_name }" type="text" name="father_name" size=""></td>
+						<td><input value="${sessionScope.userDetail.father }" type="text" name="father_name" size=""></td>
 					</tr>
 					<tr>
 						<td colspan="1">*_ afh]sf] gfd</td>
@@ -210,7 +213,7 @@ body {
 					</tr>
 					<tr>
 						<td colspan="1">(_ cfdfsf] gfd</td>
-						<td><input value="${sessionScope.registration.mother_name }" type="text" name="mother_name" size=""></td>
+						<td><input value="${sessionScope.userDetail.mother }" type="text" name="mother_name" size=""></td>
 					</tr>
 				</tbody>
 			</table>

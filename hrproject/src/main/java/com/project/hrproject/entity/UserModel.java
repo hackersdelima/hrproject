@@ -1,7 +1,7 @@
 package com.project.hrproject.entity;
 
 public class UserModel {
-	private String ad_no, name,name1, father, mother, spouse,permanentaddress,tempaddress, userid, status,username, password, citizenshipno, phonenumber, email;
+	private String ad_no, name,name1, father, mother, spouse,permanentaddress,tempaddress, citizenshipno, phonenumber, email,dob,ageyr,agemth,ageday,lastpassedexam,passeddatebs,passeddatead, userid, status,username, password;
 
 	public String getName() {
 		return name;
@@ -101,6 +101,48 @@ public String getTempaddress() {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+public void setLastpassedexam(String lastpassedexam) {
+	this.lastpassedexam = lastpassedexam;
+}
+public String getLastpassedexam() {
+	return lastpassedexam;
+}
+public void setPasseddatebs(String passeddatebs) {
+	this.passeddatebs = passeddatebs;
+}
+public String getPasseddatebs() {
+	return passeddatebs;
+}
+public void setPasseddatead(String passeddatead) {
+	this.passeddatead = passeddatead;
+}
+public String getPasseddatead() {
+	return passeddatead;
+}
+public void setDob(String dob) {
+	this.dob = dob;
+}
+public String getDob() {
+	return dob;
+}
+public void setAgeyr(String ageyr) {
+	this.ageyr = ageyr;
+}
+public String getAgeyr() {
+	return ageyr;
+}
+public void setAgemth(String agemth) {
+	this.agemth = agemth;
+}
+public String getAgemth() {
+	return agemth;
+}
+public void setAgeday(String ageday) {
+	this.ageday = ageday;
+}
+public String getAgeday() {
+	return ageday;
+}
 
 	public String getAd_no() {
 		return ad_no;
@@ -112,12 +154,14 @@ public String getTempaddress() {
 
 	@Override
 	public String toString() {
-		return "UserModel [ad_no=" + ad_no + ", name=" + name + ",name1=" + name1 + ", userid=" + userid + ", status=" + status
+		return "UserModel [ad_no=" + ad_no + ", name=" + name + ",name1=" + name1 + ",father=" + father +", mother=" + mother + ",spouse=" + spouse
+				+ ", permanentaddress=" + permanentaddress + ",tempaddress=" + tempaddress + ", userid=" + userid + ", status=" + status
 				+ ", username=" + username + ", password=" + password + ", citizenshipno=" + citizenshipno
-				+ ", phonenumber=" + phonenumber + ", email=" + email + "]";
+				+ ", phonenumber=" + phonenumber + ", email=" + email +
+				",dob="+dob+",ageyr="+ageyr+",agemth="+agemth+",ageday="+ageday+",lastpassedexam="+lastpassedexam+",passeddatebs="+passeddatebs+",passeddatead="+passeddatead+"]";
 	}
 
-	
+
 
 	
 	

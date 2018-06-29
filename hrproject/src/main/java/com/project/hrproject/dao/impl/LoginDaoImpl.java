@@ -58,6 +58,16 @@ private JdbcTemplate jdbcTemplate;
 				user.setStatus(rs.getString("status"));
 				user.setAd_no(rs.getString("advertiseno"));
 				user.setName(rs.getString("name"));
+				user.setLastpassedexam(rs.getString("lastpassedexam"));
+				user.setDob(rs.getString("dob"));
+				user.setAgeyr(rs.getString("ageyr"));
+				user.setAgemth(rs.getString("agemth"));
+				user.setAgeday(rs.getString("ageday"));
+				user.setPasseddatebs(rs.getString("passeddatebs"));
+				user.setPasseddatead(rs.getString("passeddatead"));
+				user.setFather(rs.getString("father"));
+				user.setMother(rs.getString("mother"));
+				user.setSpouse(rs.getString("spouse"));
 				
 				return user;
 			}

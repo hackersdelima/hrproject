@@ -61,7 +61,7 @@ body {
     				<td>${sessionScope.user.ad_no }</td>
     			</tr>
     			<tr>
-    				<td colspan="2"><label for="name">Name</label></td>
+    				<td colspan="2"><label for="name">Name in Devnagari</label></td>
     				<td>
     				
 						${sessionScope.user.name } 
@@ -71,11 +71,29 @@ body {
     			</tr>
     			
     			<tr>
-    				<td colspan="2"><label for="name">Name1</label></td>
+    				<td colspan="2"><label for="name">Name in English</label></td>
     				<td>${sessionScope.user.name1 }</td>
     			</tr>
-    			
-    			
+    			<tr>
+    				<td colspan="2"><label for="name">Father</label></td>
+    				<td>${sessionScope.user.father }</td>
+    			</tr>    			
+    			<tr>
+    				<td colspan="2"><label for="name">Mother</label></td>
+    				<td>${sessionScope.user.mother }</td>
+    			</tr>      			
+    			<tr>
+    				<td colspan="2"><label for="name">Spouse</label></td>
+    				<td>${sessionScope.user.spouse }</td>
+    			</tr>  
+   			<tr>
+    				<td colspan="2"><label for="name">Permanent Address</label></td>
+    				<td>${sessionScope.user.permanentaddress }</td>
+    			</tr>
+  			<tr>
+    				<td colspan="2"><label for="name">Temporary Address</label></td>
+    				<td>${sessionScope.user.tempaddress }</td>
+    			</tr> 
     			<tr>
     				<td colspan="2"><label for="citizenship-no">Citizenship No</label></td>
     				<td>${sessionScope.user.citizenshipno }</td>
@@ -89,7 +107,35 @@ body {
     				<td>${sessionScope.user.email }</td>
     			</tr>
     			<tr>
-    				<td colspan="2"><label for="user-name">Username</label></td>
+    				<td colspan="2"><label for="phone-no">Date of birth</label></td>
+    				<td>${sessionScope.user.dob }</td>
+    			</tr>
+    			<tr>
+    				<td colspan="2"><label for="phone-no">Age Year</label></td>
+    				<td>${sessionScope.user.ageyr }</td>
+    			</tr>
+    			<tr>
+    				<td colspan="2"><label for="phone-no">Age Month</label></td>
+    				<td>${sessionScope.user.agemth }</td>
+    			</tr>
+    			<tr>
+    				<td colspan="2"><label for="phone-no">Age Day</label></td>
+    				<td>${sessionScope.user.ageday }</td>
+    			</tr>
+    			<tr>
+    				<td colspan="2"><label for="phone-no">Last passed Exam</label></td>
+    				<td>${sessionScope.user.lastpassedexam }</td>
+    			</tr>
+   			<tr>
+    				<td colspan="2"><label for="phone-no">Last exam passed Date BS</label></td>
+    				<td>${sessionScope.user.passeddatebs }</td>
+    			</tr>
+  			<tr>
+    				<td colspan="2"><label for="phone-no">Last exam passed Date AD</label></td>
+    				<td>${sessionScope.user.passeddatead }</td>
+    			</tr>    			
+    			<tr>
+    				<td colspan="2"><label for="user-name">User name</label></td>
     				<td>${sessionScope.user.username }</td>
     			</tr>
     			<tr>
