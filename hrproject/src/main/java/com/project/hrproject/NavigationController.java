@@ -25,6 +25,11 @@ public class NavigationController {
 		
 		return "registration/registration_form";
 	}
+	@RequestMapping(value = "/documents_upload")
+	public String documents_upload(Model model){
+		return "registration/picupload";
+	}
+	
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(ModelMap model, @ModelAttribute("msg") String msg) {
@@ -38,5 +43,6 @@ public class NavigationController {
 		
 		return "reports/admit_card";
 	}
+	
 
 }
