@@ -24,7 +24,15 @@ private JdbcTemplate jdbcTemplate;
 	 }
 	 
 	 public int signup(UserModel user){
-		 String sql = "insert into usertbl(username, password, citizenshipno, phonenumber, email, name, advertiseno) values ('"+user.getUsername()+"', '"+user.getPassword()+"','"+user.getCitizenshipno()+"', '"+user.getPhonenumber()+"', '"+user.getEmail()+"', '"+user.getName()+"','"+user.getAd_no()+"')";
+		 String sql = "insert into usertbl(username, password, name,name1,"
+		 		+ "father, mother, spouse,permanentaddress,tempaddress, citizenshipno, phonenumber, "
+		 		+ "email,dob,ageyr,agemth,ageday,lastpassedexam,passeddatebs,passeddatead,advertiseno,open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra)"
+		 		+ " values ('"+user.getUsername()+"', '"+user.getPassword()+"', '"+user.getName()+"', '"+user.getName1() +"','"+
+		 		user.getFather()+"','"+user.getMother()+"','"+user.getSpouse()+"','"+
+		 		user.getPermanentaddress()+"','"+user.getTempaddress()+"','"+user.getCitizenshipno()+"','"+user.getPhonenumber()+
+		 		"','"+user.getEmail()+"','"+user.getDob()+"','"+user.getAgeyr()
+		 		+"','"+user.getAgemth()+"','"+user.getAgeday()+"','"+user.getLastpassedexam()+"','"
+		 		+user.getPasseddatebs()+"','"+user.getPasseddatead()+"','"+user.getAdvertiseno()+"','"+user.getOpen_comp()+"','"+user.getMahila()+"','"+user.getAdibasi()+"','"+user.getMadhesi()+"','"+user.getDalit()+"','"+user.getApanga()+"','"+user.getPichadiyeko_chetra()+"')";
 		 return jdbcTemplate.update(sql);
 	 }
 

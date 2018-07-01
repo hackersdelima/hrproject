@@ -30,8 +30,8 @@ public class LoginController {
 		if (status) {
 			UserModel userDetail = getUser(user);
 			model.addAttribute("userDetail", userDetail);
-			System.out.println(registrationDao.getSpecificAdvertisements(userDetail.getAd_no()));
-			model.addAttribute("vacancy", registrationDao.getSpecificAdvertisements(userDetail.getAd_no()));
+			System.out.println(registrationDao.getSpecificAdvertisements(userDetail.getAdvertiseno()));
+			model.addAttribute("vacancy", registrationDao.getSpecificAdvertisements(userDetail.getAdvertiseno()));
 			return "profile";
 		} else {
 			attributes.addFlashAttribute("msg","Invalid Login Credentials!");

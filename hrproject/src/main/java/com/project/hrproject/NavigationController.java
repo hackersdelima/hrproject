@@ -1,5 +1,7 @@
 package com.project.hrproject;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.project.hrproject.dao.LoginDao;
 import com.project.hrproject.dao.RegistrationDao;
 import com.project.hrproject.entity.UserModel;
 
@@ -16,6 +19,9 @@ import com.project.hrproject.entity.UserModel;
 public class NavigationController {
 	@Autowired
 	RegistrationDao registrationDao;
+	
+	@Autowired
+	LoginDao loginDao;
 	
 	
 	@RequestMapping(value = "/registration_form")
@@ -42,6 +48,13 @@ public class NavigationController {
 	public String entranceCard() {
 		
 		return "reports/admit_card";
+	}
+	
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public String profile(HttpSession session, Model model) {
+		model.addAttribute("user",session.getAttribute("userDetail"));
+		
+		return "profile/edit";
 	}
 	
 

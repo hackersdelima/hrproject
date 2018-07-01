@@ -20,13 +20,13 @@
     			<tr>
     				<td colspan="2"><label for="user-name">Username</label></td>
     					
-    				<td><form:input path="username" cssClass="uname" id="user-name" placeholder="Enter Username"/></td>
+    				<td><form:input path="username" cssClass="uname" id="user-name" type="password" placeholder="Enter Username"/></td>
     				<td colspan="2"><input type="submit" value="Login"/></td>
     			</tr>
     			<tr>
     				<td colspan="2"><label for="password">Password</label></td>
     				
-    				<td><form:input path="password" cssClass="uname" id="password" placeholder="Enter Password"/></td>
+    				<td><form:input path="password" cssClass="uname" id="password" type="password" placeholder="Enter Password"/></td>
     				<td><a href="<spring:url value="/nav/signup"/>" style="font-size: 80%;">New Member? Signup Here!</a></td>
     			</tr>
     			<tr>

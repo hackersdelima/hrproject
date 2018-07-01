@@ -31,6 +31,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/signup_review", method = RequestMethod.POST)
 	public String signup_review(ModelMap model, @ModelAttribute UserModel user){
+		System.out.println(user);
 		model.addAttribute("user",user);
 		return "signup_review";
 	}

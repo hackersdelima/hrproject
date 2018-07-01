@@ -61,6 +61,7 @@ private JdbcTemplate jdbcTemplate;
 			a.setPostnp(rs.getString("postnp"));
 			a.setServiceen(rs.getString("serviceen"));
 			a.setServicenp(rs.getString("servicenp"));
+			a.setDate(rs.getString("date"));
 			return a;
 		}
 		 

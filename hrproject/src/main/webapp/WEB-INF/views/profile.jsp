@@ -11,15 +11,17 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Digi Nepal | Profile</title>
+    <title>ADBL | Profile</title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
+    
+       <!-- NProgress -->
     <link href="${pageContext.request.contextPath}/resources/css/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
@@ -110,7 +112,8 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="profileSettings" target="iframe_a"> Profile</a></li>
+                 
+                    <li><a href="<spring:url value="/nav/profile"/>" target="iframe_a"> Profile</a></li>
                     <li>
                       <a href="javascript:;">
                         <span>Settings</span>
@@ -185,7 +188,7 @@
     
     <!-- Custom Theme Scripts -->
     <script src="${pageContext.request.contextPath}/resources/js/custom.min.js"></script>
-    
+    <script src="${pageContext.request.contextPath}/resources/js/fontawesome.js"></script>
   </body>
 </html>
 

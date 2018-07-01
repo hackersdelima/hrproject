@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@taglib prefix="spring" uri="http://www.springframework.org/tags"  %>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../include.jsp"></jsp:include>
 <spring:url value="/reg/next" var="formUrl"></spring:url>
 <html>
@@ -12,7 +13,14 @@
 	font-family: myFirstFont;
 	src: url(${pageContext.request.contextPath}/resources/fonts/preeti.TTF);
 }
-
+@font-face {
+	font-family: mySecondFont;
+	src: url(${pageContext.request.contextPath}/resources/fonts/Sunil_1.ttf);
+}
+.nep1{
+font-family: mySecondFont;
+	color: #344c4c;
+}
 body, .nep {
 	font-family: myFirstFont;
 	color: #344c4c;
@@ -30,6 +38,7 @@ body {
 	font-size: 180%;
 	
 }
+
 </style>
 </head>
 <body class="background container">
@@ -81,15 +90,15 @@ body {
 		<div class="col-md-12">
 			<div class="col-md-3"></div>
 			<div class="col-md-9">
-				<strong>ljifo</strong> <input type="text" value="${sessionScope.registration.subject }" name="subject">
+				<strong>ljifo M </strong>${sessionScope.vacancy.postnp }
 				=kbsf] b/vf:t ;DjGwdf .
 			</div>
 
 		</div>
 		<div class="col-md-12">
-			dxfzo,<br> To; s[lif ljsf; a}+s ln=sf] ldlt <input value="${sessionScope.registration.ad_date }" type="text"
-				name="ad_date" value=""> ut] k|sflzt lj1fkg cg';f/ lj1fkg g+
-			<span><strong>${sessionScope.userDetail.ad_no }</strong></span> kb <strong>${sessionScope.vacancy.postnp }</strong> sf] nflu b]xfosf] ljj/0f
+			dxfzo,<br> To; s[lif ljsf; a}+s ln=sf] ldlt  <span class="nep1">${sessionScope.vacancy.date }</span>
+				 ut] k|sflzt lj1fkg cg';f/ lj1fkg g+
+			<span class="nep1"><strong> ${sessionScope.userDetail.advertiseno }</strong></span> kb <strong>${sessionScope.vacancy.postnp }</strong> sf] nflu b]xfosf] ljj/0f
 			pNn]v u/L /Ltk"j{s b/vf:t k]z u/]sf] 5' .
 		</div>
 		<div class="col-md-12">
@@ -97,39 +106,48 @@ body {
 		</div>
 		<div class="col-md-12">
 			<div class="col-md-6">
-				s_ v'NNff k|ltof]lutftkm{ <input value="${sessionScope.registration.khulla_pratiyogita }" type="text"
-					name="khulla_pratiyogita" value="">
+				s_ v'NNff k|ltof]lutftkm{ <input type="checkbox" <c:if test="${sessionScope.userDetail.open_comp eq 1}">checked</c:if> 
+					name="khulla_pratiyogita" > 
 			</div>
 			<div class="col-md-6">
 				<table class="table">
 					<tbody>
 						<tr>
 							<td colspan="1">v_ ;dfj]zLtkm{</td>
-							<td><input value="${sessionScope.registration.samabesi }" type="text" name="samabesi" value=""></td>
 						</tr>
 						<tr>
 							<td colspan="1">-!_ dlxnf</td>
-							<td><input value="${sessionScope.registration.woman }" type="text" name="woman" value=""></td>
+							<td><input class="checkbox"
+								type="checkbox" name="mahila"
+								<c:if test="${sessionScope.userDetail.mahila eq 1}">checked</c:if> ></td>
 						</tr>
 						<tr>
 							<td colspan="1">-@_ cflbjf;L hghflt</td>
-							<td><input value="${sessionScope.registration.aadibasi_janjati }" type="text" name="aadibasi_janjati" value=""></td>
+							<td><input
+								type="checkbox" name="adibasi"
+								<c:if test="${sessionScope.userDetail.adibasi eq 1}">checked</c:if> ></td>
 						</tr>
 						<tr>
 							<td colspan="1">-#_ dw];L</td>
-							<td><input value="${sessionScope.registration.madhesi }" type="text" name="madhesi" value=""></td>
+							<td><input
+								type="checkbox" name="madhesi" 
+								<c:if test="${sessionScope.userDetail.madhesi eq 1}">checked</c:if> ></td>
 						</tr>
 						<tr>
 							<td colspan="1">-$_ blnt</td>
-							<td><input value="${sessionScope.registration.dalit }" type="text" name="dalit" value=""></td>
+							<td><input
+								type="checkbox" name="dalit"
+								<c:if test="${sessionScope.userDetail.dalit eq 1}">checked</c:if> ></td>
 						</tr>
 						<tr>
 							<td colspan="1">-%_ ckf+u</td>
-							<td><input value="${sessionScope.registration.apanga }" type="text" name="apanga" value=""></td>
+							<td><input
+								type="checkbox" name="apanga"
+								<c:if test="${sessionScope.userDetail.apanga eq 1}">checked</c:if> ></td>
 						</tr>
 						<tr>
 							<td colspan="1">-^_ lk5l8Psf] If]q</td>
-							<td><input value="${sessionScope.registration.pichadiyeko_chhetra }" type="text" name="pichadiyeko_chhetra" value=""></td>
+							<td><input type="checkbox" name="pichadiyeko_chetra" <c:if test="${sessionScope.userDetail.pichadiyeko_chetra eq 1}">checked</c:if> ></td>
 						</tr>
 					</tbody>
 
@@ -141,7 +159,10 @@ body {
 			k/LIffdf ;lDdlnt x'g rfx]sf] xf] ;f]xL cg';f/sf] ;d"x sf]i7 leq
 			cIf/df :ki6 pNn]v ug'{kg]{5 _</div>
 		<div class="col-md-12">
-			pQL0f{ u/]sf] clGtd k/LIffsf] gfd <input value="${sessionScope.registration.last_exam }" type="text" name="last_exam">
+		
+		pQL0f{ u/]sf] clGtd k/LIffsf] gfd 
+			<span><strong> ${sessionScope.userDetail.lastpassedexam }</strong></span> 
+<%-- 			 pQL0f{ u/]sf] clGtd k/LIffsf] gfd <input value="${sessionScope.userDetail.lastpassedexam }" type="text" name="last_exam">  --%>
 			ljifox? <input value="${sessionScope.registration.last_exam_subjects }" type="text" name="last_exam_subjects">
 		</div>
 		<div class="col-md-12">
@@ -151,26 +172,26 @@ body {
 				</caption>
 				<tbody>
 					<tr>
-						<td>plQ0f{ u/]sf] ;fn <input value="${sessionScope.registration.degree_year }" type="text" name="degree_year"
-							size="4"> dlxgf <input value="${sessionScope.registration.degree_month }" type="text" name="degree_month"
-							size="2"> ut] <input value="${sessionScope.registration.degree_day }" type="text" name="degree_day"
-							size="2">&nbsp;&nbsp;&nbsp;&nbsp; ;g \ <input value="${sessionScope.registration.degree_yearen }" type="text"
-							name="degree_yearen" size="4"> dlxgf <input value="${sessionScope.registration.degree_monthen }" type="text"
+						<td>plQ0f{ u/]sf] ;fn <input value="${sessionScope.userDetail.passeddatebs }" type="text"  name="degree_year"
+							size="8"> <%-- dlxgf <input value="${sessionScope.userDetail.agemth }" type="text" name="degree_month"
+							size="2"> ut] <input value="${sessionScope.userDetail.ageday }" type="text" name="degree_day"
+							size="2"> --%>&nbsp;&nbsp;&nbsp;&nbsp; ;g \ <input value="${sessionScope.userDetail.passeddatead }" type="text"
+							name="degree_yearen" size="8" > <%-- dlxgf  <input value="${sessionScope.registration.degree_monthen }" type="text"
 							name="degree_monthen" size="2"> tfl/v <input value="${sessionScope.registration.degree_dayen }" type="text"
-							name="degree_dayen" size="2">
+							name="degree_dayen" size="2"> --%>
 						</td>
 					</tr>
 					<tr>
-						<td>@_ hGd ldlt <input value="${sessionScope.registration.birth_date }" type="text" name="birth_date"
-							size="10" placeholder="2051-11-11">
-							&nbsp;&nbsp;&nbsp;&nbsp; xfnsf] pd]/ &nbsp;&nbsp;&nbsp; aif{ <input value="${sessionScope.registration.cur_age_yr }"
-							type="text" name="cur_age_yr" size="3"> dlxgf <input value="${sessionScope.registration.cur_age_month }"
-							type="text" name="cur_age_month" size="2"> lbg <input value="${sessionScope.registration.cur_age_days }"
-							type="text" name="cur_age_days" size="2"></td>
+						<td>@_ hGd ldlt <input value="${sessionScope.userDetail.dob }" type="text" name="birth_date"
+							size="10"  >
+							&nbsp;&nbsp;&nbsp;&nbsp; xfnsf] pd]/ &nbsp;&nbsp;&nbsp; aif{ <input value="${sessionScope.userDetail.ageyr }"
+							type="text" name="cur_age_yr" size="3" > dlxgf <input value="${sessionScope.userDetail.agemth }"
+							type="text" name="cur_age_month" size="2" > lbg <input value="${sessionScope.userDetail.ageday }"
+							type="text" name="cur_age_days" size="2" ></td>
 					</tr>
 
 					<tr>
-						<td>#_ gful/stf <input value="${sessionScope.registration.citizenship }" type="text" name="citizenship" size=""></td>
+						<td>#_ gful/stf <input value="${sessionScope.userDetail.citizenshipno }" type="text" name="citizenship" size="" ></td>
 					</tr>
 					<tr>
 						<td>$_ c~rn <input value="${sessionScope.registration.cit_zone }" type="text" name="cit_zone" size="9">
@@ -187,15 +208,15 @@ body {
 
 					<tr>
 						<td colspan="1">%_ :yfoL 7]ufgf</td>
-						<td><input value="${sessionScope.registration.permanent_address }" type="text" name="permanent_address" size="20"></td>
+						<td><input value="${sessionScope.userDetail.permanentaddress }" type="text" name="permanent_address" size="20" ></td>
 					</tr>
 					<tr>
 						<td colspan="1">^_ c:yfoL 7]ufgf</td>
-						<td><input value="${sessionScope.registration.temp_address }" type="text" name="temp_address" size=""></td>
+						<td><input value="${sessionScope.userDetail.tempaddress }" type="text" name="temp_address" size="" ></td>
 					</tr>
 					<tr>
 						<td colspan="1">&_ Affa'sf] gfd</td>
-						<td><input value="${sessionScope.registration.father_name }" type="text" name="father_name" size=""></td>
+						<td><input value="${sessionScope.userDetail.father }" type="text" name="father_name" size="" ></td>
 					</tr>
 					<tr>
 						<td colspan="1">*_ afh]sf] gfd</td>
@@ -203,7 +224,7 @@ body {
 					</tr>
 					<tr>
 						<td colspan="1">(_ cfdfsf] gfd</td>
-						<td><input value="${sessionScope.registration.mother_name }" type="text" name="mother_name" size=""></td>
+						<td><input value="${sessionScope.userDetail.mother }" type="text" name="mother_name" size="" ></td>
 					</tr>
 				</tbody>
 			</table>
@@ -218,16 +239,15 @@ body {
 					<tbody>
 						<tr>
 							<td colspan="2">b:tvt M</td>
-							<td><input value="${sessionScope.registration.signature }" type="text" name="signature"></td>
+							
 						</tr>
 						<tr>
-							<td colspan="2">k"/f gfd, y/</td>
-							<td><input value="${sessionScope.registration.full_name }" type="text" name="full_name"></td>
+							<td colspan="2" class="nep">k"/f gfd, y/ M <small> ${sessionScope.userDetail.name }</small></td>
+							
 						</tr>
 						<tr>
 							<td colspan="2">ldlt</td>
-							<td><input value="${sessionScope.registration.submission_date }" type="text" name="submission_date"
-								placeholder="2074-01-01"></td>
+							
 						</tr>
 					</tbody>
 				</table>
@@ -237,7 +257,7 @@ body {
 	</form>
 	<script>
 
-		$("#ad_no").blur(function()
+		$("#advertiseno").blur(function()
 				{
 				var advertiseno=$(this).val();
 				var dataString = 'advertiseno='+ advertiseno;

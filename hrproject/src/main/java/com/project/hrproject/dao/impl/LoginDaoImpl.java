@@ -52,11 +52,35 @@ private JdbcTemplate jdbcTemplate;
 			@Override
 			public UserModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 				UserModel user=new UserModel();
+				user.setUserid(rs.getString("userid"));
 				user.setUsername(rs.getString("username"));
 				user.setPassword(rs.getString("password"));
-				user.setUserid(rs.getString("userid"));
+				user.setName(rs.getString("name"));
+				user.setName1(rs.getString("name1"));
+				user.setFather(rs.getString("father"));
+				user.setMother(rs.getString("mother"));
+				user.setSpouse(rs.getString("spouse"));
+				user.setPermanentaddress(rs.getString("permanentaddress"));
+				user.setTempaddress(rs.getString("tempaddress"));
+				user.setCitizenshipno(rs.getString("citizenshipno"));
+				user.setPhonenumber(rs.getString("phonenumber"));
+				user.setEmail(rs.getString("email"));
+				user.setDob(rs.getString("dob"));
+				user.setAgeyr(rs.getString("ageyr"));
+				user.setAgemth(rs.getString("agemth"));
+				user.setAgeday(rs.getString("ageday"));
+				user.setLastpassedexam(rs.getString("lastpassedexam"));
+				user.setPasseddatebs(rs.getString("passeddatebs"));
+				user.setPasseddatead(rs.getString("passeddatead"));
 				user.setStatus(rs.getString("status"));
-				user.setAd_no(rs.getString("advertiseno"));
+				user.setAdvertiseno(rs.getString("advertiseno"));
+				user.setOpen_comp(rs.getInt("open_comp"));
+				user.setMahila(rs.getInt("mahila"));
+				user.setAdibasi(rs.getInt("adibasi"));
+				user.setMadhesi(rs.getInt("madhesi"));
+				user.setDalit(rs.getInt("dalit"));
+				user.setApanga(rs.getInt("apanga"));
+				user.setPichadiyeko_chetra(rs.getInt("pichadiyeko_chetra"));
 				
 				return user;
 			}

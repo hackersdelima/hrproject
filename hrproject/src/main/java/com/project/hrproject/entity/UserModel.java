@@ -1,7 +1,19 @@
 package com.project.hrproject.entity;
 
 public class UserModel {
-	private String ad_no, name, userid, status,username, password, citizenshipno, phonenumber, email;
+	private String advertiseno, name, name1, father, mother, spouse, permanentaddress, tempaddress, citizenshipno,
+			phonenumber, email, dob, ageyr, agemth, ageday, lastpassedexam, passeddatebs, passeddatead, userid, status,
+			username, password;
+	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
+
+	
+	public String getAdvertiseno() {
+		return advertiseno;
+	}
+
+	public void setAdvertiseno(String advertiseno) {
+		this.advertiseno = advertiseno;
+	}
 
 	public String getName() {
 		return name;
@@ -9,6 +21,54 @@ public class UserModel {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getName1() {
+		return name1;
+	}
+
+	public void setName1(String name1) {
+		this.name1 = name1;
+	}
+
+	public void setFather(String father) {
+		this.father = father;
+	}
+
+	public String getFather() {
+		return father;
+	}
+
+	public void setMother(String mother) {
+		this.mother = mother;
+	}
+
+	public String getMother() {
+		return mother;
+	}
+
+	public void setSpouse(String spouse) {
+		this.spouse = spouse;
+	}
+
+	public String getSpouse() {
+		return spouse;
+	}
+
+	public void setPermanentaddress(String permanentaddress) {
+		this.permanentaddress = permanentaddress;
+	}
+
+	public String getPermanentaddress() {
+		return permanentaddress;
+	}
+
+	public void setTempaddress(String tempaddress) {
+		this.tempaddress = tempaddress;
+	}
+
+	public String getTempaddress() {
+		return tempaddress;
 	}
 
 	public String getUserid() {
@@ -67,24 +127,135 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public String getAd_no() {
-		return ad_no;
+	public void setLastpassedexam(String lastpassedexam) {
+		this.lastpassedexam = lastpassedexam;
 	}
 
-	public void setAd_no(String ad_no) {
-		this.ad_no = ad_no;
+	public String getLastpassedexam() {
+		return lastpassedexam;
+	}
+
+	public void setPasseddatebs(String passeddatebs) {
+		this.passeddatebs = passeddatebs;
+	}
+
+	public String getPasseddatebs() {
+		return passeddatebs;
+	}
+
+	public void setPasseddatead(String passeddatead) {
+		this.passeddatead = passeddatead;
+	}
+
+	public String getPasseddatead() {
+		return passeddatead;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setAgeyr(String ageyr) {
+		this.ageyr = ageyr;
+	}
+
+	public String getAgeyr() {
+		return ageyr;
+	}
+
+	public void setAgemth(String agemth) {
+		this.agemth = agemth;
+	}
+
+	public String getAgemth() {
+		return agemth;
+	}
+
+	public void setAgeday(String ageday) {
+		this.ageday = ageday;
+	}
+
+	public String getAgeday() {
+		return ageday;
+	}
+
+	public int getOpen_comp() {
+		return open_comp;
+	}
+
+	public void setOpen_comp(int open_comp) {
+		this.open_comp = open_comp;
+	}
+
+	public int getMahila() {
+		return mahila;
+	}
+
+	public void setMahila(int mahila) {
+		this.mahila = mahila;
+	}
+
+	public int getAdibasi() {
+		return adibasi;
+	}
+
+	public void setAdibasi(int adibasi) {
+		this.adibasi = adibasi;
+	}
+
+	public int getMadhesi() {
+		return madhesi;
+	}
+
+	public void setMadhesi(int madhesi) {
+		this.madhesi = madhesi;
+	}
+
+	public int getDalit() {
+		return dalit;
+	}
+
+	public void setDalit(int dalit) {
+		this.dalit = dalit;
+	}
+
+	public int getApanga() {
+		return apanga;
+	}
+
+	public void setApanga(int apanga) {
+		this.apanga = apanga;
+	}
+
+	public int getPichadiyeko_chetra() {
+		return pichadiyeko_chetra;
+	}
+
+	public void setPichadiyeko_chetra(int pichadiyeko_chetra) {
+		this.pichadiyeko_chetra = pichadiyeko_chetra;
 	}
 
 	@Override
 	public String toString() {
-		return "UserModel [ad_no=" + ad_no + ", name=" + name + ", userid=" + userid + ", status=" + status
-				+ ", username=" + username + ", password=" + password + ", citizenshipno=" + citizenshipno
-				+ ", phonenumber=" + phonenumber + ", email=" + email + "]";
+		return "UserModel [advertiseno=" + advertiseno + ", name=" + name + ", name1=" + name1 + ", father=" + father
+				+ ", mother=" + mother + ", spouse=" + spouse + ", permanentaddress=" + permanentaddress
+				+ ", tempaddress=" + tempaddress + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber
+				+ ", email=" + email + ", dob=" + dob + ", ageyr=" + ageyr + ", agemth=" + agemth + ", ageday=" + ageday
+				+ ", lastpassedexam=" + lastpassedexam + ", passeddatebs=" + passeddatebs + ", passeddatead="
+				+ passeddatead + ", userid=" + userid + ", status=" + status + ", username=" + username + ", password="
+				+ password + ", open_comp=" + open_comp + ", mahila=" + mahila + ", adibasi=" + adibasi + ", madhesi="
+				+ madhesi + ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chetra=" + pichadiyeko_chetra
+				+ "]";
 	}
 
 	
-
-	
 	
 
+	
+
+	
 }
