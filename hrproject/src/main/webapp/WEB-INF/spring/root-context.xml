@@ -4,36 +4,36 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
+
 	<!-- creating object of daoImpl for autowiring -->
-	<!-- <bean id="operationDao" class="com.spring.dao.impl.OperationDaoImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate" />
-	</bean> -->
-	
+	<!-- <bean id="operationDao" class="com.spring.dao.impl.OperationDaoImpl"> 
+		<property name="jdbcTemplate" ref="jdbcTemplate" /> </bean> -->
+
 	<!-- Basic for Database Connection -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<bean id="loginDao" class="com.project.hrproject.dao.impl.LoginDaoImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
 	<bean id="userDao" class="com.project.hrproject.dao.impl.UserDaoImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
 	<bean id="registrationDao" class="com.project.hrproject.dao.impl.RegistrationDaoImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
- <property name="maxUploadSize" value="268435456"/>
-</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="268435456" />
+	</bean>
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/hr_form_verification" />
 		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="password" value="123456" />
 	</bean>
-	
+
 
 </beans>

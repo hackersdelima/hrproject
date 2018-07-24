@@ -67,19 +67,30 @@ public class RegistrationController implements ServletContextAware{
 		return "registration/picupload";
 	}
 
+	
+	
 	@RequestMapping(value = "/documents_upload")
-	@ResponseBody
-	public String documents_upload(@RequestParam("files") MultipartFile[] files, Model model, HttpSession session) {
+	public String documents_upload(@RequestParam("files") MultipartFile[] files, HttpSession session, @ModelAttribute("document_type") String document_type) {
 		//operations
 		/*RegistrationModel rm = (RegistrationModel)session.getAttribute("registration");
 		RegistrationNextModel rnm = (RegistrationNextModel)session.getAttribute("registrationnext");*/
-		
-		for (MultipartFile file : files) {
-			saveImage(file,session);
-		}
+		UserModel userdetail=(UserModel)session.getAttribute("userDetail");
+		String username = userdetail.getUsername();
+	String filename = "";
 		//database save operation
-		return "file uploaded";
+		for (MultipartFile file : files) {
+			
+			filename=file.getOriginalFilename();
+			int save_status = registrationDao.documentUploadSave(document_type, username, filename);
+			if(save_status>0){
+			saveImage(file,session, document_type);
+			}
+		}
+		return "redirect:/nav/documents_upload";
+		
 	}
+	
+	
 	@RequestMapping(value = "/save")
 	@ResponseBody
 	public String save(@RequestParam("files") MultipartFile[] files, Model model, HttpSession session) {
@@ -91,7 +102,7 @@ public class RegistrationController implements ServletContextAware{
 	}
 	
 	@ResponseBody
-	private String saveImage(MultipartFile file, HttpSession session) {
+	private String saveImage(MultipartFile file, HttpSession session, String document_type) {
 		UserModel userdetail=(UserModel)session.getAttribute("userDetail");
 		String saveFileName=null;
 		String fileLocation=null; 
@@ -99,23 +110,25 @@ public class RegistrationController implements ServletContextAware{
 		try {
 			
 			if (!file.getOriginalFilename().isEmpty()) {
-				saveFileName=userdetail.getUsername()+".png";
+				saveFileName=userdetail.getUsername()+document_type+".jpg";
 				
 				//File upload location from database
 				fileLocation=registrationDao.imageUploadLocation(); //can be taken from database
 				
 				//create folder if not exists
 				File uploadDir = new File(fileLocation);
+				
 				if (!uploadDir.exists()) {
 					uploadDir.mkdir();
 				}
 				//upload file
+				
 				BufferedOutputStream outputStream = new BufferedOutputStream(
 						new FileOutputStream(new File(fileLocation, saveFileName)));
 				outputStream.write(file.getBytes());
 				outputStream.flush();
 				outputStream.close();
-
+				
 				
 			} else {
 				return "please select file";

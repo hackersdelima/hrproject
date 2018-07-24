@@ -67,12 +67,21 @@ caption {
 				</p>
 			</div>
 			<div class="col-md-4">
-				<div class="pull-right"
+	<!-- 			<div class="pull-right"
 					style="width: 50%; height: 150px; border: 1px solid black">
 					kf;kf]6{ ;fOhsf] k"/f d'vfs[lt k'/} b]lvg] t:jL/ oxf+ 6f+:g] /
 					t:jL/ / kmf/fddf kg]{ u/L pDd]bjf/n] ;xL ug]{ .</div>
 
-			</div>
+			</div> -->
+			
+			
+			<div class="div-square" align="center">
+				<!-- <div class="pull-right" style="width:30%;height:150px;border:1px solid black"> -->
+				<img src="//localhost/adblmis/images/${sessionScope.userDetail.username}101.jpg" style="height:100px;width:100px;" /> 
+				
+				
+					<!-- kf;kf]6{     ;fOhsf] k"/f   d'vfs[lt   k'/} b]lvg]   t:jL/   oxf+ 6f+:g]  /  t:jL/  /  kmf/fddf   kg]{   u/L   pDd]bjf/n]      ;xL      ug]{ .   -->
+				</div>
 		</div>
 		<div class="col-md-12">
 			<table class="table" style="width: 30%">
@@ -90,7 +99,7 @@ caption {
 					</tr>
 					<tr>
 						<td colspan="2">lj1fkg g+ <span>:</span></td>
-						<td class="eng">${sessionScope.userDetail.ad_no}</td>
+						<td class="eng">${sessionScope.userDetail.advertiseno}</td>
 					</tr>
 					<tr>
 						<td colspan="2">/f]n g+</td>
@@ -117,9 +126,9 @@ caption {
 				<caption>-s_ j}olQms ljj/0f M cfˆgf] ;Dk"0f{ j}olQms
 					ljj/0f :ki6 a'lemg] cIf/df n]Vg'xf];</caption>
 				<tr>
-					<td>lj1fkg g+ M <span>${sessionScope.userDetail.ad_no }</span></td>
+					<td>lj1fkg g+ M <span>${sessionScope.userDetail.advertiseno }</span></td>
 					<td>kb M ${sessionScope.vacancy.postnp }</td>
-					<td>;]jf <input value="${sessionScope.registrationnext.sewa}"
+					<td>;]jf <input value="${sessionScope.vacancy.servicenp }"
 						type="text" name="sewa"></td>
 					<td>;d"x <input value="${sessionScope.registrationnext.group}"
 						type="text" name="group"></td>

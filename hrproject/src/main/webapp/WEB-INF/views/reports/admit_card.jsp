@@ -51,10 +51,21 @@ body {
 	<div class="col-md-4" style="text-align: center; font-size:180%;">s[lif ljsf; a}+s ln=<br>
 	k|j]zkq</div>
 	<div class="col-md-2"></div>
-	<div class="col-md-2" style="height:150px;border:1px solid black">
 	
-	</div>
-</div>
+	<!-- <div class="col-md-2" style="height:150px;border:1px solid black"> -->
+	
+	<div class="div-square" align="center">
+				<!-- <div class="pull-right" style="width:30%;height:150px;border:1px solid black"> -->
+				<img src="//localhost/adblmis/images/${sessionScope.userDetail.username}101.jpg" style="height:100px;width:100px;" /> 
+				
+				
+					<!-- kf;kf]6{     ;fOhsf] k"/f   d'vfs[lt   k'/} b]lvg]   t:jL/   oxf+ 6f+:g]  /  t:jL/  /  kmf/fddf   kg]{   u/L   pDd]bjf/n]      ;xL      ug]{ .   -->
+				</div>
+	
+	
+	
+	<!-- </div> -->
+
 <div class="col-md-12">
 <div class="col-md-2"></div>
 	<div class="col-md-4">
@@ -76,7 +87,7 @@ body {
 			<td>-!_ dlxnf</td>
 		</tr>
 		<tr>
-			<td>-v_ lj1fkg gDa/ M <span class="nep1">${sessionScope.userDetail.ad_no }</span></td>
+			<td>-v_ lj1fkg gDa/ M <span class="nep1">${sessionScope.userDetail.advertiseno }</span></td>
 			<td>-@_ cflbjf;L<span>/</span>hghflt</td>
 		</tr>
 		<tr>
