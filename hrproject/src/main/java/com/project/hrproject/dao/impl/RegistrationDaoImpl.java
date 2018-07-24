@@ -66,4 +66,15 @@ private JdbcTemplate jdbcTemplate;
 		}
 		 
 	 }
+
+	@Override
+	public int documentUploadSave(String document_type, String username,
+			String filename) {
+		
+		
+		String query = "insert into tblimages (imagetype, username, imagename) values ('"+document_type+"','"+username+"','"+username+document_type+".jpg')";
+		return jdbcTemplate.update(query);
+	}
+
+	
 }

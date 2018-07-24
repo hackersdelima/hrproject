@@ -11,4 +11,6 @@ public interface RegistrationDao {
 	 public String imageUploadLocation();
 	 public VacancyModel getSpecificAdvertisements(String advertiseno);
 	 public List<VacancyModel> getAdvertisements();
+	 
+	 public int documentUploadSave(String document_type, String username, String filename);
 }

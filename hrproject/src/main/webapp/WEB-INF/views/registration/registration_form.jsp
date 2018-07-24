@@ -82,8 +82,12 @@ body {
 				<img src="${pageContext.request.contextPath}/resources/images/logo.png">
 			</div>
 			<div class="col-md-6">
-				<div class="pull-right" style="width:30%;height:150px;border:1px solid black">
-					kf;kf]6{     ;fOhsf] k"/f   d'vfs[lt   k'/} b]lvg]   t:jL/   oxf+ 6f+:g]  /  t:jL/  /  kmf/fddf   kg]{   u/L   pDd]bjf/n]      ;xL      ug]{ .  
+			<div class="div-square" align="center">
+				<!-- <div class="pull-right" style="width:30%;height:150px;border:1px solid black"> -->
+				<img src="//localhost/adblmis/images/${sessionScope.userDetail.username}101.jpg" style="height:100px;width:100px;" /> 
+				
+				
+					<!-- kf;kf]6{     ;fOhsf] k"/f   d'vfs[lt   k'/} b]lvg]   t:jL/   oxf+ 6f+:g]  /  t:jL/  /  kmf/fddf   kg]{   u/L   pDd]bjf/n]      ;xL      ug]{ .   -->
 				</div>
 			</div>
 		</div>
