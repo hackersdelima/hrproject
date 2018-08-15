@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>ADBL Signup</title>
+<title>ADBL Signup कमल</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <link rel="stylesheet"
@@ -16,6 +16,32 @@
 table tr td {
 	padding-bottom: 1em;
 }
+
+body {
+	font-size: 14px;
+	font-weight: bold;
+	color:#00030a;
+}
+
+
+
+textarea:focus, input:focus {
+    color: #0206ef;
+}
+
+
+
+
+.black_color {
+font-weight: bold;
+  color: #00030a;
+  font-size: 14px;
+}
+
+
+
+
+
 
 @font-face {
 	font-family: myFirstFont;
@@ -47,9 +73,7 @@ input {
 	color: #3d5c5c;
 }
 
-body {
-	font-size: 180%;
-}
+
 
 /* The container */
 .container {
