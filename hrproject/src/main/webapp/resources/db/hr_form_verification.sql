@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2018 at 04:23 AM
+-- Generation Time: Sep 17, 2018 at 06:14 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -37,7 +37,27 @@ CREATE TABLE IF NOT EXISTS `general_settings` (
 --
 
 INSERT INTO `general_settings` (`general_settings_id`, `name`, `description`) VALUES
-(1, 'image_upload_location', 'localhost:8080/hr_images');
+(1, 'image_upload_location', 'e:/photos/images');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblimages`
+--
+
+CREATE TABLE IF NOT EXISTS `tblimages` (
+  `images_id` bigint(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `imagetype` varchar(10) NOT NULL,
+  `imagename` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblimages`
+--
+
+INSERT INTO `tblimages` (`images_id`, `username`, `imagetype`, `imagename`) VALUES
+(19, 'admin', '101', 'admin101.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `usertbl` (
   `dalit` tinyint(1) NOT NULL DEFAULT '0',
   `apanga` tinyint(1) NOT NULL DEFAULT '0',
   `pichadiyeko_chetra` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `usertbl`
@@ -130,6 +150,12 @@ ALTER TABLE `general_settings`
   ADD PRIMARY KEY (`general_settings_id`);
 
 --
+-- Indexes for table `tblimages`
+--
+ALTER TABLE `tblimages`
+  ADD PRIMARY KEY (`images_id`);
+
+--
 -- Indexes for table `usertbl`
 --
 ALTER TABLE `usertbl`
@@ -151,10 +177,15 @@ ALTER TABLE `vacancytbl`
 ALTER TABLE `general_settings`
   MODIFY `general_settings_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `tblimages`
+--
+ALTER TABLE `tblimages`
+  MODIFY `images_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
 -- AUTO_INCREMENT for table `usertbl`
 --
 ALTER TABLE `usertbl`
-  MODIFY `userid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+  MODIFY `userid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

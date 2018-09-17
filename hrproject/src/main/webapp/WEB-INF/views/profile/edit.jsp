@@ -163,8 +163,8 @@ body {
 									<tr>
 										<td>
 											<div class="input-group">
-												<span class="input-group-addon">Name (Nepali) </span>
-												<form:input path="name" cssClass=" uname" id="name"
+												<span class="input-group-addon">Name (Nepali) ${user.name }</span>
+												<form:input path="name" cssClass="uname" id="name"
 													placeholder="Devnagari unicode" value="${user.name }" />
 											</div>
 										</td>

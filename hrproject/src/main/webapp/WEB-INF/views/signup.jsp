@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>ADBL Signup कमल</title>
+<title>ADBL Signup</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <link rel="stylesheet"
@@ -21,8 +21,14 @@ body {
 	font-size: 14px;
 	font-weight: bold;
 	color:#00030a;
+	
 }
-
+.span {
+	font-size: 14px;
+	font-weight: bold;
+	color:#00030a;
+	
+}
 
 
 textarea:focus, input:focus {
@@ -147,10 +153,10 @@ input {
 
 <body style="background-color: mediumaquamarine;">
 	<div class="col-md-8 col-centered"
-		style="text-align: center; padding-bottom: 10px;">
+		style="text-align: center; padding-bottom: 10px; background-color:#e6e6e6;">
 		<img
 			src="${pageContext.request.contextPath}/resources/images/adbl-logo.png"
-			alt="logo" class="img-responsive" />
+			alt="logo" class="img-responsive" style="width:100%; box-shadow: 5px 6px #888888;"/>
 
 		<h4>SIGNUP FORM</h4>
 		<hr>
@@ -178,9 +184,10 @@ input {
 					<table style="width: 100%; margin: auto;">
 						<tr>
 
-							<td colspan="2">
+							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Advertise No</span>
+								
+									 <span class="input-group-addon span">Advertise No</span> 
 									<form:select path="advertiseno" cssClass="form-control" id="advertiseno">
 										<option value="${sessionScope.user.advertiseno }" selected>${sessionScope.user.advertiseno }</option>
 										<c:forEach items="${ad_nos }" var="a">
@@ -194,7 +201,8 @@ input {
 						<tr>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Name (Nepali) </span>
+								
+									 <span class="input-group-addon span">Name (Nepali) </span>
 									<form:input path="name" cssClass=" uname" id="name"
 										placeholder="Devnagari unicode"
 										value="${sessionScope.user.name }" />
@@ -204,14 +212,14 @@ input {
 						<tr>
 							<td colspan="2">
 								<div class="input-group">
-									<span class="input-group-addon">Name (English) </span>
+									<span class="input-group-addon  span">Name (English) </span>
 									<form:input path="name1" cssClass="uname" id="name"
 										placeholder="Enter Name" value="${sessionScope.user.name1 }" />
 								</div>
 							</td>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Father</span>
+									<span class="input-group-addon  span">Father</span>
 									<form:input path="father" cssClass="uname" id="name"
 										placeholder="Enter Father" value="${sessionScope.user.father }" />
 								</div>
@@ -223,14 +231,14 @@ input {
 						<tr>
 							<td colspan="2">
 								<div class="input-group">
-									<span class="input-group-addon">Mother</span>
+									<span class="input-group-addon  span">Mother</span>
 									<form:input path="mother" cssClass="uname" id="name"
 										placeholder="Enter Mother" value="${sessionScope.user.mother }" />
 								</div>
 							</td>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Spouse</span>
+									<span class="input-group-addon  span">Spouse</span>
 									<form:input path="spouse" cssClass="uname" id="name"
 										placeholder="Enter Spouse" value="${sessionScope.user.spouse }" />
 								</div>
@@ -240,13 +248,13 @@ input {
 
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Permanent Address</span>
+									<span class="input-group-addon  span">Permanent Address</span>
 									<form:input path="permanentaddress" cssClass="uname" id="name"
 										placeholder="Enter Permanent Address" value="${sessionScope.user.permanentaddress }" />
 								</div></td>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Temporary Address</span>
+									<span class="input-group-addon  span">Temporary Address</span>
 									<form:input path="tempaddress" cssClass="uname" id="name"
 										placeholder="Enter Temp Address" value="${sessionScope.user.tempaddress }" />
 								</div>
@@ -254,13 +262,13 @@ input {
 						</tr>
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Citizenship No</span>
+									<span class="input-group-addon  span">Citizenship No</span>
 									<form:input path="citizenshipno" cssClass="uname"
 										id="citizenship-no" placeholder="Enter Citizenship No"
 										value="${sessionScope.user.citizenshipno }" />
 								</div></td>
 							<td><div class="input-group">
-									<span class="input-group-addon">Phone/Mob Number</span>
+									<span class="input-group-addon span">Phone/Mob Number</span>
 									<form:input path="phonenumber" cssClass="uname" id="phone-no"
 										placeholder="Enter Phone Number"
 										value="${sessionScope.user.phonenumber }" />
@@ -268,12 +276,12 @@ input {
 						</tr>
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Email</span>
+									<span class="input-group-addon span">Email</span>
 									<form:input path="email" cssClass="uname" id="email"
 										placeholder="Enter Email" value="${sessionScope.user.email }" />
 								</div></td>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">DOB (B.S. YYYYMMDD)</span>
+									<span class="input-group-addon span">DOB (B.S. YYYYMMDD)</span>
 									<form:input path="dob" cssClass="uname" id="name"
 										placeholder="Enter Date of birth"
 										value="${sessionScope.user.dob }" />
@@ -284,14 +292,14 @@ input {
     			<caption>AGE DETAIL</caption>
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Year</span>
+									<span class="input-group-addon span">Year</span>
 									<form:input path="ageyr" size="4" maxlength="2" minlength="2" 
 										cssClass="uname" id="name" placeholder="Year"
 										value="${sessionScope.user.ageyr }" />
 								</div></td>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Month</span>
+									<span class="input-group-addon span">Month</span>
 									<form:input path="agemth" cssClass="uname" id="name"
 										placeholder="Month" size="4" maxlength="2" 
 										value="${sessionScope.user.agemth }" />
@@ -299,7 +307,7 @@ input {
 							</td>
 							<td>
 								<div class="input-group">
-									<span class="input-group-addon">Day</span>
+									<span class="input-group-addon span">Day</span>
 									<form:input path="ageday" cssClass="uname" id="name"
 										placeholder="Day" size="3" maxlength="2" 
 										value="${sessionScope.user.ageday }" />
@@ -311,12 +319,12 @@ input {
     			<caption>EXAM DETAIL</caption>
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Last Exam Passed</span>
+									<span class="input-group-addon span">Last Exam Passed</span>
 									<form:input path="lastpassedexam" cssClass="uname" id="name"
 										placeholder="Last Exam" value="${sessionScope.user.lastpassedexam }" />
 								</div></td>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Last exam passed Date BS</span>
+									<span class="input-group-addon span">Last exam passed Date BS</span>
 									<form:input path="passeddatebs" cssClass="uname" id="name"
 										placeholder="Last Exam Date BS"
 										value="${sessionScope.user.passeddatebs }" />
@@ -325,7 +333,7 @@ input {
 
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Last exam passed Date AD</span>
+									<span class="input-group-addon span">Last exam passed Date AD</span>
 									<form:input path="passeddatead" cssClass="uname" id="name"
 										placeholder="Last Exam Date"
 										value="${sessionScope.user.passeddatead }" />
@@ -333,13 +341,13 @@ input {
 						</tr>
 						<tr>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Username</span>
+									<span class="input-group-addon span">Username</span>
 									<form:input path="username" cssClass="uname" id="name"
 										placeholder="Enter Username"
 										value="${sessionScope.user.username }" />
 								</div></td>
 							<td colspan="2"><div class="input-group">
-									<span class="input-group-addon">Password</span>
+									<span class="input-group-addon span">Password</span>
 									<form:input path="password" cssClass="uname" id="password"
 										placeholder="Enter Password"
 										value="${sessionScope.user.password }" />

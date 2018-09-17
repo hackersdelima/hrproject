@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/profile.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/profile/edit.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/registration/registration_form.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/registration/registration_form1.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/reports/admit_card.jsp=UTF-8

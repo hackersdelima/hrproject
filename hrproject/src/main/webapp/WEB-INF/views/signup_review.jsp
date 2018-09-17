@@ -126,7 +126,7 @@ body {
 		style="text-align: center; padding-bottom: 10px;">
 		<img
 			src="${pageContext.request.contextPath}/resources/images/adbl-logo.png"
-			alt="logo" class="img-responsive" />
+			alt="logo" class="img-responsive"  style="width:100%;box-shadow: 5px 6px #888888;"/>
 
 		<h4>SIGNUP FORM</h4>
 		<hr>
