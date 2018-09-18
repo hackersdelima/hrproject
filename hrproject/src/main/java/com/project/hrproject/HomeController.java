@@ -40,10 +40,12 @@ public class HomeController {
 		System.out.println(user);
 		String msg = "";
 		int status = userDao.signup(user);
-		if(status==0){
+		if(status>0){
+			msg = "Signup Successful! Please Login to Continue.";
+		}
+		else {
 			msg ="Signup Failed! Please Signup again.";
 		}
-		msg = "Signup Successful! Please Login to Continue.";
 		attributes.addFlashAttribute("msg",msg);
 		sessionStatus.isComplete();
 		return "redirect:/";
