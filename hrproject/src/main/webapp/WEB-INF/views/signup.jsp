@@ -7,13 +7,14 @@
 <title>ADBL Signup</title>
 </head>
 
-<body class="background">
+<body class="background" style="background-color: #b3ffcc">
 	<spring:url value="/signup_review" var="formUrl" />
 	<form:form cssClass="login-form" action="${formUrl }" method="POST"
 		modelAttribute="user">
 
 		<div class="col-md-8 col-sm-8 col-xs-8  col-sm-offset-2">
-			<div class="col-md-12 col-xs-12">
+			<div class="col-md-12 col-xs-12"
+				style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);">
 				<div class="x_panel">
 					<div class="x_title">
 
@@ -41,7 +42,7 @@
 					<div class="x_content">
 
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DETAILS</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -98,11 +99,24 @@
 											placeholder="Enter Temp Address"
 											value="${sessionScope.user.tempaddress }" />
 									</div>
+									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Citizenship No</label> <input
 											name="citizenshipno" class="form-control" id="citizenship-no"
 											placeholder="Enter Citizenship No"
 											value="${sessionScope.user.citizenshipno }" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="citizenshipIssuedDate">Citizenship Issued Date</label> <input
+											name="citizenshipIssuedDate" class="form-control" id="citizenshipIssuedDate"
+											placeholder="Enter Citizenship Issued Date"
+											value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="citizenshipIssuedDistrict">Citizenship Issued District</label> <select
+											name="citizenshipIssuedDistrict" class="form-control" id="citizenshipIssuedDistrict">
+											<option value="">Select District</option>
+											</select>
 									</div>
 
 
@@ -127,8 +141,10 @@
 								</div>
 							</div>
 						</div>
+						
+
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">AGE DETAIL</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -153,7 +169,7 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">EXAM DETAIL</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -178,7 +194,7 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">COMPITITION TYPE</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -250,6 +266,37 @@
 												</div>
 											</div>
 										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="panel panel-primary">
+								<div class="panel-heading clearfix">APPLICANT DOCUMENTS</div>
+								<div class="panel-body">
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="imagetype">Document Type</label> <select
+											name="imagetype" class="form-control" id="imagetype" >
+											<option value="CTZ">Citizenship</option>
+											</select>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="description">Description</label> <input type="text" name="description" class="form-control" id="name" placeholder="Description" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="file">Image</label> <input type="file" name="file" class="form-control" id="file" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="imagetype">Bank Voucher</label> <select
+											name="imagetype" class="form-control" id="imagetype" >
+											<option value="BNKV">Bank Voucher</option>
+											</select>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="description">Voucher Date</label> <input type="text" name="description" class="form-control" id="name" placeholder="Voucher Date" value="" required/>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="file">Image</label> <input type="file" name="file" class="form-control" id="file" required/>
 									</div>
 								</div>
 							</div>

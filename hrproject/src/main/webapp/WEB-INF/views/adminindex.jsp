@@ -1,5 +1,4 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <html>
 <head>
@@ -21,32 +20,30 @@
 		<p style="color: red;">${msg}</p>
 		<br> <br>
 
-		<spring:url value="/login/" var="formUrl" />
+		<spring:url value="/login/admin" var="formUrl" />
 
-		<form:form cssClass="login-form" action="${formUrl }"
-			modelAttribute="user">
+		<form class="login-form" action="${formUrl }" method="POST">
 			<table style="width: 80%; margin: auto;">
+			<caption>:: admin login ::</caption>
 				<tr>
+						<td colspan="2"><label for="staffCode">Staff Code</label></td>
+					<td><input type="text" name="staffCode" class="uname" id="staffCode"
+							type="password" placeholder="Enter Staff Code" /></td>
 					<td colspan="2"><label for="user-name">Username</label></td>
 
-					<td><form:input path="username" cssClass="uname"
+					<td><input type="text" name="username" class="uname"
 							id="user-name" type="password" placeholder="Enter Username" /></td>
-					<td colspan="2"><input type="submit" value="Login" /></td>
 				</tr>
 				<tr>
-					<td colspan="2"><label for="password">Password</label></td>
-
-					<td><form:input path="password" cssClass="uname" id="password"
+				<td colspan="2"><label for="password">Password</label></td>
+					<td><input type="text" name="password" class="uname" id="password"
 							type="password" placeholder="Enter Password" /></td>
-					<td><a href="<spring:url value="/nav/signup"/>"
-						style="font-size: 80%;">New Member? Signup Here!</a></td>
+					
+					<td colspan="2"><input type="submit" class="form-control btn btn-success" value="Login" /></td>
 				</tr>
-				<tr>
-
-
-				</tr>
+			
 			</table>
-		</form:form>
+		</form>
 	</div>
 </body>
 </html>

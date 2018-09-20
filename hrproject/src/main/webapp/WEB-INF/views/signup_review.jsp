@@ -7,13 +7,13 @@
 <title>ADBL Signup</title>
 </head>
 
-<body class="background">
+<body class="background" style="background-color:#b3ffcc">
 	<spring:url value="/signup_review" var="formUrl" />
 	<form:form cssClass="signup-form" action="${formUrl }" method="POST"
 		modelAttribute="user">
 
 		<div class="col-md-8 col-sm-8 col-xs-8  col-sm-offset-2">
-			<div class="col-md-12 col-xs-12">
+			<div class="col-md-12 col-xs-12"  style=" box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);">
 				<div class="x_panel">
 					<div class="x_title">
 
@@ -38,7 +38,7 @@
 					<div class="x_content">
 
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DETAILS</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -53,28 +53,28 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Name(Nepali)</label> <input
 											name="name" class="form-control" id="name"
-											placeholder="Devnagari unicode" value="${sessionScope.user.name }" />
+										 value="${sessionScope.user.name }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Name(English)</label> <input
 											name="name1" class="form-control" id="name"
-											placeholder="Enter Name" value="${sessionScope.user.name1 }" />
+										value="${sessionScope.user.name1 }" />
 									</div>
 									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Father</label> <input
 											name="father" class="form-control" id="name"
-											placeholder="Enter Father" value="${sessionScope.user.father }" />
+										 value="${sessionScope.user.father }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Mother</label> <input
 											name="mother" class="form-control" id="name"
-											placeholder="Enter Mother" value="${sessionScope.user.mother }" />
+											 value="${sessionScope.user.mother }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Spouse</label> <input
 											name="spouse" class="form-control" id="name"
-											placeholder="Enter Spouse" value="${sessionScope.user.spouse }" />
+											 value="${sessionScope.user.spouse }" />
 									</div>
 
 
@@ -82,19 +82,28 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Permanent Address</label> <input
 											name="permanentaddress" class="form-control" id="name"
-											placeholder="Enter Permanent Address"
 											value="${sessionScope.user.permanentaddress }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Temporary Address</label> <input
 											name="tempaddress" class="form-control" id="name"
-											placeholder="Enter Temp Address" value="${sessionScope.user.tempaddress }" />
+											 value="${sessionScope.user.tempaddress }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Citizenship No</label> <input
 											name="citizenshipno" class="form-control" id="citizenship-no"
-											placeholder="Enter Citizenship No"
 											value="${sessionScope.user.citizenshipno }" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="citizenshipIssuedDate">Citizenship Issued Date</label> <input
+											name="citizenshipIssuedDate" class="form-control" id="citizenshipIssuedDate"
+											value="${sessionScope.user.citizenshipIssuedDate }" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="citizenshipIssuedDistrict">Citizenship Issued District</label> <select
+											name="citizenshipIssuedDistrict" class="form-control" id="citizenshipIssuedDistrict">
+											<option value="${sessionScope.user.citizenshipIssuedDistrict }">${sessionScope.user.citizenshipIssuedDistrict }</option>
+											</select>
 									</div>
 
 
@@ -102,70 +111,70 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Phone/Mob Number</label> <input
 											name="phonenumber" class="form-control" id="phone-no"
-											placeholder="Enter Phone Number" value="${sessionScope.user.phonenumber }" />
+											 value="${sessionScope.user.phonenumber }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Email</label> <input
 											name="email" class="form-control" id="email"
-											placeholder="Enter Email" value="${sessionScope.user.email }" />
+											value="${sessionScope.user.email }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">DOB (B.S. YYYYMMDD)</label> <input
 											name="dob" class="form-control" id="name"
-											placeholder="Enter Date of birth" value="${sessionScope.user.dob }" />
+											value="${sessionScope.user.dob }" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">AGE DETAIL</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Year</label> <input
 											name="ageyr" size="4" maxlength="2" minlength="2"
-											class="form-control" id="name" placeholder="Year"
+											class="form-control" id="name" 
 											value="${sessionScope.user.ageyr }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Month</label> <input
 											name="agemth" class="form-control" id="name"
-											placeholder="Month" size="4" maxlength="2"
+											 size="4" maxlength="2"
 											value="${sessionScope.user.agemth }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Day</label> <input
 											name="ageday" class="form-control" id="name"
-											placeholder="Day" size="3" maxlength="2"
+											 size="3" maxlength="2"
 											value="${sessionScope.user.ageday }" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">EXAM DETAIL</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last Exam Passed</label> <input
 											name="lastpassedexam" class="form-control" id="name"
-											placeholder="Last Exam" value="${sessionScope.user.lastpassedexam }" />
+											 value="${sessionScope.user.lastpassedexam }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last exam passed Date
 											BS</label> <input name="passeddatebs" class="form-control" id="name"
-											placeholder="Last Exam Date BS" value="${sessionScope.user.passeddatebs }" />
+											 value="${sessionScope.user.passeddatebs }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last exam passed Date
 											AD</label> <input name="passeddatead" class="form-control" id="name"
-											placeholder="Last Exam Date" value="${sessionScope.user.passeddatead }" />
+											 value="${sessionScope.user.passeddatead }" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="panel-body">
-							<div class="panel panel-success">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">COMPITITION TYPE</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -243,7 +252,6 @@
 		</div>
 	</form:form>
 	<script type="text/javascript">
-	
 	$(".signup-form :input").prop("disabled", true);
 	</script>
 </body>

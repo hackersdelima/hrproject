@@ -8,26 +8,25 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="col-md-12 col-xs-12">
 			<div class="x_panel">
-				<spring:url value="/profile/update/${user.userid }" var="formUrl" />
-				<form class="form" action="${formUrl }" method="POST"
+				<%-- <spring:url value="/profile/update/${user.userid }" var="formUrl" /> --%>
+				<form class="form" action="" method="post"
 					accept-charset="UTF-8">
 					<div class="x_title">
-						<h2>PROFILE UPDATE</h2>
+						<h2>APPLICANT PROFILE DETAIL</h2>
 						<br>
 						<div class="ln_solid"></div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
 								<button class="btn btn-info" type="button" id="validate">Validate</button>
 								<button class="btn btn-primary" type="reset">Reset</button>
 								<input type="submit" class="btn btn-success" value="Submit">
 							</div>
-						</div>
+						</div> -->
 						<br> <br>
 						<div class="clearfix"></div>
 					</div>
 
 					<div class="x_content">
-
 						<div class="panel-body">
 							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">USER DETAILS</div>
@@ -221,22 +220,19 @@
 													<label for="pichadiyekochetra" class="label-primary"></label>
 												</div>
 											</div>
-
 										</div>
-
 									</div>
-
-
-
-
 								</div>
 							</div>
 						</div>
 					</div>
 				</form>
 			</div>
-
 		</div>
 	</div>
+	<script type="text/javascript">
+	
+	$(".form :input").prop("disabled", true);
+	</script>
 </body>
 </html>

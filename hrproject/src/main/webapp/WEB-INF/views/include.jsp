@@ -26,12 +26,6 @@
     	background-color:#F7F7F7;}
     	body{
     	color:black}
-    	
-    	input[type=text] {
-	font-size: 14px;
-	font-weight: bold;
-	color:#00030a;
-}
 
 textarea:focus, input:focus {
     color: #0206ef;

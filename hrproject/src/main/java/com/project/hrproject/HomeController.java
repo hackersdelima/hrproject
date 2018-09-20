@@ -2,7 +2,6 @@ package com.project.hrproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +26,13 @@ public class HomeController {
 		model.addAttribute("msg", msg);
 		return "index";
 	}
+	
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	public String admin(ModelMap model, @ModelAttribute("msg") String msg) {
+		model.put("user", new UserModel());
+		model.addAttribute("msg", msg);
+		return "adminindex";
+	}
 
 	
 	@RequestMapping(value = "/signup_review", method = RequestMethod.POST)
@@ -40,6 +46,7 @@ public class HomeController {
 		System.out.println(user);
 		String msg = "";
 		int status = userDao.signup(user);
+		
 		if(status>0){
 			msg = "Signup Successful! Please Login to Continue.";
 		}
@@ -48,6 +55,7 @@ public class HomeController {
 		}
 		attributes.addFlashAttribute("msg",msg);
 		sessionStatus.isComplete();
+		
 		return "redirect:/";
 	}
 }

@@ -5,8 +5,24 @@ public class UserModel {
 			phonenumber, email, dob, ageyr, agemth, ageday, lastpassedexam, passeddatebs, passeddatead, userid, status,
 			username, password;
 	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
-
+	private String citizenshipIssuedDistrict, citizenshipIssuedDate;
 	
+	public String getCitizenshipIssuedDistrict() {
+		return citizenshipIssuedDistrict;
+	}
+
+	public void setCitizenshipIssuedDistrict(String citizenshipIssuedDistrict) {
+		this.citizenshipIssuedDistrict = citizenshipIssuedDistrict;
+	}
+
+	public String getCitizenshipIssuedDate() {
+		return citizenshipIssuedDate;
+	}
+
+	public void setCitizenshipIssuedDate(String citizenshipIssuedDate) {
+		this.citizenshipIssuedDate = citizenshipIssuedDate;
+	}
+
 	public String getAdvertiseno() {
 		return advertiseno;
 	}
