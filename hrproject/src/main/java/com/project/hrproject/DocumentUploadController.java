@@ -2,6 +2,7 @@ package com.project.hrproject;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +27,7 @@ import com.project.hrproject.utils.ImageConverter;
 @RequestMapping("/document")
 public class DocumentUploadController {
 	@Autowired
-	DocumentService imageService;
+	DocumentService documentService;
 	
 	ImageConverter i = new ImageConverter();
 
@@ -44,7 +46,7 @@ public class DocumentUploadController {
 
 					int save_status = 0;
 					// save_status = save query here
-					save_status = imageService.saveDocument(imageModel, i);
+					save_status = documentService.saveDocument(imageModel, i);
 					if (save_status > 0) {
 						map.put("status", HttpStatus.OK);
 					} else {
@@ -60,6 +62,15 @@ public class DocumentUploadController {
 		else {
 			map.put("status", "no files found!");
 		}
+		return map;
+	}
+	
+	@RequestMapping(value = "/findByUserid/{id}", method = RequestMethod.GET)
+	public Map<String, Object> findByUserid(@PathVariable("id") String userid){
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<ImageModel> list =  documentService.findByUserid(userid);
+		System.out.println(list);
+		map.put("data", list);
 		return map;
 	}
 

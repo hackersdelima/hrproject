@@ -3,8 +3,10 @@ package com.project.hrproject.dao.impl;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.project.hrproject.dao.UserDao;
@@ -49,6 +51,12 @@ private NamedParameterJdbcTemplate template;
 			System.out.println(e);
 			return 0;
 		}
+	}
+
+	@Override
+	public String findMaxUserId() {
+		String sql = "select max(userid) as userid from usertbl";
+		return jdbcTemplate.queryForObject(sql, String.class);
 	}
 
 }

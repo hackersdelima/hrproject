@@ -8,9 +8,9 @@
 </head>
 
 <body class="background" style="background-color: #b3ffcc">
-	<spring:url value="/signup_review" var="formUrl" />
+	<spring:url value="/signup" var="formUrl" />
 	<form:form cssClass="login-form" action="${formUrl }" method="POST"
-		modelAttribute="user">
+		 enctype="multipart/form-data">
 
 		<div class="col-md-8 col-sm-8 col-xs-8  col-sm-offset-2">
 			<div class="col-md-12 col-xs-12"

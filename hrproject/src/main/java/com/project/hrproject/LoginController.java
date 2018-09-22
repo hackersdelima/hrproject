@@ -1,6 +1,5 @@
 package com.project.hrproject;
 
-import org.aspectj.lang.reflect.CatchClauseSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +44,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/admin", method = RequestMethod.POST)
-	public String adminlogin(@ModelAttribute AdminUserModel adminUserModel, Model model) {
+	public String adminlogin(@ModelAttribute AdminUserModel adminUserModel, Model model, RedirectAttributes attributes) {
 		try {
 			AdminUserModel userDetail  = loginDao.findAdminUser(adminUserModel);
 		if(userDetail!=null) {
@@ -53,12 +52,14 @@ public class LoginController {
 			return "adminprofile";
 		}
 		else {
+		attributes.addFlashAttribute("msg","Invalid Login Credentials!");
 			return "redirect:/admin";
 		}
 	}
 	
 	catch(Exception e) {
 		System.out.println(e);
+		attributes.addFlashAttribute("msg","Invalid Login Credentials!");
 		return "redirect:/admin";
 	}
 	}

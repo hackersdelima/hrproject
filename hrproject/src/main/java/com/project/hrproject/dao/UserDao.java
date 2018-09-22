@@ -7,4 +7,6 @@ public interface UserDao {
 
 	public int update(UserModel user, String userid);
 
+	public String findMaxUserId();
+
 }

@@ -17,17 +17,27 @@ import com.project.hrproject.entity.AdminUserModel;
 import com.project.hrproject.entity.UserModel;
 
 public class LoginDaoImpl implements LoginDao{
+	private NamedParameterJdbcTemplate namedParamterJdbcTemplate;
 	private JdbcTemplate jdbcTemplate;
-	private NamedParameterJdbcTemplate template;
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
+		 this.namedParamterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate);
 	}
+
 	@Autowired
 	public void setDataSource(DataSource dataSource){
-		this.template = new NamedParameterJdbcTemplate(dataSource);
 		 this.jdbcTemplate=new JdbcTemplate(dataSource);
+		
 	}
+	
+	@Override
+	public AdminUserModel findAdminUser(AdminUserModel adminUserModel) {
+		System.out.println(adminUserModel);
+		String sql = "select id, staffCode, username, branchCode from adminusertbl where staffCode= :staffCode and username = :username and password = :password";
+		AdminUserModel user = namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(adminUserModel),new BeanPropertyRowMapper<AdminUserModel>(AdminUserModel.class));
+		return user;
+		}
 	 
 	 public boolean verifyUser(UserModel user)
 		{
@@ -90,12 +100,6 @@ public class LoginDaoImpl implements LoginDao{
 		}
 
 
-		@Override
-		public AdminUserModel findAdminUser(AdminUserModel adminUserModel) {
-			System.out.println(adminUserModel);
-			String sql = "select id, staffCode, username, branchCode from adminusertbl where staffCode = '"+adminUserModel.getStaffCode()+"' and username = '"+adminUserModel.getUsername()+"' and password = '"+adminUserModel.getPassword()+"'";
-			System.out.println(sql);
-			return template.queryForObject(sql, new BeanPropertySqlParameterSource(new AdminUserModel()), new BeanPropertyRowMapper<AdminUserModel>(AdminUserModel.class));
-		}
+		
 
 }

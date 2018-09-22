@@ -1,5 +1,7 @@
 package com.project.hrproject.service.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class DocumentServiceImpl implements DocumentService {
 	@Override
 	public int saveDocument(ImageModel imageModel, int i) {
 		return documentDao.saveDocument( imageModel, i);
+	}
+
+	@Override
+	public List<ImageModel> findByUserid(String userid) {
+		return documentDao.findByUserid(userid);
 	}
 
 }

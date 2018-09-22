@@ -1,7 +1,7 @@
 package com.project.hrproject.entity;
 
 public class ImageModel {
-private String images_id, username, imagetype[], description[];
+private String images_id, userid, imagetype[], description[];
 private byte[] image;
 public String getImages_id() {
 	return images_id;
@@ -9,11 +9,11 @@ public String getImages_id() {
 public void setImages_id(String images_id) {
 	this.images_id = images_id;
 }
-public String getUsername() {
-	return username;
+public String getUserid() {
+	return userid;
 }
-public void setUsername(String username) {
-	this.username = username;
+public void setUserid(String userid) {
+	this.userid = userid;
 }
 public String[] getImagetype() {
 	return imagetype;

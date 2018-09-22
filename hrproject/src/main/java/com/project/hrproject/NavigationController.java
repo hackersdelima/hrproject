@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 
 import com.project.hrproject.dao.LoginDao;
 import com.project.hrproject.dao.RegistrationDao;
@@ -55,6 +57,20 @@ public class NavigationController {
 		model.addAttribute("user",session.getAttribute("userDetail"));
 		
 		return "profile/edit";
+	}
+	
+	@RequestMapping(value = "/applicants", method = RequestMethod.GET)
+	public String applicants() {
+		return "admin/applicants";
+	}
+	
+	@RequestMapping(value = "/applicantdetail/{id}", method = RequestMethod.GET)
+	public String applicantdetail(@PathVariable("id") String userid, Model model, @ModelAttribute("msg") String msg) {
+		model.addAttribute("userid", userid);		
+		if(msg!=null) {
+			model.addAttribute("msg",msg);
+		}
+		return "admin/applicantdetail";
 	}
 	
 

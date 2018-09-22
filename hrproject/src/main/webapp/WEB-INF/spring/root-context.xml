@@ -10,9 +10,13 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate" /> </bean> -->
 
 	<!-- Basic for Database Connection -->
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	<bean id="namedParamterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+   <constructor-arg ref="jdbcTemplate"/>
+</bean>
 	<bean id="loginDao" class="com.project.hrproject.dao.impl.LoginDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>

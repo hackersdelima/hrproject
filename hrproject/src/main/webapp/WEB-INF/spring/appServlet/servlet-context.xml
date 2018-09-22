@@ -25,9 +25,5 @@
 	<mvc:interceptors>
     <beans:bean class="com.project.hrproject.SessionHandler" />
 </mvc:interceptors>
-	
-	
-	
-	
 </beans:beans>
 
