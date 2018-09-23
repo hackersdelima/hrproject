@@ -24,11 +24,8 @@
 
 		<form class="login-form" action="${formUrl }" method="POST">
 			<table style="width: 80%; margin: auto;">
-			<caption>:: admin login ::</caption>
+			<caption>:: ADMIN LOGIN ::</caption>
 				<tr>
-						<td colspan="2"><label for="staffCode">Staff Code</label></td>
-					<td><input type="text" name="staffCode" class="uname" id="staffCode"
-							type="password" placeholder="Enter Staff Code" /></td>
 					<td colspan="2"><label for="user-name">Username</label></td>
 
 					<td><input type="text" name="username" class="uname"

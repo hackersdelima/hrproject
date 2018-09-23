@@ -6,6 +6,7 @@ public class AdminUserModel {
 	private String password;
 	private String staffCode;
 	private String branchCode;
+	private String regionCode;
 	public String getId() {
 		return id;
 	}
@@ -36,10 +37,17 @@ public class AdminUserModel {
 	public void setBranchCode(String branchCode) {
 		this.branchCode = branchCode;
 	}
+	
+	public String getRegionCode() {
+		return regionCode;
+	}
+	public void setRegionCode(String regionCode) {
+		this.regionCode = regionCode;
+	}
 	@Override
 	public String toString() {
 		return "AdminUserModel [id=" + id + ", username=" + username + ", password=" + password + ", staffCode="
-				+ staffCode + ", branchCode=" + branchCode + "]";
+				+ staffCode + ", branchCode=" + branchCode + ", regionCode=" + regionCode + "]";
 	}
 
 }

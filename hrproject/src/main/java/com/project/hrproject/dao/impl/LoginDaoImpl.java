@@ -34,7 +34,7 @@ public class LoginDaoImpl implements LoginDao{
 	@Override
 	public AdminUserModel findAdminUser(AdminUserModel adminUserModel) {
 		System.out.println(adminUserModel);
-		String sql = "select id, staffCode, username, branchCode from adminusertbl where staffCode= :staffCode and username = :username and password = :password";
+		String sql = "select id, staffCode, username, branchCode, regioncode from adminusertbl where username = :username and password = :password";
 		AdminUserModel user = namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(adminUserModel),new BeanPropertyRowMapper<AdminUserModel>(AdminUserModel.class));
 		return user;
 		}
@@ -44,7 +44,7 @@ public class LoginDaoImpl implements LoginDao{
 			
 			boolean userexists=false;
 			
-			String sql="SELECT COUNT(*) FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
+			String sql="SELECT COUNT(*) FROM usertbl WHERE status=1 and username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
 			System.out.println(sql);
 			System.out.println(jdbcTemplate+"jdnds");
 			int rowcount= jdbcTemplate.queryForObject(sql, Integer.class);
