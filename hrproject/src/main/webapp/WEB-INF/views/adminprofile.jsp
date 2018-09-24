@@ -65,6 +65,7 @@
                     <ul class="nav child_menu">
                       <li><a href="<spring:url value="/nav/applicants"/>" target="iframe_a">Signup Verification</a></li>
                       <li><a href="<spring:url value="/nav/"/>" target="iframe_a">Form Verification</a></li>
+                        <li><a href="<spring:url value="/nav/reginfo"/>" target="iframe_a">Registration Form</a></li>
                       <li><a href="listStudents" target="iframe_a">Verification Status</a></li>
                     </ul>
                   </li>

@@ -73,5 +73,10 @@ public class NavigationController {
 		return "admin/applicantdetail";
 	}
 	
+	@RequestMapping(value = "/reginfo", method = RequestMethod.GET)
+	public String reginfo() {
+		return "admin/registration_form";
+	}
+	
 
 }
