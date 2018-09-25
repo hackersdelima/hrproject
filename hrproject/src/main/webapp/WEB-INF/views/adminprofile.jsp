@@ -44,7 +44,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>${sessionScope.userDetail.username }</h2>
+                <h2>${sessionScope.adminDetail.username }</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -64,9 +64,6 @@
                   <li><a><i class="fa fa-edit"></i> Applicant Verification <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<spring:url value="/nav/applicants"/>" target="iframe_a">Signup Verification</a></li>
-                      <li><a href="<spring:url value="/nav/"/>" target="iframe_a">Form Verification</a></li>
-                        <li><a href="<spring:url value="/nav/reginfo"/>" target="iframe_a">Registration Form</a></li>
-                      <li><a href="listStudents" target="iframe_a">Verification Status</a></li>
                     </ul>
                   </li>
                    <li><a href="/entrancecards" target="iframe_a">Entrance Cards</a></li>
@@ -107,7 +104,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="">Username
+                    <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="">${sessionScope.adminDetail.username }
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

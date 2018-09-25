@@ -63,10 +63,10 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<spring:url value="/nav/registration_form"/>" target="iframe_a">Registration Form</a></li>
-                      <li><a href="<spring:url value="/nav/documents_upload"/>" target="iframe_a">Documents Upload</a></li>
+               <%--        <li><a href="<spring:url value="/nav/registration_form"/>" target="iframe_a">Registration Form</a></li>
+                      <li><a href="<spring:url value="/nav/documents_upload"/>" target="iframe_a">Documents Upload</a></li> --%>
                        <li><a href="<spring:url value="/nav/entrance_card"/>" target="iframe_a">Entrance Card</a></li>
-                      <li><a href="listStudents" target="iframe_a">Verification Status</a></li>
+                     <%--  <li><a href="<spring:url value="/nav/verificationStatus"/>" target="iframe_a">Verification Status</a></li> --%>
                     </ul>
                   </li>
                   

@@ -47,9 +47,18 @@ public class NavigationController {
 	}
 	
 	@RequestMapping(value = "/entrance_card", method = RequestMethod.GET)
-	public String entranceCard() {
+	public String entranceCard(Model model, HttpSession session) {
+		UserModel user =(UserModel) session.getAttribute("userDetail");
+		String userid = user.getUserid();
+		int status = registrationDao.verificationStatus(userid);
 		
-		return "reports/admit_card";
+		if(status==1) {
+			return "reports/admit_card";
+		}
+		else {
+			model.addAttribute("msg", "You are not yet verified! ");
+			return "registration/verificationStatus";
+		}
 	}
 	
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)
@@ -76,6 +85,22 @@ public class NavigationController {
 	@RequestMapping(value = "/reginfo", method = RequestMethod.GET)
 	public String reginfo() {
 		return "admin/registration_form";
+	}
+	
+	
+	@RequestMapping(value = "/verificationStatus", method = RequestMethod.GET)
+	public String verificationStatus(Model model, HttpSession session) {
+		UserModel user =(UserModel) session.getAttribute("userDetail");
+		String userid = user.getUserid();
+		int status = registrationDao.verificationStatus(userid);
+		
+		if(status==1) {
+			model.addAttribute("msg", "Your Registration is verified!");
+		}
+		else {
+			model.addAttribute("msg", "Verification is pending!");
+		}
+		return "registration/verificationStatus";
 	}
 	
 

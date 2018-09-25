@@ -44,7 +44,7 @@ public class LoginDaoImpl implements LoginDao{
 			
 			boolean userexists=false;
 			
-			String sql="SELECT COUNT(*) FROM usertbl WHERE status=1 and username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
+			String sql="SELECT COUNT(*) FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
 			System.out.println(sql);
 			System.out.println(jdbcTemplate+"jdnds");
 			int rowcount= jdbcTemplate.queryForObject(sql, Integer.class);

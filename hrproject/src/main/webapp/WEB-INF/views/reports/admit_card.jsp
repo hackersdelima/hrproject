@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 	<%@taglib prefix="spring" uri="http://www.springframework.org/tags"  %>
 <jsp:include page="../include.jsp"></jsp:include>
 <spring:url value="/reg/next" var="formUrl"></spring:url>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -130,6 +127,7 @@ o; a}+saf6  ldlt M  df<span>/</span>b]lv  lnOg]  pQm  kbsf]  k/LIffdf  tkfO{nfO{
 </div>
 <div>
 b|i6Jo M s[kof k5fl8 x]g'{xf 
+</div>
 </div>
 </body>
 
