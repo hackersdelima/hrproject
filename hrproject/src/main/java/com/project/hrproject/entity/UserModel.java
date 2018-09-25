@@ -6,6 +6,7 @@ public class UserModel {
 			username, password;
 	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
 	private String citizenshipIssuedDistrict, citizenshipIssuedDate;
+	private String grandfather;
 	
 	public String getCitizenshipIssuedDistrict() {
 		return citizenshipIssuedDistrict;
@@ -254,6 +255,14 @@ public class UserModel {
 	public void setPichadiyeko_chetra(int pichadiyeko_chetra) {
 		this.pichadiyeko_chetra = pichadiyeko_chetra;
 	}
+	
+	public String getGrandfather() {
+		return grandfather;
+	}
+
+	public void setGrandfather(String grandfather) {
+		this.grandfather = grandfather;
+	}
 
 	@Override
 	public String toString() {
@@ -265,13 +274,8 @@ public class UserModel {
 				+ passeddatead + ", userid=" + userid + ", status=" + status + ", username=" + username + ", password="
 				+ password + ", open_comp=" + open_comp + ", mahila=" + mahila + ", adibasi=" + adibasi + ", madhesi="
 				+ madhesi + ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chetra=" + pichadiyeko_chetra
-				+ "]";
+				+ ", citizenshipIssuedDistrict=" + citizenshipIssuedDistrict + ", citizenshipIssuedDate="
+				+ citizenshipIssuedDate + ", grandfather=" + grandfather + "]";
 	}
 
-	
-	
-
-	
-
-	
 }

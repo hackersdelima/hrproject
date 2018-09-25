@@ -1,63 +1,86 @@
 package com.project.hrproject.entity;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class EducationModel {
-private List<String> institute_name,exam_name,completed_year,level,marks_obtained,main_subject,kaifiyat;
+	private String userid;
+private String[] institute_name, exam_name,completion_year, level, totalmarks_percentage , major_sub, kaifiyat;
 
-public List<String> getInstitute_name() {
+
+public String getUserid() {
+	return userid;
+}
+
+public void setUserid(String userid) {
+	this.userid = userid;
+}
+
+public String[] getInstitute_name() {
 	return institute_name;
 }
 
-public void setInstitute_name(List<String> institute_name) {
+public void setInstitute_name(String[] institute_name) {
 	this.institute_name = institute_name;
 }
 
-public List<String> getExam_name() {
+public String[] getExam_name() {
 	return exam_name;
 }
 
-public void setExam_name(List<String> exam_name) {
+public void setExam_name(String[] exam_name) {
 	this.exam_name = exam_name;
 }
 
-public List<String> getCompleted_year() {
-	return completed_year;
+public String[] getCompletion_year() {
+	return completion_year;
 }
 
-public void setCompleted_year(List<String> completed_year) {
-	this.completed_year = completed_year;
+public void setCompletion_year(String[] completion_year) {
+	this.completion_year = completion_year;
 }
 
-public List<String> getLevel() {
+public String[] getLevel() {
 	return level;
 }
 
-public void setLevel(List<String> level) {
+public void setLevel(String[] level) {
 	this.level = level;
 }
 
-public List<String> getMarks_obtained() {
-	return marks_obtained;
+public String[] getTotalmarks_percentage() {
+	return totalmarks_percentage;
 }
 
-public void setMarks_obtained(List<String> marks_obtained) {
-	this.marks_obtained = marks_obtained;
+public void setTotalmarks_percentage(String[] totalmarks_percentage) {
+	this.totalmarks_percentage = totalmarks_percentage;
 }
 
-public List<String> getMain_subject() {
-	return main_subject;
+public String[] getMajor_sub() {
+	return major_sub;
 }
 
-public void setMain_subject(List<String> main_subject) {
-	this.main_subject = main_subject;
+public void setMajor_sub(String[] major_sub) {
+	this.major_sub = major_sub;
 }
 
-public List<String> getKaifiyat() {
+public String[] getKaifiyat() {
 	return kaifiyat;
 }
 
-public void setKaifiyat(List<String> kaifiyat) {
+public void setKaifiyat(String[] kaifiyat) {
 	this.kaifiyat = kaifiyat;
 }
+
+@Override
+public String toString() {
+	return "EducationModel [institute_name=" + Arrays.toString(institute_name) + ", exam_name="
+			+ Arrays.toString(exam_name) + ", completion_year=" + Arrays.toString(completion_year) + ", level="
+			+ Arrays.toString(level) + ", totalmarks_percentage=" + Arrays.toString(totalmarks_percentage)
+			+ ", major_sub=" + Arrays.toString(major_sub) + ", kaifiyat=" + Arrays.toString(kaifiyat) + "]";
+}
+
+
+
+
+
 }

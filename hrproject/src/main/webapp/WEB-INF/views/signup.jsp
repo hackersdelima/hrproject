@@ -10,7 +10,7 @@
 <body class="background" style="background-color: #b3ffcc">
 	<spring:url value="/signup" var="formUrl" />
 	<form:form cssClass="login-form" action="${formUrl }" method="POST"
-		 enctype="multipart/form-data">
+		enctype="multipart/form-data">
 
 		<div class="col-md-8 col-sm-8 col-xs-8  col-sm-offset-2">
 			<div class="col-md-12 col-xs-12"
@@ -57,8 +57,7 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Name(Nepali)</label> <input
 											name="name" class="form-control" id="name"
-											placeholder="Devnagari unicode"
-											value="" />
+											placeholder="Devnagari unicode" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Name(English)</label> <input
@@ -69,54 +68,54 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Father</label> <input
 											name="father" class="form-control" id="name"
-											placeholder="Enter Father"
-											value="" />
+											placeholder="Enter Father" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Mother</label> <input
 											name="mother" class="form-control" id="name"
-											placeholder="Enter Mother"
-											value="" />
+											placeholder="Enter Mother" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Spouse</label> <input
 											name="spouse" class="form-control" id="name"
-											placeholder="Enter Spouse"
-											value="" />
+											placeholder="Enter Spouse" value="" />
 									</div>
 
 
 									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Grand Father Name</label> <input
+											name="grandfather" class="form-control" id="grandfather"
+											placeholder="Enter Grand Father Name" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Permanent Address</label> <input
 											name="permanentaddress" class="form-control" id="name"
-											placeholder="Enter Permanent Address"
-											value="" />
+											placeholder="Enter Permanent Address" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Temporary Address</label> <input
 											name="tempaddress" class="form-control" id="name"
-											placeholder="Enter Temp Address"
-											value="" />
+											placeholder="Enter Temp Address" value="" />
 									</div>
 									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Citizenship No</label> <input
 											name="citizenshipno" class="form-control" id="citizenship-no"
-											placeholder="Enter Citizenship No"
-											value="" />
+											placeholder="Enter Citizenship No" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="citizenshipIssuedDate">Citizenship Issued Date</label> <input
-											name="citizenshipIssuedDate" class="form-control" id="citizenshipIssuedDate"
-											placeholder="Enter Citizenship Issued Date"
-											value="" />
+										<label for="citizenshipIssuedDate">Citizenship Issued
+											Date</label> <input name="citizenshipIssuedDate" class="form-control"
+											id="citizenshipIssuedDate"
+											placeholder="Enter Citizenship Issued Date" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="citizenshipIssuedDistrict">Citizenship Issued District</label> <select
-											name="citizenshipIssuedDistrict" class="form-control" id="citizenshipIssuedDistrict">
+										<label for="citizenshipIssuedDistrict">Citizenship
+											Issued District</label> <select name="citizenshipIssuedDistrict"
+											class="form-control" id="citizenshipIssuedDistrict">
 											<option value="">Select District</option>
-											</select>
+										</select>
 									</div>
 
 
@@ -124,8 +123,7 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Phone/Mob Number</label> <input
 											name="phonenumber" class="form-control" id="phone-no"
-											placeholder="Enter Phone Number"
-											value="" />
+											placeholder="Enter Phone Number" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Email</label> <input
@@ -135,13 +133,12 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">DOB (B.S. YYYYMMDD)</label> <input
 											name="dob" class="form-control" id="name"
-											placeholder="Enter Date of birth"
-											value="" />
+											placeholder="Enter Date of birth" value="" />
 									</div>
 								</div>
 							</div>
 						</div>
-						
+
 
 						<div class="panel-body">
 							<div class="panel panel-primary">
@@ -150,20 +147,17 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Year</label> <input
 											name="ageyr" size="4" maxlength="2" minlength="2"
-											class="form-control" id="name" placeholder="Year"
-											value="" />
+											class="form-control" id="name" placeholder="Year" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Month</label> <input
 											name="agemth" class="form-control" id="name"
-											placeholder="Month" size="4" maxlength="2"
-											value="" />
+											placeholder="Month" size="4" maxlength="2" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Day</label> <input
 											name="ageday" class="form-control" id="name"
-											placeholder="Day" size="3" maxlength="2"
-											value="" />
+											placeholder="Day" size="3" maxlength="2" value="" />
 									</div>
 								</div>
 							</div>
@@ -175,20 +169,17 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last Exam Passed</label> <input
 											name="lastpassedexam" class="form-control" id="name"
-											placeholder="Last Exam"
-											value="" />
+											placeholder="Last Exam" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last exam passed Date
 											BS</label> <input name="passeddatebs" class="form-control" id="name"
-											placeholder="Last Exam Date BS"
-											value="" />
+											placeholder="Last Exam Date BS" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Last exam passed Date
 											AD</label> <input name="passeddatead" class="form-control" id="name"
-											placeholder="Last Exam Date"
-											value="" />
+											placeholder="Last Exam Date" value="" />
 									</div>
 								</div>
 							</div>
@@ -200,8 +191,8 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<div class="material-switch pull-right">
 											Open Compitition <input type="checkbox" id="open_comp"
-												name="open_comp" value="1">
-											<label for="open_comp" class="label-primary"></label>
+												name="open_comp" value="1"> <label for="open_comp"
+												class="label-primary"></label>
 										</div>
 									</div>
 									<div class="clearfix"></div>
@@ -215,22 +206,22 @@
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 												<div class="material-switch pull-right">
 													Mahila <input type="checkbox" id="mahila" name="mahila"
-														value="1">
-													<label for="mahila" class="label-primary"></label>
+														value="1"> <label for="mahila"
+														class="label-primary"></label>
 												</div>
 											</div>
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 												<div class="material-switch pull-right">
 													Aadibasi <input id="aadibasi" type="checkbox"
-														name="adibasi" value="1">
-													<label for="aadibasi" class="label-primary"></label>
+														name="adibasi" value="1"> <label for="aadibasi"
+														class="label-primary"></label>
 												</div>
 											</div>
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 												<div class="material-switch pull-right">
 													Madhesi <input id="madhesi" type="checkbox" name="madhesi"
-														value="1">
-													<label for="madhesi" class="label-primary"></label>
+														value="1"> <label for="madhesi"
+														class="label-primary"></label>
 												</div>
 
 											</div>
@@ -240,15 +231,15 @@
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 												<div class="material-switch pull-right">
 													Dalit <input type="checkbox" id="dalit" name="dalit"
-														value="1">
-													<label for="dalit" class="label-primary"></label>
+														value="1"> <label for="dalit"
+														class="label-primary"></label>
 												</div>
 											</div>
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 												<div class="material-switch pull-right">
 													Apanga <input id="apanga" type="checkbox" name="apanga"
-														value="1">
-													<label for="apanga" class="label-primary"></label>
+														value="1"> <label for="apanga"
+														class="label-primary"></label>
 												</div>
 											</div>
 											<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
@@ -265,31 +256,86 @@
 						</div>
 						<div class="panel-body">
 							<div class="panel panel-primary">
+								<div class="panel-heading clearfix">EDUCATION DETAIL</div>
+								<div class="panel-body" style="overflow:auto;">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>S.No</th>
+												<th>Institute, Country</th>
+												<th>Exam Name</th>
+												<th>Completion yr</th>
+												<th>Level</th>
+												<th>Total Marks/Percentage</th>
+												<th>Major Subject</th>
+												<th>Kaifiyat</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<%
+												for (int i = 1; i <= 5; i++) {
+											%>
+											<tr>
+												<td><%=i %></td>
+												<td><input type="text" size=auto
+													name="institute_name" /></td>
+												<td><input type="text" size=auto
+													name="exam_name" /></td>
+												<td><input type="text" size=auto
+													name="completion_year" /></td>
+												<td><input type="text" size=auto name="level" /></td>
+												<td><input type="text" size=auto
+													name="totalmarks_percentage" /></td>
+												<td><input type="text" size=auto
+													name="major_sub" /></td>
+												<td><input type="text" size=auto
+													name="kaifiyat" /></td>
+											</tr>
+											<%
+												}
+											%>
+
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-body">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DOCUMENTS</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="imagetype">Document Type</label> <select
-											name="imagetype" class="form-control" id="imagetype" >
+											name="imagetype" class="form-control" id="imagetype">
 											<option value="CTZ">Citizenship</option>
-											</select>
+										</select>
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Description</label> <input type="text" name="description" class="form-control" id="name" placeholder="Description" value="" />
+										<label for="description">Description</label> <input
+											type="text" name="description" class="form-control" id="name"
+											placeholder="Description" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="file">Image</label> <input type="file" name="file" class="form-control" id="file" />
+										<label for="file">Image</label> <input type="file" name="file"
+											class="form-control" id="file" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="imagetype">Bank Voucher</label> <select
-											name="imagetype" class="form-control" id="imagetype" >
+											name="imagetype" class="form-control" id="imagetype">
 											<option value="BNKV">Bank Voucher</option>
-											</select>
+										</select>
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Voucher Date</label> <input type="text" name="description" class="form-control" id="name" placeholder="Voucher Date" value="" required/>
+										<label for="description">Voucher Date</label> <input
+											type="text" name="description" class="form-control" id="name"
+											placeholder="Voucher Date" value="" required />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="file">Image</label> <input type="file" name="file" class="form-control" id="file" required/>
+										<label for="file">Image</label> <input type="file" name="file"
+											class="form-control" id="file" required />
 									</div>
 								</div>
 							</div>

@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.hrproject.dao.UserDao;
+import com.project.hrproject.entity.EducationModel;
 import com.project.hrproject.entity.ImageModel;
 import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.service.DocumentService;
@@ -60,15 +61,19 @@ public class HomeController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@RequestParam("file") MultipartFile[] file,
-			@ModelAttribute ImageModel imageModel, @ModelAttribute UserModel user, HttpServletResponse response, RedirectAttributes attributes) {
+			@ModelAttribute ImageModel imageModel, @ModelAttribute UserModel user,@ModelAttribute EducationModel educationModel, HttpServletResponse response, RedirectAttributes attributes) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		int status = userDao.signup(user);
 		String signup = "";
 		String upload = "";
 		
 		if(status>0) {
+			int educationSize = educationModel.getExam_name().length;
 			String userid = userDao.findMaxUserId();
- 
+			educationModel.setUserid(userid);
+			for(int i=0;i<educationSize;i++) {
+			userDao.saveEducation(educationModel, i);
+			}
 			map.put("signup status", HttpStatus.OK);
 			signup = "Signup Successful! ";
 		//blob conversion
