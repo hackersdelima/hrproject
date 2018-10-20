@@ -36,7 +36,9 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/hr_form_verification" />
 		<property name="username" value="root" />
-		<property name="password" value="123456" />
+<!-- 		<property name="password" value="1O6YuY48IBheqGj7" />
+ -->				<property name="password" value="123456" />
+		
 	</bean>
 
 

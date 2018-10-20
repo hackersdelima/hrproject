@@ -186,7 +186,7 @@
 
 							$scope.cashsummary = function() {
 								// var url = serviceBase + cashSummaryUrl;
-								var url = 'http://localhost:8080/hrproject/admin/applicants/'
+								var url = '../../admin/applicants/'
 										+ userid;
 								$http.get(url).success(function(data) {
 									$scope.results = data.data;
@@ -197,7 +197,7 @@
 						});
 
 		$.ajax({
-			url : 'http://localhost:8080/hrproject/report/findByIdEducation/'+userid
+			url : '../../report/findByIdEducation/'+userid
 		}).then(function(data) {
 				//datatable		   
 				$("#tablee").dataTable({
@@ -230,7 +230,7 @@
 
 		$.ajax({
 			type : "GET",
-			url : "http://localhost:8080/hrproject/document/findByUserid/"
+			url : "../../document/findByUserid/"
 					+ userid,
 			success : function(result) {
 				$("#image1").attr("src",

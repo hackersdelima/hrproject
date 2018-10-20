@@ -54,8 +54,8 @@ public class LoginDaoImpl implements LoginDao{
 			return userexists;
 		}
 	 public UserModel getUserDetails(UserModel user){
-			String sql="SELECT * FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
-			return jdbcTemplate.queryForObject(sql, new ClassMapper());
+			String sql="SELECT * FROM usertbl WHERE username=:username AND password=:password";
+			return namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(user),new BeanPropertyRowMapper<UserModel>(UserModel.class));
 		}
 		
 

@@ -1,5 +1,7 @@
 package com.project.hrproject.entity;
 
+import java.util.Arrays;
+
 public class UserModel {
 	private String advertiseno, name, name1, father, mother, spouse, permanentaddress, tempaddress, citizenshipno,
 			phonenumber, email, dob, ageyr, agemth, ageday, lastpassedexam, passeddatebs, passeddatead, userid, status,
@@ -7,6 +9,7 @@ public class UserModel {
 	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
 	private String citizenshipIssuedDistrict, citizenshipIssuedDate;
 	private String grandfather;
+	private byte[] image;
 	
 	public String getCitizenshipIssuedDistrict() {
 		return citizenshipIssuedDistrict;
@@ -263,6 +266,15 @@ public class UserModel {
 	public void setGrandfather(String grandfather) {
 		this.grandfather = grandfather;
 	}
+	
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
 
 	@Override
 	public String toString() {
@@ -275,7 +287,7 @@ public class UserModel {
 				+ password + ", open_comp=" + open_comp + ", mahila=" + mahila + ", adibasi=" + adibasi + ", madhesi="
 				+ madhesi + ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chetra=" + pichadiyeko_chetra
 				+ ", citizenshipIssuedDistrict=" + citizenshipIssuedDistrict + ", citizenshipIssuedDate="
-				+ citizenshipIssuedDate + ", grandfather=" + grandfather + "]";
+				+ citizenshipIssuedDate + ", grandfather=" + grandfather + ", image=" + Arrays.toString(image) + "]";
 	}
 
 }
