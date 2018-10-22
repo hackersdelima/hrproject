@@ -76,5 +76,11 @@ private JdbcTemplate jdbcTemplate;
 		return jdbcTemplate.update(query);
 	}
 
+	@Override
+	public int verificationStatus(String userid) {
+		String sql = "select status from usertbl where userid='"+userid+"'";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
 	
 }

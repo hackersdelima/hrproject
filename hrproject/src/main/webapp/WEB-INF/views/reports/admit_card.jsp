@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 	<%@taglib prefix="spring" uri="http://www.springframework.org/tags"  %>
 <jsp:include page="../include.jsp"></jsp:include>
 <spring:url value="/reg/next" var="formUrl"></spring:url>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -38,10 +35,40 @@ body {
 	font-size: 180%;
 	
 }
+
+page {
+	background: white;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.5cm;
+	box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+page[size="A4"] {
+	width: 21cm;
+	height: 29.7cm;
+}
+
+@media print {
+	body, page {
+		margin: 0;
+		box-shadow: 0;
+	}
+}
+
+@page {
+	size: auto; /* auto is the current printer page size */
+	margin: 0mm; /* this affects the margin in the printer settings */
+}
 </style>
 </head>
 <body class="background">
-<div class="col-md-12">
+<div>
+<a class="btn btn-success" onClick="printDiv('printdiv')">Print</a>
+
+</div>
+<page size="A4">
+<div class="col-md-12" id="printdiv">
 	<div class="col-md-4">
 		<div class="col-md-2"></div>
 		<div class="col-md-2">
@@ -56,7 +83,7 @@ body {
 	
 	<div class="div-square" align="center">
 				<!-- <div class="pull-right" style="width:30%;height:150px;border:1px solid black"> -->
-				<img src="//localhost/adblmis/images/${sessionScope.userDetail.username}101.jpg" style="height:100px;width:100px;" /> 
+				<img src="data:image/png;base64,${sessionScope.userDetail.image }" style="height:100px;width:100px;" /> 
 				
 				
 					<!-- kf;kf]6{     ;fOhsf] k"/f   d'vfs[lt   k'/} b]lvg]   t:jL/   oxf+ 6f+:g]  /  t:jL/  /  kmf/fddf   kg]{   u/L   pDd]bjf/n]      ;xL      ug]{ .   -->
@@ -69,10 +96,10 @@ body {
 <div class="col-md-12">
 <div class="col-md-2"></div>
 	<div class="col-md-4">
-		  s_ v'NNff k|ltof]lutftkm{  <input type ="text">
+		  s_ v'NNff k|ltof]lutftkm{  
 	</div>
 	<div class="col-md-4">
-	      v_ ;dfj]zLtkm{    <input type ="text">
+	      v_ ;dfj]zLtkm{    
 	</div>
 	<div class="col-md-2"></div>
 </div>
@@ -131,6 +158,18 @@ o; a}+saf6  ldlt M  df<span>/</span>b]lv  lnOg]  pQm  kbsf]  k/LIffdf  tkfO{nfO{
 <div>
 b|i6Jo M s[kof k5fl8 x]g'{xf 
 </div>
+</div>
+</page>
+<script type="text/javascript">
+function printDiv(divName) {
+	var printContents = document.getElementById(divName).innerHTML;
+	var originalContents = document.body.innerHTML;
+	document.body.innerHTML = printContents;
+	window.print();
+	document.body.innerHTML = originalContents;
+}
+
+</script>
 </body>
 
 </html>

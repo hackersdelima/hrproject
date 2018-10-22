@@ -20,12 +20,10 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.project.hrproject" />
+	<context:component-scan base-package="com" />
+	
 	<mvc:interceptors>
     <beans:bean class="com.project.hrproject.SessionHandler" />
 </mvc:interceptors>
-	
-	
-	
-	
 </beans:beans>
+

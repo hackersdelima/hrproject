@@ -11,11 +11,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.hrproject.dao.LoginDao;
 import com.project.hrproject.dao.RegistrationDao;
+import com.project.hrproject.entity.AdminUserModel;
 import com.project.hrproject.entity.UserModel;
 
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"userDetail","vacancy"})
+@SessionAttributes({"userDetail","vacancy", "adminDetail"})
 public class LoginController {
 	@Autowired
 	private LoginDao loginDao;
@@ -41,29 +42,26 @@ public class LoginController {
 	public UserModel getUser(UserModel user) {
 		return loginDao.getUserDetails(user);
 	}
-	/*@Autowired
-	private LoginDao loginDao;*/
-	
-	/*@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Model model){
-		System.out.println("login invoked");
-		model.addAttribute("user", new UserModel());
-		boolean status = loginDao.verifyUser(user);
-		if (status) {
-			UserModel userDetail = getUser(user);
-			model.addAttribute("userDetail", userDetail);
-			return "profile";
-		} else {
-			return "index";
-		}
-		
-		return "";
-		
-		
-	}
-	public UserModel getUser(UserModel user) {
-		return loginDao.getUserDetails(user);
-	}*/
-	
 
+	@RequestMapping(value = "/admin", method = RequestMethod.POST)
+	public String adminlogin(@ModelAttribute AdminUserModel adminUserModel, Model model, RedirectAttributes attributes) {
+		try {
+			AdminUserModel userDetail  = loginDao.findAdminUser(adminUserModel);
+		if(userDetail!=null) {
+			model.addAttribute("adminDetail", userDetail);
+			return "adminprofile";
+		}
+		else {
+		attributes.addFlashAttribute("msg","Invalid Login Credentials!");
+			return "redirect:/admin";
+		}
+	}
+	
+	catch(Exception e) {
+		System.out.println(e);
+		attributes.addFlashAttribute("msg","Invalid Login Credentials!");
+		return "redirect:/admin";
+	}
+	}
+	
 }

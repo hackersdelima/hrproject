@@ -44,7 +44,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>${sessionScope.userDetail.username }</h2>
+                <h2>${sessionScope.adminDetail.username }</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,14 +61,12 @@
                       <li><a href="#" target="iframe_a">Dashboard</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Applicant Verification <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-               <%--        <li><a href="<spring:url value="/nav/registration_form"/>" target="iframe_a">Registration Form</a></li>
-                      <li><a href="<spring:url value="/nav/documents_upload"/>" target="iframe_a">Documents Upload</a></li> --%>
-                       <li><a href="<spring:url value="/nav/entrance_card"/>" target="iframe_a">Entrance Card</a></li>
-                     <%--  <li><a href="<spring:url value="/nav/verificationStatus"/>" target="iframe_a">Verification Status</a></li> --%>
+                      <li><a href="<spring:url value="/nav/applicants"/>" target="iframe_a">Signup Verification</a></li>
                     </ul>
                   </li>
+                   <li><a href="/entrancecards" target="iframe_a">Entrance Cards</a></li>
                   
                 </ul>
               </div>
@@ -106,7 +104,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="">Username
+                    <img src="${pageContext.request.contextPath}/resources/images/user.jpg" alt="">${sessionScope.adminDetail.username }
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -118,7 +116,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="<spring:url value="/logout/"/>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<spring:url value="/logout/admin"/>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>

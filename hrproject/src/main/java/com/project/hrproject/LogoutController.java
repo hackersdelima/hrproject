@@ -16,5 +16,12 @@ public class LogoutController {
 		attributes.addAttribute("msg","Logout Successful!");
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value="/admin")
+	public String admin(HttpSession session, RedirectAttributes attributes){
+		session.invalidate();
+		attributes.addAttribute("msg","Logout Successful!");
+		return "redirect:/admin";
+	}
 
 }

@@ -1,4 +1,5 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <html>
 <head>
 <title>ADBL Login</title>
@@ -19,12 +20,11 @@
 		<p style="color: red;">${msg}</p>
 		<br> <br>
 
-		<spring:url value="/login/" var="formUrl" />
+		<spring:url value="/login/admin" var="formUrl" />
 
 		<form class="login-form" action="${formUrl }" method="POST">
 			<table style="width: 80%; margin: auto;">
-			<caption><a href="<spring:url value="/nav/signup"/>"
-						style="font-size: 80%;">New Member? Signup Here!</a></caption>
+			<caption>:: ADMIN LOGIN ::</caption>
 				<tr>
 					<td colspan="2"><label for="user-name">Username</label></td>
 
@@ -44,4 +44,3 @@
 	</div>
 </body>
 </html>
-

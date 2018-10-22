@@ -13,4 +13,5 @@ public interface RegistrationDao {
 	 public List<VacancyModel> getAdvertisements();
 	 
 	 public int documentUploadSave(String document_type, String username, String filename);
+	public int verificationStatus(String userid);
 }

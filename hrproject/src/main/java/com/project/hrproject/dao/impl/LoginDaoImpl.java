@@ -6,26 +6,38 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.project.hrproject.dao.LoginDao;
+import com.project.hrproject.entity.AdminUserModel;
 import com.project.hrproject.entity.UserModel;
 
 public class LoginDaoImpl implements LoginDao{
-private JdbcTemplate jdbcTemplate;
-	
+	private NamedParameterJdbcTemplate namedParamterJdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
+		 this.namedParamterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate);
 	}
-	 
-	 @Autowired
-	 private void setDataSource(DataSource dataSource)
-	 {
+
+	@Autowired
+	public void setDataSource(DataSource dataSource){
 		 this.jdbcTemplate=new JdbcTemplate(dataSource);
-		 
-	 }
+		
+	}
+	
+	@Override
+	public AdminUserModel findAdminUser(AdminUserModel adminUserModel) {
+		System.out.println(adminUserModel);
+		String sql = "select id, staffCode, username, branchCode, regioncode from adminusertbl where username = :username and password = :password";
+		AdminUserModel user = namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(adminUserModel),new BeanPropertyRowMapper<AdminUserModel>(AdminUserModel.class));
+		return user;
+		}
 	 
 	 public boolean verifyUser(UserModel user)
 		{
@@ -42,8 +54,8 @@ private JdbcTemplate jdbcTemplate;
 			return userexists;
 		}
 	 public UserModel getUserDetails(UserModel user){
-			String sql="SELECT * FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
-			return jdbcTemplate.queryForObject(sql, new ClassMapper());
+			String sql="SELECT * FROM usertbl WHERE username=:username AND password=:password";
+			return namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(user),new BeanPropertyRowMapper<UserModel>(UserModel.class));
 		}
 		
 
@@ -86,5 +98,8 @@ private JdbcTemplate jdbcTemplate;
 			}
 			
 		}
+
+
+		
 
 }
