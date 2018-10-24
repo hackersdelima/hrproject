@@ -71,6 +71,7 @@ public class HomeController {
 			int educationSize = educationModel.getExam_name().length;
 			String userid = userDao.findMaxUserId();
 			educationModel.setUserid(userid);
+			System.out.println("education is"+educationModel);
 			for(int i=0;i<educationSize;i++) {
 			userDao.saveEducation(educationModel, i);
 			}

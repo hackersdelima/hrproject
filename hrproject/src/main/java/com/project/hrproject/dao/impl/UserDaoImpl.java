@@ -62,16 +62,9 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void saveEducation(EducationModel educationModel, int i) {
 		System.out.println( educationModel.getCompletion_year()[i]);
-		String sql = "insert into educationdetail(userid, institute_name, exam_name, completion_year, level, totalmarks_percentage , major_sub, kaifiyat) values (:userid, :institute_name, :exam_name, :completion_year, :level, :totalmarks_percentage , :major_sub, :kaifiyat)";
+		String sql = "insert into educationdetail(userid, institute_name, exam_name, completion_year, level, totalmarks_percentage , major_sub, kaifiyat) values (:userid, :institute_name["+i+"], :exam_name["+i+"], :completion_year["+i+"], :level["+i+"], :totalmarks_percentage["+i+"] , :major_sub["+i+"], :kaifiyat["+i+"])";
 			MapSqlParameterSource map = new MapSqlParameterSource();
 			map.addValue("userid",educationModel.getUserid());
-			map.addValue("institute_name", educationModel.getInstitute_name()[i]);
-			map.addValue("exam_name", educationModel.getExam_name()[i]);
-			map.addValue("completion_year", educationModel.getCompletion_year()[i]);
-			map.addValue("level", educationModel.getLevel()[i]);
-			map.addValue("totalmarks_percentage", educationModel.getTotalmarks_percentage()[i]);
-			map.addValue("major_sub", educationModel.getMajor_sub()[i]);
-			map.addValue("kaifiyat", educationModel.getKaifiyat()[i]);
 		template.update(sql, new BeanPropertySqlParameterSource(educationModel));
 	}
 
