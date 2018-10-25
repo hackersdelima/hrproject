@@ -68,4 +68,14 @@ public class UserDaoImpl implements UserDao {
 		template.update(sql, new BeanPropertySqlParameterSource(educationModel));
 	}
 
+	@Override
+	public int checkUsername(String username) {
+		String sql = "select count(username) from usertbl where username='"+username+"'";
+		int count = jdbcTemplate.queryForObject(sql, Integer.class);
+		if(count>1) {
+			return 1;
+		}
+		else {return 0;}
+	}
+
 }

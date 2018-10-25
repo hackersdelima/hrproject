@@ -9,8 +9,8 @@
 
 <body class="background" style="background-color: #b3ffcc">
 	<spring:url value="/signup" var="formUrl" />
-	<form:form cssClass="login-form" action="${formUrl }" method="POST"
-		enctype="multipart/form-data">
+	<form class="login-form" action="${formUrl }" method="POST"
+		enctype="multipart/form-data" onsubmit="return confirmation();">
 
 		<div class="col-md-8 col-sm-8 col-xs-8  col-sm-offset-2">
 			<div class="col-md-12 col-xs-12"
@@ -344,7 +344,12 @@
 				</div>
 			</div>
 		</div>
-	</form:form>
+	</form>
+	<script type="text/javascript">
+		function confirmation(){
+			return confirm('Do you really want to submit the form?');
+		}
+	</script>
 </body>
 </html>
 

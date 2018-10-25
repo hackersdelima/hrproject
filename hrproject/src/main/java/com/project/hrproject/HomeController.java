@@ -25,6 +25,7 @@ import com.project.hrproject.entity.EducationModel;
 import com.project.hrproject.entity.ImageModel;
 import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.service.DocumentService;
+import com.project.hrproject.utils.CharacterGenerator;
 
 @Controller
 @SessionAttributes("user")
@@ -36,10 +37,13 @@ public class HomeController {
 	@Autowired
 	DocumentService documentService;
 	
+	CharacterGenerator cg = new CharacterGenerator();
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(ModelMap model, @ModelAttribute("msg") String msg) {
+	public String home(ModelMap model, @ModelAttribute("msg") String msg, @ModelAttribute("up") String up) {
 		model.put("user", new UserModel());
 		model.addAttribute("msg", msg);
+		model.addAttribute("up", up);
 		return "index";
 	}
 	
@@ -62,10 +66,26 @@ public class HomeController {
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@RequestParam("file") MultipartFile[] file,
 			@ModelAttribute ImageModel imageModel, @ModelAttribute UserModel user,@ModelAttribute EducationModel educationModel, HttpServletResponse response, RedirectAttributes attributes) {
+		int status =0;
+		int usernamestatus=0;
 		Map<String, Object> map = new HashMap<String, Object>();
-		int status = userDao.signup(user);
+		Map<String, Object> upmap = new HashMap<String, Object>();
+		
+		//creating random username pwd
+		user.setPassword(cg.randomString(10));
+		user.setUsername(cg.randomString(8));
+		usernamestatus = userDao.checkUsername(user.getUsername());
+		if(usernamestatus>0) {
+			user.setUsername(cg.randomString(5));
+			usernamestatus = userDao.checkUsername(user.getUsername());
+		}
+		
+		//user signup
+		 status = userDao.signup(user);
+		
 		String signup = "";
 		String upload = "";
+		String usernamepwd="";
 		
 		if(status>0) {
 			int educationSize = educationModel.getExam_name().length;
@@ -77,6 +97,7 @@ public class HomeController {
 			}
 			map.put("signup status", HttpStatus.OK);
 			signup = "Signup Successful! ";
+			usernamepwd = "Username: "+user.getUsername()+" , Password: "+user.getPassword();
 		//blob conversion
 				if (file != null && file.length > 0) {
 					for (int i = 0; i < file.length; i++) {
@@ -113,6 +134,7 @@ public class HomeController {
 		}
 		System.out.println(map);
 		attributes.addAttribute("msg", signup+upload);
+		attributes.addAttribute("up", usernamepwd);
 				return "redirect:/";
 	}
 	

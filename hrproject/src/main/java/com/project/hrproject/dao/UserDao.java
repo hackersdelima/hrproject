@@ -12,4 +12,6 @@ public interface UserDao {
 
 	public void saveEducation(EducationModel educationModel, int i);
 
+	public int checkUsername(String username);
+
 }

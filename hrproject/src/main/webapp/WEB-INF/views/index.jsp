@@ -1,4 +1,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
 <title>ADBL Login</title>
@@ -17,6 +19,8 @@
 			src="${pageContext.request.contextPath}/resources/images/adbl-logo.png"
 			alt="logo" class="img-responsive" />
 		<p style="color: red;">${msg}</p>
+		<p style="color:blue;">
+		 ${up }</p>
 		<br> <br>
 
 		<spring:url value="/login/" var="formUrl" />
