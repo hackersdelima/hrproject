@@ -11,10 +11,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.project.hrproject.dao.RegistrationDao;
-import com.project.hrproject.entity.VacancyModel;
+import com.project.hrproject.entity.Districtcodes;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
-import com.project.hrproject.entity.UserModel;
+import com.project.hrproject.entity.VacancyModel;
 
 public class RegistrationDaoImpl implements RegistrationDao {
 private JdbcTemplate jdbcTemplate;
@@ -66,6 +66,8 @@ private JdbcTemplate jdbcTemplate;
 		}
 		 
 	 }
+	 
+	 
 
 	@Override
 	public int documentUploadSave(String document_type, String username,
@@ -81,6 +83,26 @@ private JdbcTemplate jdbcTemplate;
 		String sql = "select status from usertbl where userid='"+userid+"'";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+	
+	
+
+	@Override
+	public List<Districtcodes> getDistricts() {
+		String sql = "select * from districtcodes";
+		return jdbcTemplate.query(sql, new DistrictsMapper());
+	}
+	
+	 public static final class DistrictsMapper implements RowMapper<Districtcodes>{
+
+			@Override
+			public Districtcodes mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Districtcodes d = new Districtcodes();
+			d.setDistrictcode(rs.getString("districtcode"));
+			d.setDistrictname(rs.getString("districtname"));
+				return d;
+			}
+			 
+		 }
 
 	
 }

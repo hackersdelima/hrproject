@@ -26,6 +26,7 @@ import com.project.hrproject.entity.ImageModel;
 import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.service.DocumentService;
 import com.project.hrproject.utils.CharacterGenerator;
+import com.project.hrproject.utils.EmailFunction;
 
 @Controller
 @SessionAttributes("user")
@@ -39,8 +40,11 @@ public class HomeController {
 	
 	CharacterGenerator cg = new CharacterGenerator();
 	
+	EmailFunction email = new EmailFunction();
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(ModelMap model, @ModelAttribute("msg") String msg, @ModelAttribute("up") String up) {
+		
 		model.put("user", new UserModel());
 		model.addAttribute("msg", msg);
 		model.addAttribute("up", up);

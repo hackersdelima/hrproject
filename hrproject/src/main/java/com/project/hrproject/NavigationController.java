@@ -41,6 +41,7 @@ public class NavigationController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(ModelMap model, @ModelAttribute("msg") String msg) {
+		model.put("districts", registrationDao.getDistricts());
 		model.put("ad_nos", registrationDao.getAdvertisements());
 		model.put("user", new UserModel());
 		return "signup";
