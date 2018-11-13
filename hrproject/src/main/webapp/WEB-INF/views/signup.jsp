@@ -4,7 +4,23 @@
 <jsp:include page="include.jsp"></jsp:include>
 <html>
 <head>
-<title>ADBL Signup</title>
+<title>ADBL Application</title>
+<style>
+@font-face { 
+font-family: 'preeti';
+/* src: url('fonts/preeti.TTF') format('truetype'); */
+src: url('preeti.TTF','truetype');
+ }
+
+
+
+	.nep {
+	font-family: preeti;
+	font-size:20px;
+	/* font-weight: normal;
+	font-style: normal; */
+}
+</style>
 </head>
 
 <body class="background" style="background-color: #b3ffcc">
@@ -23,29 +39,57 @@
 							alt="logo" class="img-responsive"
 							style="width: 100%; box-shadow: 5px 6px #888888;" /> <br>
 						<h4>
-							<strong>APPLICANT SIGNUP FORM</strong>
+							<strong>APPLICANT FORM</strong>
 						</h4>
 						<div class="ln_solid"></div>
-						<div class="form-group">
+						<%-- <div class="form-group">
 							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
 								<spring:url value="/" var="loginUrl" />
 								<a href="${loginUrl }" class="btn-link"><strong>Already
-										a member? Login.</strong></a>
+										a member? Login.</strong></a> 
 								<button class="btn btn-info" type="button" id="validate">Validate</button>
+								
 								<input type="submit" class="btn btn-success" value="Signup">
 							</div>
-						</div>
-						<br> <br>
+						</div> --%>
+						<!-- <br> <br> -->
 						<div class="clearfix"></div>
 					</div>
 
 					<div class="x_content">
 
+							<div class="panel-body">
+							<div class="panel panel-primary">
+								<div class="panel-heading clearfix nep">g]kfnLdf ljj/0f</div>
+								<div class="panel-body">
+										<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Name(Nepali)</label> <input
+											name="name" class="form-control nep" id="name"
+											placeholder="gfd g]kfnLdf" value="" />
+									</div>
+									
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Father's Name(Nepali)</label> <input
+											name="fathernep" class="form-control nep" id="name"
+											placeholder="afa'sf] gfd g]kfnLdf" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Grandfather's Name(Nepali)</label> <input
+											name="grandfather" class="form-control nep" id="name"
+											placeholder="afh]sf] gfd g]kfnLdf" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Permanent Address(Nepali)</label> <input
+											name="addressnep" class="form-control nep" id="name"
+											placeholder=":yfoL 7]ufgf g]kfnLdf" value="" />
+									</div>
+</div></div></div></div>
+
 						<div class="panel-body">
 							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DETAILS</div>
 								<div class="panel-body">
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+<%-- 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Advertise No</label> <select
 											name="advertiseno" class="form-control" id="advertiseno">
 											<option value="">Select Adv. No</option>
@@ -53,30 +97,44 @@
 												<option value="${a.advertiseno }">${a.advertiseno }</option>
 											</c:forEach>
 										</select>
+									</div> 
+									
+										<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">First Name(English)*</label> <input
+											name="name1" class="form-control " id="name"
+											placeholder="Enter Name" value="" />--%>
 									</div>
+																
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Name(Nepali)</label> <input
-											name="name" class="form-control" id="name"
-											placeholder="Devnagari unicode" value="" />
+										<label for="exampleInputEmail1">First Name *</label> <input
+											name="name1" class="form-control " id="name"
+											placeholder="Enter Name" value="" />
 									</div>
+									
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Name(English)</label> <input
+										<label for="exampleInputEmail1">Middle Name</label> <input
+											name="name1" class="form-control " id="name"
+											placeholder="Enter Name" value="" />
+									</div>
+									
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Last Name*</label> <input
 											name="name1" class="form-control " id="name"
 											placeholder="Enter Name" value="" />
 									</div>
 									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Father</label> <input
+										<label for="exampleInputEmail1">Father'Name</label> <input
 											name="father" class="form-control" id="name"
 											placeholder="Enter Father" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Mother</label> <input
+										<label for="exampleInputEmail1">Mother's Name</label> <input
 											name="mother" class="form-control" id="name"
 											placeholder="Enter Mother" value="" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Spouse</label> <input
+										<label for="exampleInputEmail1">Spouse Name</label> <input
 											name="spouse" class="form-control" id="name"
 											placeholder="Enter Spouse" value="" />
 									</div>
@@ -121,8 +179,8 @@
 										</select>
 									</div>
 
-
-									<div class="clearfix"></div>
+ <div class="clearfix">
+									
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Phone/Mob Number</label> <input
 											name="phonenumber" class="form-control" id="phone-no"
@@ -140,7 +198,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+					</div>	
 
 
 						<div class="panel-body">
@@ -167,7 +225,7 @@
 						</div>
 						<div class="panel-body">
 							<div class="panel panel-primary">
-								<div class="panel-heading clearfix">Permanent Address</div>
+								<div class="panel-heading clearfix">New Permanent Address</div>
 								<div class="panel-body">
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">District</label> 
@@ -373,6 +431,7 @@
 							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DOCUMENTS</div>
 								<div class="panel-body">
+								<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="imagetype">Bank Voucher</label> <select
 											name="imagetype" class="form-control" id="imagetype">
@@ -388,6 +447,7 @@
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" required />
 									</div>
+									
 								<!-- 	<div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										<label for="voucheramount">Voucher Amount</label> 
 											<input type="text" name="voucheramount" class="form-control col-md-4" id="voucheramount"
@@ -400,16 +460,16 @@
 											<option value="CTZ">Citizenship</option>
 										</select>
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+									 <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="description">Description</label> <input
 											type="text" name="description" class="form-control" id="name"
 											placeholder="Description" value="" />
-									</div>
+									</div> 
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" />
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+									<!-- <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="imagetype">Bank Voucher</label> <select
 											name="imagetype" class="form-control" id="imagetype">
 											<option value="BNKV">Bank Voucher</option>
@@ -423,7 +483,8 @@
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" required />
-									</div>
+									</div> -->
+									
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="imagetype">Character Certificate</label> <select
 											name="imagetype" class="form-control" id="imagetype">
@@ -434,13 +495,33 @@
 										<label for="description">Description</label> <input
 											type="text" name="description" class="form-control" id="name"
 											placeholder="Description" value="" />
-									</div>
+									</div> 
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" />
 									</div>
+									
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="imagetype">Signature</label> <select
+											name="imagetype" class="form-control" id="imagetype">
+											<option value="CHC">Signature</option>
+										</select>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="description">Description</label> <input
+											type="text" name="description" class="form-control" id="name"
+											placeholder="Description" value="" />
+									</div> 
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="file">Image</label> <input type="file" name="file"
+											class="form-control" id="file" />
+									</div>
+									
+									
 								</div>
 							</div>
+						</div>
+						
 						</div>
 						<div class="table-responsive">
 			<table width="100%" cellpadding="0" cellspacing="1"
@@ -474,11 +555,20 @@
 		</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			
+			<div class="form-group">
+							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+								<spring:url value="/" var="loginUrl" />
+								<%-- <a href="${loginUrl }" class="btn-link"><strong>Already
+										a member? Login.</strong></a> 
+								<button class="btn btn-info" type="button" id="validate">Validate</button>
+								--%>
+								<input type="submit" class="btn btn-success" value="Submit">
+							</div>
+						</div>
+		
 		
 	</form>
-
 
 	<script type="text/javascript">
 		function confirmation(){
