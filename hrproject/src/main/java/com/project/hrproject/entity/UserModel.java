@@ -3,7 +3,7 @@ package com.project.hrproject.entity;
 import java.util.Arrays;
 
 public class UserModel {
-	private String advertiseno, name, name1, father, mother, spouse, permanentaddress, tempaddress, citizenshipno,
+	private String advertiseno, name,grandfathernep,fathernep,addressnep, name1,fname,mname,lname, father, mother, spouse, permanentaddress, tempaddress, citizenshipno,
 			phonenumber, email, dob, ageyr, agemth, ageday, lastpassedexam, passeddatebs, passeddatead, userid, status,
 			username, password;
 	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
@@ -11,6 +11,54 @@ public class UserModel {
 	private String grandfather;
 	private byte[] image;
 	
+	public String getGrandfathernep() {
+		return grandfathernep;
+	}
+
+	public void setGrandfathernep(String grandfathernep) {
+		this.grandfathernep = grandfathernep;
+	}
+
+	public String getAddressnep() {
+		return addressnep;
+	}
+
+	public void setAddressnep(String addressnep) {
+		this.addressnep = addressnep;
+	}
+
+	public String getFathernep() {
+		return fathernep;
+	}
+
+	public void setFathernep(String fathernep) {
+		this.fathernep = fathernep;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getMname() {
+		return mname;
+	}
+
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
 	public String getCitizenshipIssuedDistrict() {
 		return citizenshipIssuedDistrict;
 	}
@@ -278,7 +326,7 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "UserModel [advertiseno=" + advertiseno + ", name=" + name + ", name1=" + name1 + ", father=" + father
+		return "UserModel [advertiseno=" + advertiseno + ", name=" + name + ",grandfathernep=" + grandfathernep + ",fathernep=" +fathernep + ",addressnep=" + addressnep +", name1=" + name1 + ", father=" + father
 				+ ", mother=" + mother + ", spouse=" + spouse + ", permanentaddress=" + permanentaddress
 				+ ", tempaddress=" + tempaddress + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber
 				+ ", email=" + email + ", dob=" + dob + ", ageyr=" + ageyr + ", agemth=" + agemth + ", ageday=" + ageday
