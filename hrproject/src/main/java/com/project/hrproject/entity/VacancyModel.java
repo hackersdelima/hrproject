@@ -1,8 +1,26 @@
 package com.project.hrproject.entity;
 
 public class VacancyModel {
-private String advertiseno,posten,postnp,serviceen,servicenp,groupen,groupnp, date;
+private String id, advertiseno,posten,postnp,serviceen,servicenp,groupen,groupnp, date, regioncode;
 
+
+
+
+public String getId() {
+	return id;
+}
+
+public void setId(String id) {
+	this.id = id;
+}
+
+public String getRegioncode() {
+	return regioncode;
+}
+
+public void setRegioncode(String regioncode) {
+	this.regioncode = regioncode;
+}
 
 public String getDate() {
 	return date;

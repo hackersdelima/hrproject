@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.project.hrproject.dao.RegistrationDao;
+import com.project.hrproject.entity.ApplicantsModel;
 import com.project.hrproject.entity.Districtcodes;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
@@ -49,6 +50,12 @@ private JdbcTemplate jdbcTemplate;
 		 return jdbcTemplate.queryForObject(sql, new AdvertisementMapper());
 	 }
 	 
+	 @Override
+		public VacancyModel getAdvertisementsById(String id) {
+			String query = "select * from vacancytbl where id='"+id+"'";
+			 return jdbcTemplate.queryForObject(query, new AdvertisementMapper());
+		}
+	 
 	 public static final class AdvertisementMapper implements RowMapper<VacancyModel>{
 
 		@Override
@@ -62,6 +69,8 @@ private JdbcTemplate jdbcTemplate;
 			a.setServiceen(rs.getString("serviceen"));
 			a.setServicenp(rs.getString("servicenp"));
 			a.setDate(rs.getString("date"));
+			a.setRegioncode(rs.getString("regioncode"));
+			a.setId(rs.getString("id"));
 			return a;
 		}
 		 
@@ -103,6 +112,24 @@ private JdbcTemplate jdbcTemplate;
 			}
 			 
 		 }
+
+
+
+	@Override
+	public int register(ApplicantsModel am) {
+		int status=0;
+		String query = "insert into usertbl (username, password, title, firstname, middlename, lastname, email, advertiseno) values ('"+am.getUsername()+"', '"+am.getPassword()+"', '"+am.getTitle()+"', '"+am.getFirstname()+"', '"+am.getMiddlename()+"', '"+am.getLastname()+"', '"+am.getEmail()+"', '"+am.getAdvertiseno()+"')";
+		try {
+			status = jdbcTemplate.update(query);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			status = 0;
+		}
+		return status;
+	}
+
+	
 
 	
 }

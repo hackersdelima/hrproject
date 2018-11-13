@@ -23,20 +23,9 @@
 							alt="logo" class="img-responsive"
 							style="width: 100%; box-shadow: 5px 6px #888888;" /> <br>
 						<h4>
-							<strong>APPLICANT SIGNUP FORM</strong>
+							<strong>APPLICANT FORM</strong>
 						</h4>
-						<div class="ln_solid"></div>
-						<div class="form-group">
-							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-								<spring:url value="/" var="loginUrl" />
-								<a href="${loginUrl }" class="btn-link"><strong>Already
-										a member? Login.</strong></a>
-								<button class="btn btn-info" type="button" id="validate">Validate</button>
-								<input type="submit" class="btn btn-success" value="Signup">
-							</div>
-						</div>
-						<br> <br>
-						<div class="clearfix"></div>
+						
 					</div>
 
 					<div class="x_content">
@@ -88,16 +77,6 @@
 											name="grandfather" class="form-control" id="grandfather"
 											placeholder="Enter Grand Father Name" value="" />
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Permanent Address</label> <input
-											name="permanentaddress" class="form-control" id="name"
-											placeholder="Enter Permanent Address" value="" />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Temporary Address</label> <input
-											name="tempaddress" class="form-control" id="name"
-											placeholder="Enter Temp Address" value="" />
-									</div>
 									<div class="clearfix"></div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="exampleInputEmail1">Citizenship No</label> <input
@@ -141,7 +120,50 @@
 								</div>
 							</div>
 						</div>
+						<div class="panel-body">
+							<div class="panel panel-primary">
+								<div class="panel-heading clearfix">Address</div>
+								<div class="panel-body">
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Permanent Address(Citizenship)</label> <input
+											name="permanentaddress" class="form-control" id="name"
+											placeholder="Enter Permanent Address" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="perdistrict">District</label> <select
+											class="form-control perdistrict" name="perdistrict">
+											<option value="">Select District</option>
+											<c:forEach items="${districts }" var="d">
+												<option value="${d.districtcode }">${d.districtname }</option>
+											</c:forEach>
+										</select>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">VDC/Municipality</label> <select
+											class="form-control" name="vdcmun">
+											<option value="">Select VDC/Municipality</option>
+										</select>
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Ward No</label> <select
+											class="form-control" name="perwardno">
+											<option value="">Select Ward No</option>
+										</select>
+									</div>
 
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="tole">Tole</label> <input name="tole"
+											class="form-control" id="tole" placeholder="Enter Tole"
+											value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Temporary Address</label> <input
+											name="tempaddress" class="form-control" id="name"
+											placeholder="Enter Temp Address" value="" />
+									</div>
+								</div>
+							</div>
+						</div>
 
 						<div class="panel-body">
 							<div class="panel panel-primary">
@@ -165,56 +187,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="panel-body">
-							<div class="panel panel-primary">
-								<div class="panel-heading clearfix">Permanent Address</div>
-								<div class="panel-body">
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">District</label> 
-										<select class="form-control" name="perdistrict">
-											<option value="">Select District</option>
-											<c:forEach items="${districts }" var="d">
-												<option value="${d.districtcode }">${d.districtname }</option>
-											</c:forEach>
-										</select>
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">VDC/Municipality</label> 
-										<select class="form-control" name="vdcmun">
-											<option value="">Select VDC/Municipality</option>
-										</select>
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Ward No</label> 
-										<select class="form-control" name="perwardno">
-											<option value="">Select Ward No</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="panel panel-primary">
-								<div class="panel-heading clearfix">EXAM DETAIL</div>
-								<div class="panel-body">
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Last Exam Passed</label> <input
-											name="lastpassedexam" class="form-control" id="name"
-											placeholder="Last Exam" value="" />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Last exam passed Date
-											BS</label> <input name="passeddatebs" class="form-control" id="name"
-											placeholder="Last Exam Date BS" value="" />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="exampleInputEmail1">Last exam passed Date
-											AD</label> <input name="passeddatead" class="form-control" id="name"
-											placeholder="Last Exam Date" value="" />
-									</div>
-								</div>
-							</div>
-						</div>
+
+						
 						<div class="panel-body">
 							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">COMPITITION TYPE</div>
@@ -287,6 +261,28 @@
 						</div>
 						<div class="panel-body">
 							<div class="panel panel-primary">
+								<div class="panel-heading clearfix">EXAM DETAIL</div>
+								<div class="panel-body">
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Last Exam Passed</label> <input
+											name="lastpassedexam" class="form-control" id="name"
+											placeholder="Last Exam" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Last exam passed Date
+											BS</label> <input name="passeddatebs" class="form-control" id="name"
+											placeholder="Last Exam Date BS" value="" />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="exampleInputEmail1">Last exam passed Date
+											AD</label> <input name="passeddatead" class="form-control" id="name"
+											placeholder="Last Exam Date" value="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">EDUCATION DETAIL</div>
 								<div class="panel-body" style="overflow: auto;">
 									<table class="table">
@@ -303,10 +299,11 @@
 										</thead>
 										<tbody>
 
-											
+
 											<tr>
 												<td>1</td>
-												<td><input type="text"  size=auto name="exam_name" value="Masters" readonly/></td>
+												<td><input type="text" size=auto name="exam_name"
+													value="Masters" readonly /></td>
 												<td><input type="text" size=auto name="institute_name" /></td>
 												<td><input type="text" size=auto name="completion_year" /></td>
 
@@ -320,7 +317,8 @@
 											</tr>
 											<tr>
 												<td>2</td>
-												<td><input type="text" size=auto name="exam_name" value="Bachelors" readonly/></td>
+												<td><input type="text" size=auto name="exam_name"
+													value="Bachelors" readonly /></td>
 												<td><input type="text" size=auto name="institute_name" /></td>
 												<td><input type="text" size=auto name="completion_year" /></td>
 
@@ -334,7 +332,8 @@
 											</tr>
 											<tr>
 												<td>3</td>
-												<td><input type="text" size=auto name="exam_name" value="10+2/ Intermediate" readonly/></td>
+												<td><input type="text" size=auto name="exam_name"
+													value="10+2/ Intermediate" readonly /></td>
 												<td><input type="text" size=auto name="institute_name" /></td>
 												<td><input type="text" size=auto name="completion_year" /></td>
 
@@ -348,7 +347,8 @@
 											</tr>
 											<tr>
 												<td>4</td>
-												<td><input type="text" size=auto name="exam_name" value="SLC/Other Board" readonly/></td>
+												<td><input type="text" size=auto name="exam_name"
+													value="SLC/Other Board" readonly /></td>
 												<td><input type="text" size=auto name="institute_name" /></td>
 												<td><input type="text" size=auto name="completion_year" /></td>
 
@@ -360,7 +360,7 @@
 													id="education_#index#_educationDocument" value=""
 													required="required" /></td>
 											</tr>
-										
+
 
 										</tbody>
 									</table>
@@ -368,74 +368,67 @@
 								</div>
 							</div>
 						</div>
-
+						<div class="panel-body">
+							<div class="panel panel-primary">
+								<div class="panel-heading clearfix">Bank Voucher Details</div>
+								<div class="panel-body">
+								<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="vouchernumber">Voucher Number</label> <input
+											type="text" name="vouchernumber" class="form-control" id="vouchernumber"
+											placeholder="Voucher Number" value="" required />
+									</div>
+									
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="voucherdate">Voucher Date</label> <input
+											type="text" name="voucherdate" class="form-control" id="voucherdate"
+											placeholder="Voucher Date" value="" required />
+									</div>
+									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+										<label for="voucheramount">Amount</label> <input
+											type="text" name="voucheramount" class="form-control" id="voucheramount"
+											placeholder="Voucher Amount" value="" required />
+									</div>
+								
+								</div>
+							</div>
+						</div>
 						<div class="panel-body">
 							<div class="panel panel-primary">
 								<div class="panel-heading clearfix">APPLICANT DOCUMENTS</div>
 								<div class="panel-body">
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="imagetype">Bank Voucher</label> <select
 											name="imagetype" class="form-control" id="imagetype">
 											<option value="BNKV">Bank Voucher</option>
 										</select>
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Voucher Date</label> <input
-											type="text" name="description" class="form-control" id="name"
-											placeholder="Voucher Date" value="" required />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+							
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" required />
 									</div>
-								<!-- 	<div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
-										<label for="voucheramount">Voucher Amount</label> 
-											<input type="text" name="voucheramount" class="form-control col-md-4" id="voucheramount"
-											placeholder="Voucher Amount" value="" required />
-									</div> -->
-									
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+								
+
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="imagetype">Citizenship</label> <select
 											name="imagetype" class="form-control" id="imagetype">
 											<option value="CTZ">Citizenship</option>
 										</select>
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Description</label> <input
-											type="text" name="description" class="form-control" id="name"
-											placeholder="Description" value="" />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+								
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" />
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="imagetype">Bank Voucher</label> <select
-											name="imagetype" class="form-control" id="imagetype">
-											<option value="BNKV">Bank Voucher</option>
-										</select>
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Voucher Date</label> <input
-											type="text" name="description" class="form-control" id="name"
-											placeholder="Voucher Date" value="" required />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="file">Image</label> <input type="file" name="file"
-											class="form-control" id="file" required />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+									
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="imagetype">Character Certificate</label> <select
 											name="imagetype" class="form-control" id="imagetype">
 											<option value="CHC">Character Certificate</option>
 										</select>
 									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-										<label for="description">Description</label> <input
-											type="text" name="description" class="form-control" id="name"
-											placeholder="Description" value="" />
-									</div>
-									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+									
+									<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
 										<label for="file">Image</label> <input type="file" name="file"
 											class="form-control" id="file" />
 									</div>
@@ -443,47 +436,84 @@
 							</div>
 						</div>
 						<div class="table-responsive">
-			<table width="100%" cellpadding="0" cellspacing="1"
-				class="table table-bordered">
-				<tr>
-					<td>
+							<table width="100%" cellpadding="0" cellspacing="1"
+								class="table table-bordered">
+								<tr>
+									<td>
 
 
-						<h2 style="margin-top: 10px;">
-							<u>Term & Conditions:</u>
-						</h2> <span> I certify that the information I have provided
-							hereinabove is true, complete and correct. I understand that any
-							misrepresentation or material omission made in this document may
-							lead to cancellation of my candidature at any stage and even to
-							termination of my appointment/dismissal from the Bank's service
-							if it is discovered that the data furnished by me is false. I
-							further declare that if selected for appointment in the Bank, I
-							am willing to work at Bank's, any branches outside Kathmandu
-							valley as per the requirement of the Bank. Bank reserves the
-							right to reject any or all the applications without assigning any
-							reason whatsoever. </span> <br />
-					<br /> <input type="checkbox" class="required"
-						name="termsandcondition" style="width: auto"  required/> <label
-						style="width: 95%"><span class="required">*</span> I
-							confirm the information provided above are correct and my own. I
-							also, hereby, agree to the above Term & Conditions . </label>
+										<h2 style="margin-top: 10px;">
+											<u>Term & Conditions:</u>
+										</h2> <span> I certify that the information I have provided
+											hereinabove is true, complete and correct. I understand that
+											any misrepresentation or material omission made in this
+											document may lead to cancellation of my candidature at any
+											stage and even to termination of my appointment/dismissal
+											from the Bank's service if it is discovered that the data
+											furnished by me is false. I further declare that if selected
+											for appointment in the Bank, I am willing to work at Bank's,
+											any branches outside Kathmandu valley as per the requirement
+											of the Bank. Bank reserves the right to reject any or all the
+											applications without assigning any reason whatsoever. </span> <br />
+										<br /> <input type="checkbox" class="required"
+										name="termsandcondition" style="width: auto" required /> <label
+										style="width: 95%"><span class="required">*</span> I
+											confirm the information provided above are correct and my
+											own. I also, hereby, agree to the above Term & Conditions . </label>
 
-					</td>
-				</tr>
-			</table>
-		</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="ln_solid"></div>
+						<div class="form-group">
+							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+								<%-- <spring:url value="/" var="loginUrl" />
+								<a href="${loginUrl }" class="btn-link"><strong>Already
+										a member? Login.</strong></a> --%>
+								<!-- <button class="btn btn-info" type="button" id="validate">Validate</button> -->
+								<input type="submit" class="btn btn-success" value="Submit Details">
+							</div>
+						</div>
+						<br> <br>
+						<div class="clearfix"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 	</form>
 
 
 	<script type="text/javascript">
-		function confirmation(){
+		function confirmation() {
 			return confirm('Do you really want to submit the form?');
 		}
+	
+		
+		$('select.perdistrict').change(function(){
+
+		    alert('Select field value has changed to' + $('select.perdistrict').val());
+
+		   // You can perform an ajax request using the .ajax() method
+		   $.ajax({
+		       type: 'GET',
+		      url: 'changeStatus.php', // This is the url that will be requested
+
+		      // This is an object of values that will be passed as GET variables and 
+		      // available inside changeStatus.php as $_GET['selectFieldValue'] etc...
+		      data: {selectFieldValue: $('select.changeStatus').val()},
+
+		      // This is what to do once a successful request has been completed - if 
+		      // you want to do nothing then simply don't include it. But I suggest you 
+		      // add something so that your use knows the db has been updated
+		      success: function(html){
+		    	  alert('data change successful');
+		      },
+		      dataType: 'html'
+		    });
+
+		});
 	</script>
 </body>
 </html>

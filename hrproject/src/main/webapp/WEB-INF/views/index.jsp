@@ -27,8 +27,8 @@
 
 		<form class="login-form" action="${formUrl }" method="POST">
 			<table style="width: 80%; margin: auto;">
-			<caption><a href="<spring:url value="/nav/signup"/>"
-						style="font-size: 80%;">New Member? Signup Here!</a></caption>
+			<caption><a href="<spring:url value="/applicants/vacancies"/>"
+						style="font-size: 80%;">APPLY ONLINE!</a></caption>
 				<tr>
 					<td colspan="2"><label for="user-name">Username</label></td>
 
