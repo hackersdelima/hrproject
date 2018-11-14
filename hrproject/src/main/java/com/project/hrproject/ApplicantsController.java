@@ -2,6 +2,8 @@ package com.project.hrproject;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,15 +71,22 @@ public class ApplicantsController {
 	}
 	
 	@RequestMapping(value="update", method=RequestMethod.GET)
-	public String update(@ModelAttribute UserModel userModel, Model model) {
+	public String update(@ModelAttribute UserModel userModel, Model model, HttpSession session) {
+		UserModel userDetail = (UserModel) session.getAttribute("userDetail");
+		String userid = userDetail.getUserid();
+		userModel.setUserid(userid);
+		
 		String msg;
 		System.out.println(userModel);
 		int updateStatus = registrationDao.updateuser(userModel);
+		System.out.println(updateStatus);
 		
 		if(updateStatus>0) {
+			System.out.println("update successful");
 			msg="Update Successful!";
 		}
 		else {
+			System.out.println("update failed");
 			msg = "Update Failed!";
 		}
 		model.addAttribute("msg", msg);

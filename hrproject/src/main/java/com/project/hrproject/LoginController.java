@@ -28,11 +28,10 @@ public class LoginController {
 		System.out.println(user);
 		System.out.println("login invoked");
 		boolean status = loginDao.verifyUser(user);
+		System.out.println("verification="+status);
 		if (status) {
 			UserModel userDetail = getUser(user);
 			model.addAttribute("userDetail", userDetail);
-			System.out.println(registrationDao.getSpecificAdvertisements(userDetail.getAdvertiseno()));
-			model.addAttribute("vacancy", registrationDao.getSpecificAdvertisements(userDetail.getAdvertiseno()));
 			return "profile";
 		} else {
 			attributes.addFlashAttribute("msg","Invalid Login Credentials!");
