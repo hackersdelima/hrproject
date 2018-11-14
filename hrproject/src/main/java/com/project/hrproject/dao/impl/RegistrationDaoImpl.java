@@ -9,20 +9,25 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.project.hrproject.dao.RegistrationDao;
 import com.project.hrproject.entity.ApplicantsModel;
 import com.project.hrproject.entity.Districtcodes;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
+import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.entity.VacancyModel;
 
 public class RegistrationDaoImpl implements RegistrationDao {
+	private NamedParameterJdbcTemplate template;
 private JdbcTemplate jdbcTemplate;
 	
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
+		this.template = new NamedParameterJdbcTemplate(jdbcTemplate);
 	}
 	 
 	 @Autowired
@@ -123,6 +128,19 @@ private JdbcTemplate jdbcTemplate;
 			status = jdbcTemplate.update(query);
 		}
 		catch(Exception e) {
+			System.out.println(e);
+			status = 0;
+		}
+		return status;
+	}
+
+	@Override
+	public int updateuser(UserModel userModel) {
+		int status = 0;
+		String sql = "update usertbl set name=:name, father=:father, grandfather=:grandfather, fathernep=:fathernep, grandfathernep=:grandfathernep, mother=:mother, spouse=:spouse, permanentaddress=:permanentaddress, permanentaddressnep=:permanentaddressnep, perdistrict=:perdistrict, pervdcmun=:pervdcmun, perwardno=:perwardno, pertole=:pertole, tempaddress=:tempaddress, citizenshipno=:citizenshipno, citizenshipIssuedDate=:citizenshipIssuedDate, citizenshipIssuedDistrict=:citizenshipIssuedDistrict, phonenumber=:phonenumber, email=:email, dob=:dob, ageyr=:ageyr, agemth=:agemth, ageday=:ageday, lastpassedexam=:lastpassedexam, passeddatebs=:passeddatebs, passeddatead=:passeddatead, advertiseno=:advertiseno, open_comp=:open_comp, mahila=:mahila, adibasi=:adibasi, madhesi=:madhesi, dalit=:dalit, apanga=:apanga, pichadiyeko_chetra=:pichadiyeko_chetra";
+		try {
+			status = template.update(sql, new BeanPropertySqlParameterSource(userModel));
+		} catch (Exception e) {
 			System.out.println(e);
 			status = 0;
 		}

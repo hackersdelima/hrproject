@@ -3,141 +3,50 @@ package com.project.hrproject.entity;
 import java.util.Arrays;
 
 public class UserModel {
-	private String advertiseno, name,grandfathernep,fathernep,addressnep, name1,fname,mname,lname, father, mother, spouse, permanentaddress, tempaddress, citizenshipno,
-			phonenumber, email, dob, ageyr, agemth, ageday, lastpassedexam, passeddatebs, passeddatead, userid, status,
-			username, password;
-	private int open_comp, mahila, adibasi, madhesi, dalit, apanga, pichadiyeko_chetra;
-	private String citizenshipIssuedDistrict, citizenshipIssuedDate;
+	private String userid;
+	private String username;
+	private String password;
+	private String title;
+	private String name;
+	private String firstname;
+	private String middlename;
+	private String lastname;
+	private String father;
 	private String grandfather;
+	private String fathernep;
+	private String grandfathernep;
+	private String mother;
+	private String spouse;
+	private String permanentaddress;
+	private String permanentaddressnep;
+	private String tempaddress;
+	private String citizenshipno;
+	private String citizenshipIssuedDate;
+	private String citizenshipIssuedDistrict;
+	private String phonenumber;
+	private String email;
+	private String dob;
+	private String ageyr;
+	private String agemth;
+	private String ageday;
+	private String lastpassedexam;
+	private String passeddatebs;
+	private String passeddatead;
+	private String advertiseno;
+	private String status;
+	private String open_comp;
+	private String mahila;
+	private String adibasi;
+	private String madhesi;
+	private String dalit;
+	private String apanga;
+	private String pichadiyeko_chetra;
+	private String regioncode;
+	
 	private byte[] image;
 	
-	public String getGrandfathernep() {
-		return grandfathernep;
-	}
-
-	public void setGrandfathernep(String grandfathernep) {
-		this.grandfathernep = grandfathernep;
-	}
-
-	public String getAddressnep() {
-		return addressnep;
-	}
-
-	public void setAddressnep(String addressnep) {
-		this.addressnep = addressnep;
-	}
-
-	public String getFathernep() {
-		return fathernep;
-	}
-
-	public void setFathernep(String fathernep) {
-		this.fathernep = fathernep;
-	}
-
-	public String getFname() {
-		return fname;
-	}
-
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public String getMname() {
-		return mname;
-	}
-
-	public void setMname(String mname) {
-		this.mname = mname;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-
-	public String getCitizenshipIssuedDistrict() {
-		return citizenshipIssuedDistrict;
-	}
-
-	public void setCitizenshipIssuedDistrict(String citizenshipIssuedDistrict) {
-		this.citizenshipIssuedDistrict = citizenshipIssuedDistrict;
-	}
-
-	public String getCitizenshipIssuedDate() {
-		return citizenshipIssuedDate;
-	}
-
-	public void setCitizenshipIssuedDate(String citizenshipIssuedDate) {
-		this.citizenshipIssuedDate = citizenshipIssuedDate;
-	}
-
-	public String getAdvertiseno() {
-		return advertiseno;
-	}
-
-	public void setAdvertiseno(String advertiseno) {
-		this.advertiseno = advertiseno;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getName1() {
-		return name1;
-	}
-
-	public void setName1(String name1) {
-		this.name1 = name1;
-	}
-
-	public void setFather(String father) {
-		this.father = father;
-	}
-
-	public String getFather() {
-		return father;
-	}
-
-	public void setMother(String mother) {
-		this.mother = mother;
-	}
-
-	public String getMother() {
-		return mother;
-	}
-
-	public void setSpouse(String spouse) {
-		this.spouse = spouse;
-	}
-
-	public String getSpouse() {
-		return spouse;
-	}
-
-	public void setPermanentaddress(String permanentaddress) {
-		this.permanentaddress = permanentaddress;
-	}
-
-	public String getPermanentaddress() {
-		return permanentaddress;
-	}
-
-	public void setTempaddress(String tempaddress) {
-		this.tempaddress = tempaddress;
-	}
-
-	public String getTempaddress() {
-		return tempaddress;
-	}
+	
+	
 
 	public String getUserid() {
 		return userid;
@@ -145,14 +54,6 @@ public class UserModel {
 
 	public void setUserid(String userid) {
 		this.userid = userid;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getUsername() {
@@ -171,12 +72,140 @@ public class UserModel {
 		this.password = password;
 	}
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getMiddlename() {
+		return middlename;
+	}
+
+	public void setMiddlename(String middlename) {
+		this.middlename = middlename;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getFather() {
+		return father;
+	}
+
+	public void setFather(String father) {
+		this.father = father;
+	}
+
+	public String getGrandfather() {
+		return grandfather;
+	}
+
+	public void setGrandfather(String grandfather) {
+		this.grandfather = grandfather;
+	}
+
+	public String getFathernep() {
+		return fathernep;
+	}
+
+	public void setFathernep(String fathernep) {
+		this.fathernep = fathernep;
+	}
+
+	public String getGrandfathernep() {
+		return grandfathernep;
+	}
+
+	public void setGrandfathernep(String grandfathernep) {
+		this.grandfathernep = grandfathernep;
+	}
+
+	public String getMother() {
+		return mother;
+	}
+
+	public void setMother(String mother) {
+		this.mother = mother;
+	}
+
+	public String getSpouse() {
+		return spouse;
+	}
+
+	public void setSpouse(String spouse) {
+		this.spouse = spouse;
+	}
+
+	public String getPermanentaddress() {
+		return permanentaddress;
+	}
+
+	public void setPermanentaddress(String permanentaddress) {
+		this.permanentaddress = permanentaddress;
+	}
+
+	public String getPermanentaddressnep() {
+		return permanentaddressnep;
+	}
+
+	public void setPermanentaddressnep(String permanentaddressnep) {
+		this.permanentaddressnep = permanentaddressnep;
+	}
+
+	public String getTempaddress() {
+		return tempaddress;
+	}
+
+	public void setTempaddress(String tempaddress) {
+		this.tempaddress = tempaddress;
+	}
+
 	public String getCitizenshipno() {
 		return citizenshipno;
 	}
 
 	public void setCitizenshipno(String citizenshipno) {
 		this.citizenshipno = citizenshipno;
+	}
+
+	public String getCitizenshipIssuedDate() {
+		return citizenshipIssuedDate;
+	}
+
+	public void setCitizenshipIssuedDate(String citizenshipIssuedDate) {
+		this.citizenshipIssuedDate = citizenshipIssuedDate;
+	}
+
+	public String getCitizenshipIssuedDistrict() {
+		return citizenshipIssuedDistrict;
+	}
+
+	public void setCitizenshipIssuedDistrict(String citizenshipIssuedDistrict) {
+		this.citizenshipIssuedDistrict = citizenshipIssuedDistrict;
 	}
 
 	public String getPhonenumber() {
@@ -195,126 +224,141 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public void setLastpassedexam(String lastpassedexam) {
-		this.lastpassedexam = lastpassedexam;
-	}
-
-	public String getLastpassedexam() {
-		return lastpassedexam;
-	}
-
-	public void setPasseddatebs(String passeddatebs) {
-		this.passeddatebs = passeddatebs;
-	}
-
-	public String getPasseddatebs() {
-		return passeddatebs;
-	}
-
-	public void setPasseddatead(String passeddatead) {
-		this.passeddatead = passeddatead;
-	}
-
-	public String getPasseddatead() {
-		return passeddatead;
+	public String getDob() {
+		return dob;
 	}
 
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
 
-	public String getDob() {
-		return dob;
+	public String getAgeyr() {
+		return ageyr;
 	}
 
 	public void setAgeyr(String ageyr) {
 		this.ageyr = ageyr;
 	}
 
-	public String getAgeyr() {
-		return ageyr;
+	public String getAgemth() {
+		return agemth;
 	}
 
 	public void setAgemth(String agemth) {
 		this.agemth = agemth;
 	}
 
-	public String getAgemth() {
-		return agemth;
+	public String getAgeday() {
+		return ageday;
 	}
 
 	public void setAgeday(String ageday) {
 		this.ageday = ageday;
 	}
 
-	public String getAgeday() {
-		return ageday;
+	public String getLastpassedexam() {
+		return lastpassedexam;
 	}
 
-	public int getOpen_comp() {
+	public void setLastpassedexam(String lastpassedexam) {
+		this.lastpassedexam = lastpassedexam;
+	}
+
+	public String getPasseddatebs() {
+		return passeddatebs;
+	}
+
+	public void setPasseddatebs(String passeddatebs) {
+		this.passeddatebs = passeddatebs;
+	}
+
+	public String getPasseddatead() {
+		return passeddatead;
+	}
+
+	public void setPasseddatead(String passeddatead) {
+		this.passeddatead = passeddatead;
+	}
+
+	public String getAdvertiseno() {
+		return advertiseno;
+	}
+
+	public void setAdvertiseno(String advertiseno) {
+		this.advertiseno = advertiseno;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getOpen_comp() {
 		return open_comp;
 	}
 
-	public void setOpen_comp(int open_comp) {
+	public void setOpen_comp(String open_comp) {
 		this.open_comp = open_comp;
 	}
 
-	public int getMahila() {
+	public String getMahila() {
 		return mahila;
 	}
 
-	public void setMahila(int mahila) {
+	public void setMahila(String mahila) {
 		this.mahila = mahila;
 	}
 
-	public int getAdibasi() {
+	public String getAdibasi() {
 		return adibasi;
 	}
 
-	public void setAdibasi(int adibasi) {
+	public void setAdibasi(String adibasi) {
 		this.adibasi = adibasi;
 	}
 
-	public int getMadhesi() {
+	public String getMadhesi() {
 		return madhesi;
 	}
 
-	public void setMadhesi(int madhesi) {
+	public void setMadhesi(String madhesi) {
 		this.madhesi = madhesi;
 	}
 
-	public int getDalit() {
+	public String getDalit() {
 		return dalit;
 	}
 
-	public void setDalit(int dalit) {
+	public void setDalit(String dalit) {
 		this.dalit = dalit;
 	}
 
-	public int getApanga() {
+	public String getApanga() {
 		return apanga;
 	}
 
-	public void setApanga(int apanga) {
+	public void setApanga(String apanga) {
 		this.apanga = apanga;
 	}
 
-	public int getPichadiyeko_chetra() {
+	public String getPichadiyeko_chetra() {
 		return pichadiyeko_chetra;
 	}
 
-	public void setPichadiyeko_chetra(int pichadiyeko_chetra) {
+	public void setPichadiyeko_chetra(String pichadiyeko_chetra) {
 		this.pichadiyeko_chetra = pichadiyeko_chetra;
 	}
-	
-	public String getGrandfather() {
-		return grandfather;
+
+	public String getRegioncode() {
+		return regioncode;
 	}
 
-	public void setGrandfather(String grandfather) {
-		this.grandfather = grandfather;
+	public void setRegioncode(String regioncode) {
+		this.regioncode = regioncode;
 	}
-	
 
 	public byte[] getImage() {
 		return image;
@@ -326,16 +370,21 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "UserModel [advertiseno=" + advertiseno + ", name=" + name + ",grandfathernep=" + grandfathernep + ",fathernep=" +fathernep + ",addressnep=" + addressnep +", name1=" + name1 + ", father=" + father
-				+ ", mother=" + mother + ", spouse=" + spouse + ", permanentaddress=" + permanentaddress
-				+ ", tempaddress=" + tempaddress + ", citizenshipno=" + citizenshipno + ", phonenumber=" + phonenumber
-				+ ", email=" + email + ", dob=" + dob + ", ageyr=" + ageyr + ", agemth=" + agemth + ", ageday=" + ageday
-				+ ", lastpassedexam=" + lastpassedexam + ", passeddatebs=" + passeddatebs + ", passeddatead="
-				+ passeddatead + ", userid=" + userid + ", status=" + status + ", username=" + username + ", password="
-				+ password + ", open_comp=" + open_comp + ", mahila=" + mahila + ", adibasi=" + adibasi + ", madhesi="
-				+ madhesi + ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chetra=" + pichadiyeko_chetra
-				+ ", citizenshipIssuedDistrict=" + citizenshipIssuedDistrict + ", citizenshipIssuedDate="
-				+ citizenshipIssuedDate + ", grandfather=" + grandfather + ", image=" + Arrays.toString(image) + "]";
+		return "UserModel [userid=" + userid + ", username=" + username + ", password=" + password + ", title=" + title
+				+ ", name=" + name + ", firstname=" + firstname + ", middlename=" + middlename + ", lastname="
+				+ lastname + ", father=" + father + ", grandfather=" + grandfather + ", fathernep=" + fathernep
+				+ ", grandfathernep=" + grandfathernep + ", mother=" + mother + ", spouse=" + spouse
+				+ ", permanentaddress=" + permanentaddress + ", permanentaddressnep=" + permanentaddressnep
+				+ ", tempaddress=" + tempaddress + ", citizenshipno=" + citizenshipno + ", citizenshipIssuedDate="
+				+ citizenshipIssuedDate + ", citizenshipIssuedDistrict=" + citizenshipIssuedDistrict + ", phonenumber="
+				+ phonenumber + ", email=" + email + ", dob=" + dob + ", ageyr=" + ageyr + ", agemth=" + agemth
+				+ ", ageday=" + ageday + ", lastpassedexam=" + lastpassedexam + ", passeddatebs=" + passeddatebs
+				+ ", passeddatead=" + passeddatead + ", advertiseno=" + advertiseno + ", status=" + status
+				+ ", open_comp=" + open_comp + ", mahila=" + mahila + ", adibasi=" + adibasi + ", madhesi=" + madhesi
+				+ ", dalit=" + dalit + ", apanga=" + apanga + ", pichadiyeko_chetra=" + pichadiyeko_chetra
+				+ ", regioncode=" + regioncode + ", image=" + Arrays.toString(image) + "]";
 	}
+
+	
 
 }

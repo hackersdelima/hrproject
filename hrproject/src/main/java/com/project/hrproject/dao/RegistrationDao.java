@@ -6,6 +6,7 @@ import com.project.hrproject.entity.ApplicantsModel;
 import com.project.hrproject.entity.Districtcodes;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
+import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.entity.VacancyModel;
 
 public interface RegistrationDao {
@@ -21,4 +22,5 @@ public interface RegistrationDao {
 	
 	//applicants signup first phase
 	public int register(ApplicantsModel am);
+	public int updateuser(UserModel userModel);
 }

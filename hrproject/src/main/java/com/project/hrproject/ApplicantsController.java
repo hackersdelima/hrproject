@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.hrproject.dao.RegistrationDao;
 import com.project.hrproject.entity.ApplicantsModel;
+import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.entity.VacancyModel;
 import com.project.hrproject.utils.CharacterGenerator;
 
@@ -66,5 +67,22 @@ public class ApplicantsController {
 		}
 		
 	}
+	
+	@RequestMapping(value="update", method=RequestMethod.GET)
+	public String update(@ModelAttribute UserModel userModel, Model model) {
+		String msg;
+		System.out.println(userModel);
+		int updateStatus = registrationDao.updateuser(userModel);
+		
+		if(updateStatus>0) {
+			msg="Update Successful!";
+		}
+		else {
+			msg = "Update Failed!";
+		}
+		model.addAttribute("msg", msg);
+		return "nav/registration_form";
+	}
+	
 
 }

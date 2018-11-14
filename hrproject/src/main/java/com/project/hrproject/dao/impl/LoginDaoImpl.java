@@ -68,7 +68,7 @@ public class LoginDaoImpl implements LoginDao{
 				user.setUsername(rs.getString("username"));
 				user.setPassword(rs.getString("password"));
 				user.setName(rs.getString("name"));
-				user.setName1(rs.getString("name1"));
+				user.setFirstname(rs.getString("firstname"));
 				user.setFather(rs.getString("father"));
 				user.setMother(rs.getString("mother"));
 				user.setSpouse(rs.getString("spouse"));
@@ -86,13 +86,13 @@ public class LoginDaoImpl implements LoginDao{
 				user.setPasseddatead(rs.getString("passeddatead"));
 				user.setStatus(rs.getString("status"));
 				user.setAdvertiseno(rs.getString("advertiseno"));
-				user.setOpen_comp(rs.getInt("open_comp"));
-				user.setMahila(rs.getInt("mahila"));
-				user.setAdibasi(rs.getInt("adibasi"));
-				user.setMadhesi(rs.getInt("madhesi"));
-				user.setDalit(rs.getInt("dalit"));
-				user.setApanga(rs.getInt("apanga"));
-				user.setPichadiyeko_chetra(rs.getInt("pichadiyeko_chetra"));
+				user.setOpen_comp(rs.getString("open_comp"));
+				user.setMahila(rs.getString("mahila"));
+				user.setAdibasi(rs.getString("adibasi"));
+				user.setMadhesi(rs.getString("madhesi"));
+				user.setDalit(rs.getString("dalit"));
+				user.setApanga(rs.getString("apanga"));
+				user.setPichadiyeko_chetra(rs.getString("pichadiyeko_chetra"));
 				
 				return user;
 			}

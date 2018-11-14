@@ -27,11 +27,10 @@ public class NavigationController {
 	
 	
 	@RequestMapping(value = "/registration_form")
-	public String registration_form(Model model){
+	public String registration_form(ModelMap model){
 		System.out.println("registrationform invoked");
-		
-		
-		return "registration/registration_form";
+		model.put("districts", registrationDao.getDistricts());
+		return "signup";
 	}
 	@RequestMapping(value = "/documents_upload")
 	public String documents_upload(Model model){
