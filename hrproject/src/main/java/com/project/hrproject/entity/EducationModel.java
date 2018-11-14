@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class EducationModel {
 	private String userid;
-private String[] institute_name, exam_name,completion_year, level, totalmarks_percentage , major_sub, kaifiyat;
+private String[] institute_name, exam_name,completion_year, totalmarks_percentage , major_sub;
 
 
 public String getUserid() {
@@ -39,14 +39,6 @@ public void setCompletion_year(String[] completion_year) {
 	this.completion_year = completion_year;
 }
 
-public String[] getLevel() {
-	return level;
-}
-
-public void setLevel(String[] level) {
-	this.level = level;
-}
-
 public String[] getTotalmarks_percentage() {
 	return totalmarks_percentage;
 }
@@ -63,24 +55,13 @@ public void setMajor_sub(String[] major_sub) {
 	this.major_sub = major_sub;
 }
 
-public String[] getKaifiyat() {
-	return kaifiyat;
-}
-
-public void setKaifiyat(String[] kaifiyat) {
-	this.kaifiyat = kaifiyat;
-}
-
 @Override
 public String toString() {
-	return "EducationModel [institute_name=" + Arrays.toString(institute_name) + ", exam_name="
-			+ Arrays.toString(exam_name) + ", completion_year=" + Arrays.toString(completion_year) + ", level="
-			+ Arrays.toString(level) + ", totalmarks_percentage=" + Arrays.toString(totalmarks_percentage)
-			+ ", major_sub=" + Arrays.toString(major_sub) + ", kaifiyat=" + Arrays.toString(kaifiyat) + "]";
+	return "EducationModel [userid=" + userid + ", institute_name=" + Arrays.toString(institute_name) + ", exam_name="
+			+ Arrays.toString(exam_name) + ", completion_year=" + Arrays.toString(completion_year)
+			+ ", totalmarks_percentage=" + Arrays.toString(totalmarks_percentage) + ", major_sub="
+			+ Arrays.toString(major_sub) + "]";
 }
-
-
-
 
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.hrproject.dao.RegistrationDao;
 import com.project.hrproject.entity.ApplicantsModel;
+import com.project.hrproject.entity.EducationModel;
 import com.project.hrproject.entity.UserModel;
 import com.project.hrproject.entity.VacancyModel;
 import com.project.hrproject.utils.CharacterGenerator;
@@ -70,8 +71,8 @@ public class ApplicantsController {
 		
 	}
 	
-	@RequestMapping(value="update", method=RequestMethod.GET)
-	public String update(@ModelAttribute UserModel userModel, Model model, HttpSession session) {
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public String update(@ModelAttribute UserModel userModel, @ModelAttribute EducationModel educationModel, Model model, HttpSession session) {
 		UserModel userDetail = (UserModel) session.getAttribute("userDetail");
 		String userid = userDetail.getUserid();
 		userModel.setUserid(userid);
@@ -82,6 +83,10 @@ public class ApplicantsController {
 		System.out.println(updateStatus);
 		
 		if(updateStatus>0) {
+			int educationlength = educationModel.getExam_name().length;
+			for(int i=0; i<educationlength;i++) {
+				int insertEducationStatus = registrationDao.inserteducation(educationModel, userid, i);
+			}
 			System.out.println("update successful");
 			msg="Update Successful!";
 		}

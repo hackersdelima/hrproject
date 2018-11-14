@@ -7,6 +7,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -15,6 +16,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import com.project.hrproject.dao.RegistrationDao;
 import com.project.hrproject.entity.ApplicantsModel;
 import com.project.hrproject.entity.Districtcodes;
+import com.project.hrproject.entity.EducationModel;
+import com.project.hrproject.entity.Educationdetail;
+import com.project.hrproject.entity.ImageModel;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
 import com.project.hrproject.entity.UserModel;
@@ -145,6 +149,26 @@ private JdbcTemplate jdbcTemplate;
 			status = 0;
 		}
 		return status;
+	}
+	
+	@Override
+	public int inserteducation(EducationModel educationModel, String userid, int i) {
+		System.out.println(educationModel);
+		int status = 0;
+		String sql = "insert into educationdetail (userid, institute_name, exam_name, completion_year, totalmarks_percentage, major_sub) values ('"+userid+"', :institute_name["+i+"], :exam_name["+i+"], :completion_year["+i+"], :totalmarks_percentage["+i+"], :major_sub["+i+"])";
+		try {
+			status = template.update(sql, new BeanPropertySqlParameterSource(educationModel));
+		} catch (Exception e) {
+			System.out.println(e);
+			status = 0;
+		}
+		return status;
+	}
+
+	@Override
+	public List<Educationdetail> findEducationByUserid(String userid) {
+		String query = "select * from educationdetail where userid='"+userid+"'";
+		return template.query(query, new BeanPropertyRowMapper<Educationdetail>(Educationdetail.class));
 	}
 
 	

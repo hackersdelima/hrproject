@@ -1,5 +1,7 @@
 package com.project.hrproject;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
 import com.project.hrproject.dao.LoginDao;
 import com.project.hrproject.dao.RegistrationDao;
+import com.project.hrproject.entity.Educationdetail;
 import com.project.hrproject.entity.UserModel;
 
 @Controller
@@ -103,5 +105,14 @@ public class NavigationController {
 		return "registration/verificationStatus";
 	}
 	
+	@RequestMapping(value = "/documentregistration", method = RequestMethod.GET)
+	public String documentregistration(HttpSession session, Model model) {
+		UserModel userDetail = (UserModel) session.getAttribute("userDetail");
+		String userid = userDetail.getUserid();
+		
+		List<Educationdetail> educationdetail = registrationDao.findEducationByUserid(userid);
+		model.addAttribute("educationdetail",educationdetail);
+		return "applicants/documentregistration";
+	}
 
 }

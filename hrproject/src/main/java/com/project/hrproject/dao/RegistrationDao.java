@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.project.hrproject.entity.ApplicantsModel;
 import com.project.hrproject.entity.Districtcodes;
+import com.project.hrproject.entity.EducationModel;
+import com.project.hrproject.entity.Educationdetail;
 import com.project.hrproject.entity.RegistrationModel;
 import com.project.hrproject.entity.RegistrationNextModel;
 import com.project.hrproject.entity.UserModel;
@@ -23,4 +25,6 @@ public interface RegistrationDao {
 	//applicants signup first phase
 	public int register(ApplicantsModel am);
 	public int updateuser(UserModel userModel);
+	public int inserteducation(EducationModel educationModel, String userid, int i);
+	public List<Educationdetail> findEducationByUserid(String userid);
 }

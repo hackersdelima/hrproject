@@ -57,8 +57,8 @@
 
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="fathernep">Father's Name(Nepali)</label>
-										<input name="fathernep" class="form-control nep" id="fathernamenep"
-											placeholder="afa'sf] gfd g]kfnLdf" value="" />
+										<input name="fathernep" class="form-control nep" id="fathernep"
+											placeholder="afa'sf] gfd g]kfnLdf" value="${sessionScope.userDetail.fathernep }" />
 									</div>
 									<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
 										<label for="grandfathernep">Grandfather's
