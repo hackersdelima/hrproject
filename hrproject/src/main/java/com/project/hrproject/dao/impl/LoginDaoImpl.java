@@ -19,6 +19,8 @@ import com.project.hrproject.entity.AdminUserModel;
 import com.project.hrproject.entity.UserModel;
 
 public class LoginDaoImpl implements LoginDao{
+	String password="";	
+	String passwordmd5 = null;
 	private NamedParameterJdbcTemplate namedParamterJdbcTemplate;
 	private JdbcTemplate jdbcTemplate;
 
@@ -47,8 +49,7 @@ public class LoginDaoImpl implements LoginDao{
 			boolean userexists=false;
 			
 			
-			String password="";	
-			String passwordmd5 = null;
+			
 			password=user.getPassword();
 					try {
 						MessageDigest m = MessageDigest.getInstance("MD5");
@@ -57,9 +58,8 @@ public class LoginDaoImpl implements LoginDao{
 					} catch (Exception e) {
 						System.out.println(e);
 					}
+		
 					
-			
-			
 			String sql="SELECT COUNT(*) FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+passwordmd5+"'";
 			System.out.println(sql);
 			System.out.println(jdbcTemplate+"jdnds");
@@ -71,7 +71,7 @@ public class LoginDaoImpl implements LoginDao{
 			return userexists;
 		}
 	 public UserModel getUserDetails(UserModel user){
-			String sql="SELECT * FROM usertbl WHERE username=:username AND password=:password";
+			String sql="SELECT * FROM usertbl WHERE username=:username AND password='"+passwordmd5+"'";
 			
 			return namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(user),new BeanPropertyRowMapper<UserModel>(UserModel.class));
 		}

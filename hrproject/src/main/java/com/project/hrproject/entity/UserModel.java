@@ -1,5 +1,7 @@
 package com.project.hrproject.entity;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.Arrays;
 
 public class UserModel {
@@ -408,7 +410,7 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-			
+						
 		return "UserModel [userid=" + userid + ", username=" + username + ", password=" + password + ", title=" + title
 				+ ", name=" + name + ", firstname=" + firstname + ", middlename=" + middlename + ", lastname="
 				+ lastname + ", father=" + father + ", grandfather=" + grandfather + ", fathernep=" + fathernep

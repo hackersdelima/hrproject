@@ -23,7 +23,7 @@
 
 <body class="background">
 	<spring:url value="/applicants/update" var="formUrl" />
-	<form class="login-form" action="${formUrl }" method="GET"
+	<form class="login-form" action="${formUrl }" method="POST"
 		enctype="multipart/form-data" onsubmit="return confirmation();">
 
 		<div class="col-md-12 col-sm-12 col-xs-12  ">
@@ -336,7 +336,6 @@
 											<th>Completion year</th>
 											<th>Grade/Percentage</th>
 											<th>Faculty</th>
-											<th>Document (.jpg, .png, .jpeg)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -352,10 +351,6 @@
 											<td><input type="text" size=auto
 												name="totalmarks_percentage" /></td>
 											<td><input type="text" size=auto name="major_sub" /></td>
-											<td><input type="file" class="document"
-												name="educationDocument[]"
-												id="education_#index#_educationDocument" value=""
-												="" /></td>
 										</tr>
 										<tr>
 											<td>2</td>
@@ -367,10 +362,7 @@
 											<td><input type="text" size=auto
 												name="totalmarks_percentage" /></td>
 											<td><input type="text" size=auto name="major_sub" /></td>
-											<td><input type="file" class="document"
-												name="educationDocument[]"
-												id="education_#index#_educationDocument" value=""
-												="" /></td>
+											
 										</tr>
 										<tr>
 											<td>3</td>
@@ -382,10 +374,6 @@
 											<td><input type="text" size=auto
 												name="totalmarks_percentage" /></td>
 											<td><input type="text" size=auto name="major_sub" /></td>
-											<td><input type="file" class="document"
-												name="educationDocument[]"
-												id="education_#index#_educationDocument" value=""
-												="" /></td>
 										</tr>
 										<tr>
 											<td>4</td>
@@ -397,13 +385,7 @@
 											<td><input type="text" size=auto
 												name="totalmarks_percentage" /></td>
 											<td><input type="text" size=auto name="major_sub" /></td>
-											<td><input type="file" class="document"
-												name="educationDocument[]"
-												id="education_#index#_educationDocument" value=""
-												="" /></td>
 										</tr>
-
-
 									</tbody>
 								</table>
 
@@ -523,10 +505,6 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
-
-
-
-
 	</form>
 
 	<script type="text/javascript">
