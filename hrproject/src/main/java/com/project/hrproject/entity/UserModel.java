@@ -19,6 +19,10 @@ public class UserModel {
 	private String spouse;
 	private String permanentaddress;
 	private String permanentaddressnep;
+	private String perdistrict;
+	private String pervdcmun;
+	private String perwardno;
+	private String pertole;
 	private String tempaddress;
 	private String citizenshipno;
 	private String citizenshipIssuedDate;
@@ -366,6 +370,40 @@ public class UserModel {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+	
+	
+
+	public String getPerdistrict() {
+		return perdistrict;
+	}
+
+	public void setPerdistrict(String perdistrict) {
+		this.perdistrict = perdistrict;
+	}
+
+	public String getPervdcmun() {
+		return pervdcmun;
+	}
+
+	public void setPervdcmun(String pervdcmun) {
+		this.pervdcmun = pervdcmun;
+	}
+
+	public String getPerwardno() {
+		return perwardno;
+	}
+
+	public void setPerwardno(String perwardno) {
+		this.perwardno = perwardno;
+	}
+
+	public String getPertole() {
+		return pertole;
+	}
+
+	public void setPertole(String pertole) {
+		this.pertole = pertole;
 	}
 
 	@Override
