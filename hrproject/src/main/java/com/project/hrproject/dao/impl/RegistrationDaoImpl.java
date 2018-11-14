@@ -1,5 +1,7 @@
 package com.project.hrproject.dao.impl;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -123,7 +125,20 @@ private JdbcTemplate jdbcTemplate;
 	@Override
 	public int register(ApplicantsModel am) {
 		int status=0;
-		String query = "insert into usertbl (username, password, title, firstname, middlename, lastname, email, advertiseno) values ('"+am.getUsername()+"', '"+am.getPassword()+"', '"+am.getTitle()+"', '"+am.getFirstname()+"', '"+am.getMiddlename()+"', '"+am.getLastname()+"', '"+am.getEmail()+"', '"+am.getAdvertiseno()+"')";
+	String password="";	
+String passwordmd5 = null;
+password=am.getPassword();
+		try {
+			MessageDigest m = MessageDigest.getInstance("MD5");
+			m.update(password.getBytes(), 0, password.length());
+			passwordmd5 = new BigInteger(1, m.digest()).toString(16);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		
+		
+		String query = "insert into usertbl (username, password, title, firstname, middlename, lastname, email, advertiseno) values ('"+am.getUsername()+"', '"+passwordmd5+"', '"+am.getTitle()+"', '"+am.getFirstname()+"', '"+am.getMiddlename()+"', '"+am.getLastname()+"', '"+am.getEmail()+"', '"+am.getAdvertiseno()+"')";
 		try {
 			status = jdbcTemplate.update(query);
 		}
