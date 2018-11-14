@@ -81,7 +81,7 @@ public class ApplicantsController {
 			msg = "Update Failed!";
 		}
 		model.addAttribute("msg", msg);
-		return "nav/registration_form";
+		return "redirect: ../nav/registration_form";
 	}
 	
 
