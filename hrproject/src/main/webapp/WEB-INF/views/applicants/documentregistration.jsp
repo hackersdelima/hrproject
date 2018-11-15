@@ -63,8 +63,7 @@
 			$(this).alert('close');
 		});
 		
-		$( '#formId' )
-		  .submit( function( e ) {
+		$( '.uploadform' ).submit( function( e ) {
 		    $.ajax( {
 		      url: 'FormSubmitUrl',
 		      type: 'POST',
