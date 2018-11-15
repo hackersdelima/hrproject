@@ -1,5 +1,7 @@
 package com.project.hrproject.dao.impl;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -17,6 +19,8 @@ import com.project.hrproject.entity.AdminUserModel;
 import com.project.hrproject.entity.UserModel;
 
 public class LoginDaoImpl implements LoginDao{
+	String password="";	
+	String passwordmd5 = null;
 	private NamedParameterJdbcTemplate namedParamterJdbcTemplate;
 	private JdbcTemplate jdbcTemplate;
 
@@ -44,17 +48,31 @@ public class LoginDaoImpl implements LoginDao{
 			
 			boolean userexists=false;
 			
-			String sql="SELECT COUNT(*) FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+user.getPassword()+"'";
+			
+			
+			password=user.getPassword();
+					try {
+						MessageDigest m = MessageDigest.getInstance("MD5");
+						m.update(password.getBytes(), 0, password.length());
+						passwordmd5 = new BigInteger(1, m.digest()).toString(16);
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+		
+					
+			String sql="SELECT COUNT(*) FROM usertbl WHERE username='"+user.getUsername()+"' AND password='"+passwordmd5+"'";
 			System.out.println(sql);
 			System.out.println(jdbcTemplate+"jdnds");
 			int rowcount= jdbcTemplate.queryForObject(sql, Integer.class);
+			System.out.println("Row :"+rowcount);
 			if(rowcount==1){
 				userexists=true;
 			}
 			return userexists;
 		}
 	 public UserModel getUserDetails(UserModel user){
-			String sql="SELECT * FROM usertbl WHERE username=:username AND password=:password";
+			String sql="SELECT * FROM usertbl WHERE username=:username AND password='"+passwordmd5+"'";
+			
 			return namedParamterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(user),new BeanPropertyRowMapper<UserModel>(UserModel.class));
 		}
 		

@@ -35,10 +35,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/hr_form_verification" />
-		 <property name="username" value="root" />
-		<property name="password" value="123456" /> 
-		<!-- <property name="username" value="jruser" />
-		<property name="password" value="jruser@Program" /> -->
+		 <property name="username" value="jruser" />
+		<property name="password" value="jruser@Program" /> 
 <!-- 				<property name="password" value="DigCen@1Pep" />
  -->		
 	</bean>
